@@ -3,9 +3,6 @@ package com.escaperooms.crazystans;
 
 import com.escaperooms.music.MusicPlayer;
 
-import static org.fusesource.jansi.Ansi.*;
-import static org.fusesource.jansi.Ansi.Color.*;
-
 class Lobby {
     private MusicPlayer musicPlayer;
     private Hinter hinter;
@@ -45,7 +42,7 @@ class Lobby {
 
     private void hintChecker() {
         if (hinter.isEmpty()) {
-            System.out.println(ansi().fg(RED).a("NO MORE HINTS! SOLVE IT! Coming...").reset());
+            System.out.println("NO MORE HINTS! SOLVE IT! Coming...");
         } else {
             System.out.println("Hint: " + hinter.getHint());
         }

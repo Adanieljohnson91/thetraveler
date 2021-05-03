@@ -1,8 +1,6 @@
 package com.escaperooms.crazystans;
 
 import com.escaperooms.application.EscapeRoom;
-import static org.fusesource.jansi.Ansi.Color.RED;
-import static org.fusesource.jansi.Ansi.ansi;
 
 class BeyoncesRoom {
     private Hinter hinter;
@@ -28,7 +26,7 @@ class BeyoncesRoom {
 
     private void hintChecker() {
         if (hinter.isEmpty()) {
-            System.out.println(ansi().fg(RED).a("NO MORE HINTS! SOLVE IT! USE GOOGLE!").reset());
+            System.out.println("NO MORE HINTS! SOLVE IT! USE GOOGLE!");
         } else {
             System.out.println("Hint: " + hinter.getHint());
         }

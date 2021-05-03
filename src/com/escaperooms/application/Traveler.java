@@ -2,8 +2,6 @@ package com.escaperooms.application;
 
 import java.util.ArrayList;
 import java.util.List;
-import static org.fusesource.jansi.Ansi.*;
-import static org.fusesource.jansi.Ansi.Color.*;
 public class Traveler {
     User user;
     EscapeRoom escapeRoom;
@@ -42,9 +40,9 @@ public class Traveler {
 
     private void wonSequence() {
         user.setTravelersID(Math.random() * 1000);
-        System.out.println(ansi().fg(GREEN).a("All rooms completed! You won!\n" +
+        System.out.println("All rooms completed! You won!\n" +
                 "You have been granted a Traveler's ID.\n" +
-                "Your Traveler's ID is " + ansi().fg(RED).a(user.getTravelersID())).reset() + ". DO NOT LOSE IT!");
+                "Your Traveler's ID is " +  ". DO NOT LOSE IT!");
         user.getFinishTime();
     }
 
@@ -54,9 +52,9 @@ public class Traveler {
             for(int i = 0; i < availableRooms.size(); i++) {
                 Playable currentRoom = availableRooms.get(i);
                 if(!currentRoom.isCompleted()) {
-                    System.out.println(ansi().fg(GREEN).a(i + ": " + currentRoom.getName()).reset());
+                    System.out.println(currentRoom.getName());
                 } else {
-                    System.out.println(ansi().fg(RED).a(i + ": " + currentRoom.getName() + "(played)").reset());
+                    System.out.println(currentRoom.getName());
                 }
             }
             String selection = EscapeRoom.prompt("Select a room. ", "[0-" + (availableRooms.size()-1) + "]", "Invalid choice.");

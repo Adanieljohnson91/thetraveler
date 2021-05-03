@@ -8,9 +8,6 @@ import com.escaperooms.music.MusicPlayer;
 
 import java.io.IOException;
 
-import static org.fusesource.jansi.Ansi.Color.*;
-import static org.fusesource.jansi.Ansi.ansi;
-
 public class CrazyStans extends EscapeRoom {
     private final String name = "Crazy Stans";
     private Traveler traveler;
@@ -92,10 +89,10 @@ public class CrazyStans extends EscapeRoom {
     private String welcomeMessage() {
         return "Welcome to " + name + ". To escape this room, you will first have to solve the lobby challenge " +
                 "and acquire the Song Key.\nThe Song Key will allow you to enter " +
-                ansi().fg(GREEN).a("Beyonce's, Ariana Grande's and Michael Jackson's rooms.").reset() +
+                "Beyonce's, Ariana Grande's and Michael Jackson's rooms." +
                 "\nIn each room, you must solve a challenge to acquire the room's item.\n" +
                 "Once the items from those rooms have been collected, you can enter the final room of " +
-                ansi().fg(RED).a("Christina Aguilera.").reset() + "\nSolve all the challenges in the Aguilera room " +
+                "Christina Aguilera." + "\nSolve all the challenges in the Aguilera room " +
                 "to receive the mic of the great one.\nWith this mic, you will be able to make your escape.\n" +
                 "If any of the challenges become too difficult along the way, type 'hint' to receive a hint.";
     }
