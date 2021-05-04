@@ -26,7 +26,7 @@ public class EscapeRoom implements EscapeRoomInterface {
     }
 
     public Map<String, Room> load() {
-
+        //
         Map<String, Room> allRooms = new HashMap<>();
         try {
             InputStream in = getClass().getResourceAsStream("/resources/data/RoomData.csv");
