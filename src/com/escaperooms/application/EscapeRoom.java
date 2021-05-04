@@ -41,6 +41,8 @@ public class EscapeRoom implements EscapeRoomInterface {
                 List <String> doors = Arrays.stream(roomDataCells[5].split(" ~ ")).collect(Collectors.toList());
 
                 Room currentRoom = new Room(roomName, roomItems, roomUsefulItems, actorNames,doors);
+
+                // TODO: Can this be used to switch rooms?
                 allRooms.put(gameName + " : " + roomName, currentRoom);
             });
         } catch(Exception e) {

@@ -16,7 +16,10 @@ class Client {
                 "  | | | | (_| |\\ V |  __| |  __| |   \n" +
                 "  \\_|_|  \\__,_| \\_/ \\___|_|\\___|_|   \n");
         User user = new User();
+        // TODO: Redundancy? How can we simplify this? We are passing escapeRoom into Itself.
+        // Creating all of the rooms and loading the rooms with their data.
         EscapeRoom escapeRoom = new EscapeRoom();
+
         escapeRoom.generateEscapeRooms(escapeRoom);
         String name = EscapeRoom.prompt("Please enter your name: ", "[ a-zA-z]*",
                 "\nThat is not a valid name!\n");

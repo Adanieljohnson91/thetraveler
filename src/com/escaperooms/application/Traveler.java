@@ -47,6 +47,7 @@ public class Traveler {
     }
 
     public void menu() {
+        // TODO: Use word description instead of a selection by number. May need to use a Map for this.
         List<Playable> availableRooms = getRooms();
         if(!isEscapeRoomCompleted()) {
             for(int i = 0; i < availableRooms.size(); i++) {
