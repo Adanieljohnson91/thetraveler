@@ -1,5 +1,8 @@
 package com.escaperooms.application;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class RoomV2 {
@@ -12,8 +15,12 @@ public class RoomV2 {
     RoomV2(){
 
     }
-
-    public RoomV2(String name, String description, List<UsefulItem> usefulItem, ActorV2 actor, List<String> adjacent_rooms) {
+    @JsonCreator
+    public RoomV2(@JsonProperty("name")String name,
+                  @JsonProperty("description")String description,
+                  @JsonProperty("usefulItem")List<UsefulItem> usefulItem,
+                  @JsonProperty("actor")ActorV2 actor,
+                  @JsonProperty("adjacent_rooms")List<String> adjacent_rooms) {
         this.name = name;
         this.description = description;
         this.usefulItem = usefulItem;

@@ -1,5 +1,8 @@
 package com.escaperooms.application;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +16,11 @@ public class ActorV2 {
 
     }
 
-    public ActorV2(String name, List<String> dialogs, Item item, List<TriviaV2> trivia) {
+    @JsonCreator
+    public ActorV2(@JsonProperty("name") String name,
+                   @JsonProperty("dialogs") List<String> dialogs,
+                   @JsonProperty("item") Item item,
+                   @JsonProperty("trivia") List<TriviaV2> trivia) {
         this.name = name;
         this.dialogs = dialogs;
         this.item = item;

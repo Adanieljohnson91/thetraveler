@@ -1,5 +1,6 @@
 package com.escaperooms.application;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -15,8 +16,8 @@ public class Game {
     Game(){
 
     }
-
-    Game(String name, List<RoomV2> rooms){
+    @JsonCreator
+    Game(@JsonProperty("name") String name, @JsonProperty("rooms") List<RoomV2> rooms){
         this.name = name;
         this.rooms = rooms;
     }

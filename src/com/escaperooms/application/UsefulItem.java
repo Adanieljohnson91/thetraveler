@@ -1,5 +1,8 @@
 package com.escaperooms.application;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,8 +13,8 @@ public class UsefulItem {
     UsefulItem(){
 
     }
-
-    public UsefulItem(String name, List<String> dialogs) {
+    @JsonCreator
+    public UsefulItem(@JsonProperty("name") String name, @JsonProperty("dialogs") List<String> dialogs) {
         this.name = name;
         this.dialogs = dialogs;
     }

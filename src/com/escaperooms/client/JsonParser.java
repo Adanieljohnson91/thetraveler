@@ -25,14 +25,14 @@ public class JsonParser {
         GameRoom game_room;
         try{
             game_room = objectMapper.readValue(DATA, GameRoom.class);
-            System.out.println(game_room);
+           // System.out.println(game_room);
         }catch (IOException el){
             el.printStackTrace();
         }
 
         GameRoom game = objectMapper.readValue(DATA, GameRoom.class);
-        List<?> gameName =  game.getGames();
-        System.out.println(game.getGames().get(0));
+        List<Game> gameName = game.getGames();
+        System.out.println(game.getGames().get(0).getName());
 
     }
 

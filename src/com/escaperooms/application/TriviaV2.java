@@ -1,5 +1,8 @@
 package com.escaperooms.application;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,8 +14,10 @@ public class TriviaV2 {
     TriviaV2(){
 
     }
-
-    public TriviaV2(String question, List<String> answers, String correctAnswer) {
+    @JsonCreator
+    public TriviaV2(@JsonProperty("question") String question,
+                    @JsonProperty("answers") List<String> answers,
+                    @JsonProperty("correctAnswer") String correctAnswer) {
         this.question = question;
         this.answers = answers;
         this.correctAnswer = correctAnswer;

@@ -19,7 +19,7 @@ public class GameRoom {
         this.games = games;
     }
 
-    public List<?> getGames() {
+    public List<Game> getGames() {
         return games;
     }
 
