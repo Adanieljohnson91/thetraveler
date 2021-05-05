@@ -15,7 +15,7 @@ import com.fasterxml.jackson.databind.*;
 public class SpaceAdventureParser {
 
 
-    public void parse(File DATA) {
+    public GameRoom parse(File DATA) {
 
         final ObjectMapper objectMapper = new ObjectMapper();
         GameRoom game = null;
@@ -26,7 +26,7 @@ public class SpaceAdventureParser {
             el.printStackTrace();
         }
 
-        System.out.println(game.getGames());
+       return game;
 
     }
 
