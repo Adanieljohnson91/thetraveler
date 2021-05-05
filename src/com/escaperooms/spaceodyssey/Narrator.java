@@ -58,11 +58,7 @@ public class Narrator {
     }
 
     public void spaceTalk (String item){
-        try{
             System.out.println(spaceDetails.getOrDefault(item, "I don't know that word: " + item));
-        }catch(Exception e){
-            System.out.println(item +"not found");
-        }
     }
     public void spaceTalk (String item, int next){
         try{
