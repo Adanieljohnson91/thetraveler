@@ -11,6 +11,6 @@ public class ClientV2 {
         File DATA = new File("src/resources/data/descriptions.json");
         SpaceAdventureParser parser = new SpaceAdventureParser();
         GameRoom game = parser.parse(DATA);
-        game.getGames().get(0).getCurrentRoom().getAdjacent_rooms().forEach(System.out::println);
+        game.play();
     }
 }

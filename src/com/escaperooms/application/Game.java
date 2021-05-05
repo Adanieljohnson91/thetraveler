@@ -56,6 +56,11 @@ public class Game {
         }
     }
 
+    public void play(){
+        System.out.println(currentRoom.getDescription());
+        currentRoom.getActor().getDialogs().forEach(System.out::println);
+    }
+
     public RoomV2 getCurrentRoom() {
         return currentRoom;
     }
