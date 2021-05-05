@@ -1,4 +1,4 @@
-package com.escaperooms.application;
+package com.escaperooms.spaceodyssey;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -12,9 +12,6 @@ public class RoomV2 {
     private ActorV2 actor;
     private List<String> adjacent_rooms;
 
-    RoomV2(){
-
-    }
     @JsonCreator
     public RoomV2(@JsonProperty("name")String name,
                   @JsonProperty("description")String description,
@@ -66,6 +63,12 @@ public class RoomV2 {
 
     public void setUsefulItem(List<UsefulItem> usefulItem) {
         this.usefulItem = usefulItem;
+    }
+
+    public void listAdjacentRooms(){
+        for(String room: adjacent_rooms){
+            System.out.println(room);
+        }
     }
 
 }

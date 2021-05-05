@@ -1,9 +1,10 @@
-package com.escaperooms.application;
+package com.escaperooms.spaceodyssey;
 
+import com.escaperooms.application.Item;
+import com.escaperooms.spaceodyssey.TriviaV2;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ActorV2 {
@@ -25,6 +26,7 @@ public class ActorV2 {
         this.dialogs = dialogs;
         this.item = item;
         this.trivia = trivia;
+
     }
 
     public String getName() {

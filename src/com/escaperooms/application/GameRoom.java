@@ -4,16 +4,12 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class GameRoom {
-    @JsonProperty("games")
-    @JsonDeserialize(as= List.class)
-    private List<Game> games;
-    GameRoom(){
 
-    }
+    private List<Game> games;
+
     @JsonCreator
     GameRoom(@JsonProperty("games") List<Game> games){
         this.games = games;
@@ -21,6 +17,12 @@ public class GameRoom {
 
     public List<Game> getGames() {
         return games;
+    }
+
+    public void listRooms(){
+        for(Game game: games){
+            System.out.println(game.getName());
+        }
     }
 
     public void setGames(List<Game> game) {

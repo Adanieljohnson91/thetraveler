@@ -10,12 +10,17 @@
             {
               "name": "match",
               "dialogs": [
-                ""
+                "On the floor there is a single [match].","You use the match to light the stove!", "Seems like the pilot light is out."
               ]
             }],
           "actor": {
             "name": "duckling",
-            "dialogs": [],
+            "dialogs": [
+              "In the middle of the room, is a [Duckling] playing with a yellow rubber duck in a big fish tank",
+              "I heard [Fish] wants his bowl back! Make sure to tell them I said thank you for letting me borrow it!",
+              "Thank you",
+              "Quack Quack"
+            ],
             "item": {"name": ""},
             "trivia": [
               {
@@ -50,13 +55,19 @@
         },
           {
             "name": "stock room",
+            "description": "You're in a small cramped [STOCK ROOM]",
             "usefulItem": [
               {
                 "name": "none"
               }],
             "actor": {
               "name": "duck",
-              "dialogs": [],
+              "dialogs": [
+                "A french [Duck] is preparing a meal. They look very busy",
+                "Don't Bother Me! I am busy preparing a meal. If you can, fix the stove that would help me out.",
+                "Thank you for fixing the stove! I'm bad with numbers and can only remember the last number was 2, Sorry. Here's a reward for your trouble.",
+                "Quack Quack"
+              ],
               "item": {"name": ""},
               "trivia": [
                 {
@@ -90,13 +101,19 @@
           },
           {
             "name": "cock pit",
+            "description": "You're in the [COCK PIT]",
             "usefulItem": [
               {
                 "name": "none"
               }],
             "actor": {
               "name": "dog",
-              "dialogs": [],
+              "dialogs": [
+                "A [Dog] is sitting in the captains chair. They look very busy",
+                "Help my crew and I might think about not kicking you off the ship stranger",
+                "Thank you for helping my crew. The code to the [keypad] is 4982!",
+              "Woof!"
+              ],
               "item": {"name": ""},
               "trivia": [
                 {
@@ -130,13 +147,19 @@
           },
           {
             "name": "engine room",
+            "description": " You're in a small cramped [ENGINE ROOM]",
             "usefulItem": [
               {
-                "name": "none"
+                "name": "none",
+                "dialogs": [
+                  ]
               }],
             "actor": {
               "name": "horse",
-              "dialogs": [],
+              "dialogs": ["A large [Horse] is pacing back and forth",
+                "I need to find my wrench, the captain told me you came to help. Can you help me find my wrench",
+                "Thank you for finding my wrench, now i can fix the escape pod engine. The first number to the code is 4",
+                "Ney!"],
               "item": {"name": ""},
               "trivia": [
                 {
@@ -170,9 +193,11 @@
           },
           {
             "name": "dorms",
+            "description": " You're in a small cramped [DORMS]",
             "usefulItem": [
               {
-                "name": "match"
+                "name": "match",
+                "dialogs": ["On the floor there is a single [match].", "You use the match to light the stove!", "Seems like the pilot light is out."]
               }],
             "actor": {
               "name": "none",
@@ -184,10 +209,12 @@
           },
           {
             "name": "escape hatch",
-            "usefulItem": [{"name": "none"}],
+            "description": "You're in a small cramped [ESCAPE HATCH]",
+            "usefulItem": [{"name": "none", "dialogs":[]}],
             "actor": {
               "name": "fish",
-              "dialogs": [],
+              "dialogs": ["A [Fish] is repairing some air lock doors. They look very busy", "That [Cat] keeps trying to swipe at me! I need my [fishbowl] to protect me. Can you go talk to the [Duckling] who is using my [fishbowl] as a swimming pool?",
+              "No way! I got my fishbowl back. Thank you so much stranger! The third number to the [POD] [keypad] is 8!", "Glub glub"],
               "item": {"name": ""},
               "trivia": [
                 {
@@ -221,16 +248,20 @@
           },
           {
             "name": "pod",
+            "description": "You're in a small cramped [POD]",
             "usefulItem": [
               {
-                "name": "wrench"
+                "name": "wrench",
+                "dialogs": ["A [wrench] sits on the table. Should you take it?", "You use the WRENCH to dig through the tunnel", "If only you had some type of digging tool"]
               },
               {
-                "name": "keypad"
+                "name": "keypad",
+                "dialogs": ["A [keypad] is attached to the display of the pod to activate it.", "something", "A [keypad] is attached to the display of the pod to activate it."]
               }],
             "actor": {
               "name": "cat",
-              "dialogs": [],
+              "dialogs": ["A [Cat] is lounging on a high perch.", "I love messing with [Fish], but I want more exciting toys! Can you Steal the laser pointer from Dog. He keeps it in the [DORMS]",
+              "Thank you for the toy! I heard you wanted to use the [POD], I remember the second number was the number of lives a [Cat] has.", "Meow"],
               "item": {"name": ""},
               "trivia": [
                 {

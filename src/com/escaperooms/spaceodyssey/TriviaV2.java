@@ -1,4 +1,4 @@
-package com.escaperooms.application;
+package com.escaperooms.spaceodyssey;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -11,9 +11,6 @@ public class TriviaV2 {
     private List<String> answers = new ArrayList<>();
     private String correctAnswer;
 
-    TriviaV2(){
-
-    }
     @JsonCreator
     public TriviaV2(@JsonProperty("question") String question,
                     @JsonProperty("answers") List<String> answers,

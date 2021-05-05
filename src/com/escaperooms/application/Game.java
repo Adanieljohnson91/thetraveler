@@ -1,10 +1,9 @@
 package com.escaperooms.application;
 
+import com.escaperooms.spaceodyssey.RoomV2;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -13,9 +12,7 @@ public class Game {
     public String name;
     @JsonProperty("rooms")
     public List<RoomV2> rooms;
-    Game(){
 
-    }
     @JsonCreator
     Game(@JsonProperty("name") String name, @JsonProperty("rooms") List<RoomV2> rooms){
         this.name = name;
@@ -35,6 +32,12 @@ public class Game {
 
     public void setRooms(List<RoomV2> rooms) {
         this.rooms = rooms;
+    }
+
+    public void listRooms(){
+        for(RoomV2 room: rooms){
+            System.out.println(room.getName());
+        }
     }
 
     @Override
