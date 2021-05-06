@@ -294,6 +294,84 @@
             "adjacent_rooms": ["escape hatch"]
           }
         ]
+    },{
+      "name": "jonin_exam",
+      "fighters" : [
+        {
+          "name" : "Kakashi",
+          "ninjaHP": 10,
+          "intro": "\nLooks like Kakashi is preparing to use his Chidori attack",
+          "question": "\nHow would you like to attack? \n 1: Use a Genjutsu attack \n 2: Ninjutsu attack \n 3: Dodge",
+          "attacks" : [
+            {
+              "name": "Genjutsu Attack",
+              "text": "\nYou used your genjutsu and was able to defeat the opponent!! \nWow that was fast!! ....and the winner is YOU!!"
+            },
+            {
+              "name": "Ninjutsu Attack",
+              "text": "\nKakashi: He thinks he got me with that move lol...\nYour opponent has defeated you before you could blink!!!\nBetter luck next time!!!"
+            },
+            {
+              "name": "Dodge",
+              "text": "\n Kakashi: Haaa I'll see about that!\nYou dodged the attack but it was a distraction and your opponent defeated you with a blazing kick to the back of your head!\nCall the medics this match is over!!"
+            }
+          ]
+        },
+        {
+          "name" : "Gaara",
+          "ninjaHP": 10,
+          "intro": "\nGaara throws a sand bullet fast!!",
+          "question": "\nHow would you like to attack? \n 1: Use a Genjutsu attack \n 2: Ninjutsu attack \n 3: Dodge",
+          "attacks" : [
+            {
+              "name": "Genjutsu Attack",
+              "text": "\nYou attempted to prepare a genjutsu attack but Gaara's sand bullet got to you too fast\nWow it tore through your chest!\nThe winner is Gaara!!!"
+            },
+            {
+              "name": "Ninjutsu Attack",
+              "text": "\nYou attacked Gaara with your flying leg attack while dodging his sand bullet!\nGaara is out cold from that attack, you have won the match!!"
+            },
+            {
+              "name": "Dodge",
+              "text": "\nGaara: Whaaaaat!!!! How are you moving so fast!!!!!!\nGreat you dodged it!, then you used your speedy Ninjutsu attacks to defeat Garaa!!\nYou Won Congrats!!!"
+            }
+          ]
+        },
+        {
+          "name" : "Killer B",
+          "ninjaHP": 10,
+          "intro": "\nKiller B starts rapping after the battle starts",
+          "question": "\nHow would you like to attack? \n 1: Use a Genjutsu attack \n 2: Ninjutsu attack \n 3: Join in and rap also",
+          "attacks" : [
+            {
+              "name": "Genjutsu Attack",
+              "text": "\nYou used your genjutsu and was able to defeat the opponent!!\\nKiller B Genjutsu is too advanced! He broke out of your visual prowess and used his lightning sword attack to defeat you! all while he was rapping!\nYou lose!!"
+            },
+            {
+              "name": "Ninjutsu Attack",
+              "text": "\nKiller B: Yo you trynna disrespect me while I'm spittin my raps!! Take This!!!!\nhe uses his 8 tails ability to defeat you quickly!!!\nYou have a lost this match, try again next year!!"
+            },
+            {
+              "name": "Dodge",
+              "text": "\nYou joined Killer B and spit some of your own bars!\nKiller B: Yoooo I like this kid those raps were all that!!!\n\nKiller B: yo I can't compete with that I gotta go think of some more raps!\nB forfeits the match and you are the winner!!!"
+            }
+          ]
+        }
+      ],
+      "villages": [
+        {
+          "name": "The Hidden Leaf Village",
+          "intro": "\nLooks like you will be facing the Legendary Kakashi"
+        },
+        {
+          "name": "The Village Hidden in the Stones",
+          "intro": "\nOk, you'll be fighting Gaara"
+        },
+        {
+          "name": "The Village Hidden in the Clouds",
+          "intro": "\nYou will be matched against Killer B"
+        }
+      ]
     }]
 
 }
