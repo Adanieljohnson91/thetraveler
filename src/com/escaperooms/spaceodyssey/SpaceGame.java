@@ -1,7 +1,6 @@
 package com.escaperooms.spaceodyssey;
 
 import com.escaperooms.application.Game;
-import com.escaperooms.spaceodyssey.RoomV2;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -28,14 +27,14 @@ public class SpaceGame implements Game {
      * @param roomMap is used to store our rooms so that we can navigate our game. inside of the roomMap are rooms orgainzed by name
      *                each room has a list of adjacent rooms they can connect to, we will use those names to switch the room we are currently in.
      */
-    private static Map<String, RoomV2> roomMap = new HashMap<>();
-    private static RoomV2 currentRoom;
+    public static Map<String, RoomV2> ROOMMAP = new HashMap<>();
+    public static RoomV2 CURRENT_ROOM;
 
     @JsonCreator
     public SpaceGame(@JsonProperty("name") String name, @JsonProperty("rooms") List<RoomV2> rooms){
         this.name = name;
         createRoomMap(rooms);
-        currentRoom = roomMap.get("kitchen");
+        CURRENT_ROOM = ROOMMAP.get("kitchen");
     }
 
     public List<RoomV2> getRooms() {
@@ -56,7 +55,7 @@ public class SpaceGame implements Game {
 
     private void createRoomMap(List<RoomV2> rooms){
         for(RoomV2 room: rooms){
-            roomMap.put(room.getName(), room);
+            ROOMMAP.put(room.getName(), room);
         }
     }
 
@@ -73,9 +72,10 @@ public class SpaceGame implements Game {
      * we loop over that string and pull out the available commands that match a larger Commands Enum?
      */
     public void play(){
-        System.out.println(currentRoom.getDescription());
-        currentRoom.getActor().getDialogs().forEach(System.out::println);
 
+        controller.control("help");
+        System.out.println(CURRENT_ROOM.getDescription());
+        CURRENT_ROOM.getActor().getDialogs().forEach(System.out::println);
         while (true){
             String input = scanner.nextLine();
             controller.control(input);
@@ -83,7 +83,7 @@ public class SpaceGame implements Game {
     }
 
     public RoomV2 getCurrentRoom() {
-        return currentRoom;
+        return CURRENT_ROOM;
     }
 
     @Override

@@ -19,7 +19,22 @@
               "Thank you",
               "Quack Quack"
             ],
-            "item": {"name": ""},
+            "item":
+              {
+                "name": "",
+                "dialogs": []
+              },
+            "wantedItem": [{
+              "name": "hammer",
+              "dialogs": []
+            },{
+              "name": "nail",
+              "dialogs": []
+            },{
+              "name": "bow",
+              "dialogs": []
+            }
+            ],
             "trivia": [
               {
                 "question": " An adult male duck is referred to as a _____?",
@@ -66,7 +81,22 @@
                 "Thank you for fixing the stove! I'm bad with numbers and can only remember the last number was 2, Sorry. Here's a reward for your trouble.",
                 "Quack Quack"
               ],
-              "item": {"name": ""},
+              "item":
+                {
+                  "name": "",
+                  "dialogs": []
+                },
+              "wantedItem": [{
+                "name": "hammer",
+                "dialogs": []
+              },{
+                "name": "nail",
+                "dialogs": []
+              },{
+                "name": "bow",
+                "dialogs": []
+              }
+              ],
               "trivia": [
                 {
                   "question": " An adult male duck is referred to as a _____?",
@@ -112,7 +142,22 @@
                 "Thank you for helping my crew. The code to the [keypad] is 4982!",
               "Woof!"
               ],
-              "item": {"name": ""},
+              "item":
+                {
+                  "name": "pick",
+                  "dialogs": []
+                },
+              "wantedItem": [{
+                "name": "hammer",
+                "dialogs": []
+              },{
+                "name": "nail",
+                "dialogs": []
+              },{
+                "name": "bow",
+                "dialogs": []
+              }
+              ],
               "trivia": [
                 {
                   "question": "An upright and still tail indicates that a dog is _______?",
@@ -158,7 +203,22 @@
                 "I need to find my wrench, the captain told me you came to help. Can you help me find my wrench",
                 "Thank you for finding my wrench, now i can fix the escape pod engine. The first number to the code is 4",
                 "Ney!"],
-              "item": {"name": ""},
+              "item":
+                {
+                  "name": "",
+                  "dialogs": []
+                },
+              "wantedItem": [{
+                "name": "hammer",
+                "dialogs": []
+              },{
+                "name": "nail",
+                "dialogs": []
+              },{
+                "name": "bow",
+                "dialogs": []
+              }
+              ],
               "trivia": [
                 {
                   "question": "Horses are measured in ____?",
@@ -213,7 +273,22 @@
               "name": "fish",
               "dialogs": ["A [Fish] is repairing some air lock doors. They look very busy", "That [Cat] keeps trying to swipe at me! I need my [fishbowl] to protect me. Can you go talk to the [Duckling] who is using my [fishbowl] as a swimming pool?",
               "No way! I got my fishbowl back. Thank you so much stranger! The third number to the [POD] [keypad] is 8!", "Glub glub"],
-              "item": {"name": ""},
+              "item":
+                {
+                  "name": "",
+                  "dialogs": []
+                },
+              "wantedItem": [{
+                "name": "hammer",
+                "dialogs": []
+              },{
+                "name": "nail",
+                "dialogs": []
+              },{
+                "name": "bow",
+                "dialogs": []
+              }
+              ],
               "trivia": [
                 {
                   "question": " What is the loudest fish?",
@@ -260,7 +335,22 @@
               "name": "cat",
               "dialogs": ["A [Cat] is lounging on a high perch.", "I love messing with [Fish], but I want more exciting toys! Can you Steal the laser pointer from Dog. He keeps it in the [DORMS]",
               "Thank you for the toy! I heard you wanted to use the [POD], I remember the second number was the number of lives a [Cat] has.", "Meow"],
-              "item": {"name": ""},
+              "item":
+                {
+                  "name": "",
+                  "dialogs": []
+                },
+              "wantedItem": [{
+                "name": "hammer",
+                "dialogs": []
+              },{
+                "name": "nail",
+                "dialogs": []
+              },{
+                "name": "bow",
+                "dialogs": []
+              }
+              ],
               "trivia": [
                 {
                   "question": "Cats move with their right feet and then their left feet. The only other animals that walk this way are ________?",

@@ -1,6 +1,8 @@
 package com.escaperooms.spaceodyssey;
 
 import com.escaperooms.application.Controller;
+import com.escaperooms.application.Game;
+import com.escaperooms.application.GameRoom;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -40,6 +42,7 @@ public class SpaceController implements Controller {
     }
 
     private void talk(){
+        SpaceGame.CURRENT_ROOM.getActor().interact();
         System.out.println("Talking");
     }
 

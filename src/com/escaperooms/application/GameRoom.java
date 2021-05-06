@@ -32,9 +32,9 @@ public class GameRoom {
     }
 
     public void play(){
+        System.out.println("Select a Game");
         listGames();
         while (true){
-            System.out.println("Select a Game");
             String input = scanner.nextLine();
             currentGame = gameMap.get(input);
             currentGame.play();
