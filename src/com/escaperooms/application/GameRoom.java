@@ -11,18 +11,18 @@ import java.util.Scanner;
 
 public class GameRoom {
 
-    private List<SpaceGame> games;
+    private List<Game> games;
     private Map<String, Game> gameMap = new HashMap<>();
     private Game currentGame;
     Scanner scanner = new Scanner(System.in);
 
     @JsonCreator
-    GameRoom(@JsonProperty("games") List<SpaceGame> games){
+    public GameRoom(@JsonProperty("games") List<Game> games){
         this.games = games;
         buildGameMap();
     }
 
-    public List<SpaceGame> getGames() {
+    public List<Game> getGames() {
         return games;
     }
 
@@ -42,7 +42,7 @@ public class GameRoom {
     }
 
     private void buildGameMap(){
-        for(SpaceGame game: games){
+        for(Game game: games){
             gameMap.put(game.getName(), game);
         }
     }
