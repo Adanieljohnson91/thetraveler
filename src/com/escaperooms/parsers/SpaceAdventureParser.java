@@ -4,18 +4,19 @@ import java.io.File;
 import java.io.IOException;
 
 import com.escaperooms.application.GameRoom;
+import com.escaperooms.spaceodyssey.SpaceGame;
 import com.fasterxml.jackson.databind.*;
 
 public class SpaceAdventureParser {
 
 
-    public GameRoom parse(File DATA) {
+    public SpaceGame parse(File DATA) {
 
         final ObjectMapper objectMapper = new ObjectMapper();
-        GameRoom game = null;
+        SpaceGame game = null;
 
         try{
-            game = objectMapper.readValue(DATA, GameRoom.class);
+            game = objectMapper.readValue(DATA, SpaceGame.class);
         }catch (IOException el){
             el.printStackTrace();
         }
