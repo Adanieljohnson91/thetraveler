@@ -8,15 +8,22 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 
 public class SpaceGame implements Game {
+
     @JsonProperty("type")
     private String type;
+
     @JsonProperty("name")
     public String name;
+
     @JsonProperty("rooms")
     private List<RoomV2> rooms;
+
+    private final SpaceController controller = new SpaceController();
+    private final Scanner scanner = new Scanner(System.in);
     /**
      * @param roomMap is used to store our rooms so that we can navigate our game. inside of the roomMap are rooms orgainzed by name
      *                each room has a list of adjacent rooms they can connect to, we will use those names to switch the room we are currently in.
@@ -30,6 +37,7 @@ public class SpaceGame implements Game {
         createRoomMap(rooms);
         currentRoom = roomMap.get("kitchen");
     }
+
     public List<RoomV2> getRooms() {
         return rooms;
     }
@@ -67,6 +75,11 @@ public class SpaceGame implements Game {
     public void play(){
         System.out.println(currentRoom.getDescription());
         currentRoom.getActor().getDialogs().forEach(System.out::println);
+
+        while (true){
+            String input = scanner.nextLine();
+            controller.control(input);
+        }
     }
 
     public RoomV2 getCurrentRoom() {
