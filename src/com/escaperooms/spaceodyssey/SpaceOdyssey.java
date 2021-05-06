@@ -121,7 +121,6 @@ public class SpaceOdyssey extends EscapeRoom {
                             }
                             if (user.isCurrentRoom("STOCK ROOM") && !user.hasAnswer("MATCH")) {
                                 tryNarrate(choice[choice.length - 1], 1);
-//                                tryPlayConvo(choice[choice.length - 1]);
                             }
                             if (user.isCurrentRoom("KITCHEN")) {
                                 tryNarrate(choice[choice.length - 1], 1);

@@ -79,7 +79,7 @@ setAnswerD(answerD);
         this.answerD = answerD;
     }
     public boolean ask (){
-        List<String> validAnswers = Arrays.asList(new String[] { getAnswerA().toUpperCase(), getAnswerB().toUpperCase(), getAnswerC().toUpperCase(), getAnswerD().toUpperCase() });
+        List<String> validAnswers = Arrays.asList(getAnswerA().toUpperCase(), getAnswerB().toUpperCase(), getAnswerC().toUpperCase(), getAnswerD().toUpperCase());
         boolean result = false;
         String userAnswer = prompter.prompt(getQuestion()+"\nA : "+getAnswerA()+"\nB : "+getAnswerB()+"\nC : "+getAnswerC()+"\nD : "+getAnswerD()+"\n","A|B|C|D|a|b|c|d"+"|"+getAnswerA()+"|"+getAnswerB()+"|"+getAnswerC()+"|"+getAnswerD()+"|"+getAnswerA().toLowerCase()+"|"+getAnswerB().toLowerCase()+"|"+getAnswerC().toLowerCase()+"|"+getAnswerD().toLowerCase()+"|"+getAnswerA().toUpperCase()+"|"+getAnswerB().toUpperCase()+"|"+getAnswerC().toUpperCase()+"|"+getAnswerD().toUpperCase(),"Not a valid answer try again").toUpperCase();
         if(userAnswer.equals(getCorrectAnswer()) || validAnswers.contains(userAnswer)){
