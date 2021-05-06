@@ -1,6 +1,4 @@
 {
-  "games":
-    [{
         "name": "space_odyssey",
         "rooms": [
           {
@@ -294,5 +292,4 @@
             "adjacent_rooms": ["escape hatch"]
           }
         ]
-    }]
 }

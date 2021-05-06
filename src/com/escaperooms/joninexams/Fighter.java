@@ -12,6 +12,7 @@ public class Fighter {
     private Integer ninjaHP;
     private String intro;
     private List<Attack> attacks;
+    private String question;
 
     Fighter(){
 
@@ -21,11 +22,13 @@ public class Fighter {
     public Fighter(@JsonProperty("name") String name,
                    @JsonProperty("ninjaHP") Integer ninjaHP,
                    @JsonProperty("intro") String intro,
-                   @JsonProperty("attacks") List<Attack> attacks) {
+                   @JsonProperty("attacks") List<Attack> attacks,
+                   @JsonProperty("question") String question) {
         this.name = name;
         this.ninjaHP = ninjaHP;
         this.intro = intro;
         this.attacks = attacks;
+        this.question = question;
     }
 
     public String getName() {return name;}
@@ -38,4 +41,5 @@ public class Fighter {
     public void setIntro(String intro) {this.intro = intro;}
     public void seHP(Integer hp) {this.ninjaHP = hp;}
     public void setAttacks(List<Attack> attacks) {this.attacks = attacks;}
+
 }
