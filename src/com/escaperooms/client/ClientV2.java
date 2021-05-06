@@ -1,5 +1,6 @@
 package com.escaperooms.client;
 
+import com.escaperooms.application.GameRoom;
 import com.escaperooms.parsers.SpaceAdventureParser;
 
 import java.io.File;
@@ -9,6 +10,7 @@ public class ClientV2 {
     public static void main(String[] args) throws IOException {
         File DATA = new File("src/resources/data/descriptions.json");
         SpaceAdventureParser parser = new SpaceAdventureParser();
-        parser.parse(DATA);
+        GameRoom game = parser.parse(DATA);
+        game.play();
     }
 }
