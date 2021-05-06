@@ -3,14 +3,18 @@ package com.escaperooms.spaceodyssey;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class RoomV2 {
     private String name;
     private String description;
     private List<UsefulItem> usefulItem;
     private ActorV2 actor;
+    private List<String> commands = new ArrayList<>();
     private List<String> adjacent_rooms;
+    private Scanner scanner = new Scanner(System.in);
 
     @JsonCreator
     public RoomV2(@JsonProperty("name")String name,

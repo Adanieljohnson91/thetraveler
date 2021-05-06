@@ -1,8 +1,8 @@
 package com.escaperooms.application;
 
+import com.escaperooms.spaceodyssey.*;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.util.HashMap;
 import java.util.List;
@@ -11,19 +11,23 @@ import java.util.Scanner;
 
 public class GameRoom {
 
-    private List<Game> games;
+    private List<SpaceGame> games;
     private Map<String, Game> gameMap = new HashMap<>();
     private Game currentGame;
     Scanner scanner = new Scanner(System.in);
 
     @JsonCreator
-    GameRoom(@JsonProperty("games") List<Game> games){
+    GameRoom(@JsonProperty("games") List<SpaceGame> games){
         this.games = games;
         buildGameMap();
     }
 
-    public List<Game> getGames() {
+    public List<SpaceGame> getGames() {
         return games;
+    }
+
+    public void addGame(Game game){
+        gameMap.put(game.getName(), game);
     }
 
     public void play(){
@@ -38,22 +42,22 @@ public class GameRoom {
     }
 
     private void buildGameMap(){
-        for(Game game: games){
+        for(SpaceGame game: games){
             gameMap.put(game.getName(), game);
         }
     }
 
-    private void setCurrentGame(Game game){
+    private void setCurrentGame(SpaceGame game){
         this.currentGame = game;
     }
 
     public void listGames(){
-        for(Game game: games){
-            System.out.println(game.getName());
+        for(String game: gameMap.keySet()){
+            System.out.println(game);
         }
     }
 
-    public void setGames(List<Game> game) {
+    public void setGames(List<SpaceGame> game) {
         this.games = games;
     }
 

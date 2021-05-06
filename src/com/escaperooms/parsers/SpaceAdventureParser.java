@@ -1,14 +1,8 @@
 package com.escaperooms.parsers;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.*;
 
-import com.escaperooms.application.Game;
 import com.escaperooms.application.GameRoom;
 import com.fasterxml.jackson.databind.*;
 
