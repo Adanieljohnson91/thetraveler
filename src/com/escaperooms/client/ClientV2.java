@@ -2,6 +2,7 @@ package com.escaperooms.client;
 
 import com.escaperooms.application.Game;
 import com.escaperooms.application.GameRoom;
+import com.escaperooms.application.UserV2;
 import com.escaperooms.joninexams.JoninGame;
 import com.escaperooms.parsers.JoninGameParser;
 import com.escaperooms.parsers.SpaceAdventureParser;
@@ -26,7 +27,7 @@ public class ClientV2 {
 
         gameList.add(spaceGame);
         gameList.add(joninGame);
-        GameRoom gameRoom = new GameRoom(gameList);
+        GameRoom gameRoom = new GameRoom(gameList, new UserV2());
         gameRoom.play();
 
     }
