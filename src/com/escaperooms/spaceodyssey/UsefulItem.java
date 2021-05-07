@@ -8,12 +8,12 @@ import java.util.List;
 
 public class UsefulItem {
     private String name;
-    private List<String> dialogs;
+    private String inscription;
 
     @JsonCreator
-    public UsefulItem(@JsonProperty("name") String name, @JsonProperty("dialogs") List<String> dialogs) {
+    public UsefulItem(@JsonProperty("name") String name, @JsonProperty("inscription") String inscription) {
         this.name = name;
-        this.dialogs = dialogs;
+        this.inscription = inscription;
     }
 
     public String getName() {
@@ -24,11 +24,11 @@ public class UsefulItem {
         this.name = name;
     }
 
-    public List<String> getDialogs() {
-        return dialogs;
+    public String getDialogs() {
+        return inscription;
     }
 
-    public void setDialogs(List<String> dialogs) {
-        this.dialogs = dialogs;
+    public void setDialogs(String inscription) {
+        this.inscription = inscription;
     }
 }

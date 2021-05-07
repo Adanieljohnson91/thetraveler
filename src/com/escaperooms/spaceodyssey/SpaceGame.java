@@ -58,13 +58,6 @@ public class SpaceGame implements Game {
             ROOMMAP.put(room.getName(), room);
         }
     }
-
-    public void listRooms(){
-        for(RoomV2 room: rooms){
-            System.out.println(room.getName());
-        }
-    }
-
     /**
      * Game logic: a user starts in a room and is given a description of the area
      * based on the room they will have different options on how to interact
@@ -73,13 +66,26 @@ public class SpaceGame implements Game {
      */
     public void play(){
 
-        controller.control("help");
-        System.out.println(CURRENT_ROOM.getDescription());
-        CURRENT_ROOM.getActor().getDialogs().forEach(System.out::println);
-        while (true){
-            String input = scanner.nextLine();
-            controller.control(input);
+        try{
+            while (true){
+                currentSceneDialogs();
+                String input = scanner.nextLine();
+                controller.control(input);
+            }
+        }catch(Exception e){
+            System.out.println(e.getMessage());
         }
+
+    }
+
+    public void currentSceneDialogs(){
+        try{
+            System.out.println(CURRENT_ROOM.getDescription());
+            CURRENT_ROOM.getActor().describe();
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+
     }
 
     public RoomV2 getCurrentRoom() {

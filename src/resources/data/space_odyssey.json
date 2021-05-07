@@ -4,37 +4,23 @@
           {
           "name": "kitchen",
             "description": "You're in the most beautiful kitchen you have ever seen.",
-          "usefulItem": [
-            {
-              "name": "match",
-              "dialogs": [
-                "On the floor there is a single [match].","You use the match to light the stove!", "Seems like the pilot light is out."
-              ]
-            }],
+          "usefulItem": {"name": "none", "inscription":""},
           "actor": {
-            "name": "duckling",
+            "name": "Diego the Wide Mouthed Duck",
+            "health": 5,
+            "attack": 1,
+            "actorRoomText": "In the distance you see what looks like a duck, oh wait, it is Diego the wide mouthed Duck with a bill full of... Guts?",
+            "secretText": "Quack quack quack, before you put me down, let Bunny bunny big skins know that I love him",
             "dialogs": [
-              "In the middle of the room, is a [Duckling] playing with a yellow rubber duck in a big fish tank",
-              "I heard [Fish] wants his bowl back! Make sure to tell them I said thank you for letting me borrow it!",
-              "Thank you",
+              "I have some cards, but im not sure what to do, answer my question while I think it through.",
+              "Come fight me baby... [Diego blows you a kiss.]",
               "Quack Quack"
             ],
             "item":
               {
-                "name": "",
-                "dialogs": []
+                "name": "Willie Mays 1952 Topps #261 Giants Baseball Card",
+                "inscription": "Base ball gloves fits all..."
               },
-            "wantedItem": [{
-              "name": "hammer",
-              "dialogs": []
-            },{
-              "name": "nail",
-              "dialogs": []
-            },{
-              "name": "bow",
-              "dialogs": []
-            }
-            ],
             "trivia": [
               {
                 "question": " An adult male duck is referred to as a _____?",
@@ -69,34 +55,24 @@
           {
             "name": "stock room",
             "description": "You're in a small cramped [STOCK ROOM]",
-            "usefulItem": [
-              {
-                "name": "none"
-              }],
+            "usefulItem":{"name": "none", "inscription":""},
             "actor": {
-              "name": "duck",
+              "name": "Bunny Bunny Big Skins",
+              "health": 6,
+              "attack": 2,
+              "actorRoomText": "You see 'Bunny Bunny Big Skins' sitting in the corner of the room chopping away at a carrot",
+              "secretText": "Oh god, what are you doing? Whats wrong with you, please don't hurt me!!! AHHHHH!!!",
               "dialogs": [
-                "A french [Duck] is preparing a meal. They look very busy",
-                "Don't Bother Me! I am busy preparing a meal. If you can, fix the stove that would help me out.",
-                "Thank you for fixing the stove! I'm bad with numbers and can only remember the last number was 2, Sorry. Here's a reward for your trouble.",
-                "Quack Quack"
+                "So you think you can escape, answer a question if you want my help.",
+                "Oh, so this is how it is? hope you weren't planning on getting out of here.",
+                "Thump Thump [The sound of Bunny feet slapping the ground]"
               ],
               "item":
-                {
-                  "name": "",
-                  "dialogs": []
-                },
-              "wantedItem": [{
-                "name": "hammer",
-                "dialogs": []
-              },{
-                "name": "nail",
-                "dialogs": []
-              },{
-                "name": "bow",
-                "dialogs": []
-              }
-              ],
+              {
+                "name": "brass knuckle",
+                "inscription": "the sun can be represented by the number..."
+              },
+              "wantedItem": [],
               "trivia": [
                 {
                   "question": " An adult male duck is referred to as a _____?",
@@ -130,59 +106,49 @@
           {
             "name": "cock pit",
             "description": "You're in the [COCK PIT]",
-            "usefulItem": [
-              {
-                "name": "none"
-              }],
+            "usefulItem":{"name": "none", "inscription":""},
             "actor": {
-              "name": "dog",
+              "name": "Mad Bat",
+              "health": 5,
+              "attack": 1,
+              "actorRoomText": "Deep in the darkness of you can only see the light of the room ahead, from the ceiling you hear a crunching, CRUNCH CRUNCH CRUNCH, the sounds of beetle bones snapping in Mad Bats mouth",
+              "secretText": "..... [Mad Bat Parishes in Silence]",
               "dialogs": [
-                "A [Dog] is sitting in the captains chair. They look very busy",
-                "Help my crew and I might think about not kicking you off the ship stranger",
-                "Thank you for helping my crew. The code to the [keypad] is 4982!",
-              "Woof!"
+                "CRUNCH CRUNCH CRUNCH, You dare interrupt my feast, answer me now before I hang you by your feet...",
+                "How do you expect to fight me in the darkness when you cant see me, but i can see you?",
+                "Swoosh Swoosh"
               ],
               "item":
-                {
-                  "name": "pick",
-                  "dialogs": []
-                },
-              "wantedItem": [{
-                "name": "hammer",
-                "dialogs": []
-              },{
-                "name": "nail",
-                "dialogs": []
-              },{
-                "name": "bow",
-                "dialogs": []
-              }
-              ],
+              {
+                "name": "Baccarat Zodiac Pig",
+                "inscription": "socks and shoes both come in..."
+              },
+              "wantedItem": [],
               "trivia": [
                 {
-                  "question": "An upright and still tail indicates that a dog is _______?",
-                  "answers": ["scared or curious", "focused and excited", "angry", "anxious"],
-                  "correctAnswer": "focused and excited"
+                  "question": " An adult male duck is referred to as a _____?",
+                  "answers": ["Mandrake", "Drake", "Quacker", "Duckle"],
+                  "correctAnswer": "Drake"
                 },
                 {
-                  "question": "Greyhounds can run up to ___ miles per hour.?",
-                  "answers": ["23", "38", "44", "53"],
-                  "correctAnswer": "44"
+                  "question": "Many birds have a gland that produces a waxy oil to waterproof feathers called a _____ gland?",
+                  "answers": ["Mandrake", "Drake", "Uropygial", "Duckle"],
+                  "correctAnswer": "Uropygial"
                 },
                 {
-                  "question": "The first dog superstar was ________?",
-                  "answers": ["Air Bud", "Rin Tin Tin", "Taco Bell Chihuahua", "Lassie"],
-                  "correctAnswer": "Rin Tin Tin"
+                  "question": "How long after hatching are Ducklings able to walk and leave the nest?",
+                  "answers": ["immediately", "a couple hours", "a day", "a couple days"],
+                  "correctAnswer": "a couple hours"
                 },
                 {
-                  "question": "A Russian dog named ______ was the first animal in space and traveled around the Earth in 1957?",
-                  "answers": ["Lukraim", "Laika", "Wallachia", "Larissa"],
-                  "correctAnswer": "Laika"
+                  "question": "a group of ducks can be called a ______?",
+                  "answers": ["druid", "deckle", "cast", "raft"],
+                  "correctAnswer": "raft"
                 },
                 {
-                  "question": "Dalmatian puppies are born with ____?",
-                  "answers": ["all their spots", "0 spots", "most of their spots", "some of their spots"],
-                  "correctAnswer": "0 spots"
+                  "question": "How many eyelids does a duck have?",
+                  "answers": ["0", "1", "2", "3"],
+                  "correctAnswer": "3"
                 }
               ]
             },
@@ -191,59 +157,49 @@
           {
             "name": "engine room",
             "description": " You're in a small cramped [ENGINE ROOM]",
-            "usefulItem": [
-              {
-                "name": "none",
-                "dialogs": [
-                  ]
-              }],
+            "usefulItem":{"name": "none", "inscription":""},
             "actor": {
-              "name": "horse",
-              "dialogs": ["A large [Horse] is pacing back and forth",
-                "I need to find my wrench, the captain told me you came to help. Can you help me find my wrench",
-                "Thank you for finding my wrench, now i can fix the escape pod engine. The first number to the code is 4",
-                "Ney!"],
-              "item":
-                {
-                  "name": "",
-                  "dialogs": []
-                },
-              "wantedItem": [{
-                "name": "hammer",
-                "dialogs": []
-              },{
-                "name": "nail",
-                "dialogs": []
-              },{
-                "name": "bow",
-                "dialogs": []
-              }
+              "name": "Arty the Alligator",
+              "health": 5,
+              "attack": 1,
+              "actorRoomText": "The room smells like fish and cheap cologne, you look down and see Arty the Alligator with his mouth wide open",
+              "secretText": "Oh shit, how did this happen... Let me go my friend, it was just a game... Please don't, I have kids, we'll there my sisters kids, but i love them like my own... ok, you got me i don't have a sister... Oh noo....",
+              "dialogs": [
+                "You can quit now, just step inside, or answer my question, either way you will die.",
+                "So you want to be my meal of the day?",
+                "Chomp Chomp"
               ],
+              "item":
+              {
+                "name": "Snake skin assless chaps",
+                "inscription": "...Rainbows have so many colors..."
+              },
+              "wantedItem": [],
               "trivia": [
                 {
-                  "question": "Horses are measured in ____?",
-                  "answers": ["centimeter", "hands", "meters", "feet"],
-                  "correctAnswer": "hands"
+                  "question": " An adult male duck is referred to as a _____?",
+                  "answers": ["Mandrake", "Drake", "Quacker", "Duckle"],
+                  "correctAnswer": "Drake"
                 },
                 {
-                  "question": "Horses came from what continent?",
-                  "answers": ["Asia", "Europe", "Africa", "North America"],
-                  "correctAnswer": "Europe"
+                  "question": "Many birds have a gland that produces a waxy oil to waterproof feathers called a _____ gland?",
+                  "answers": ["Mandrake", "Drake", "Uropygial", "Duckle"],
+                  "correctAnswer": "Uropygial"
                 },
                 {
-                  "question": " A baby horse is called a _____?",
-                  "answers": ["Ferol", "Foal", "Voal", "Colt"],
-                  "correctAnswer": "Foal"
+                  "question": "How long after hatching are Ducklings able to walk and leave the nest?",
+                  "answers": ["immediately", "a couple hours", "a day", "a couple days"],
+                  "correctAnswer": "a couple hours"
                 },
                 {
-                  "question": "The original horse was no larger than a ____?",
-                  "answers": ["rhino", "golden retriever", "large deer", "reindeer"],
-                  "correctAnswer": "golden retriever"
+                  "question": "a group of ducks can be called a ______?",
+                  "answers": ["druid", "deckle", "cast", "raft"],
+                  "correctAnswer": "raft"
                 },
                 {
-                  "question": "Horses ______ burp?",
-                  "answers": ["can", "can't", "can", "can"],
-                  "correctAnswer": "can't"
+                  "question": "How many eyelids does a duck have?",
+                  "answers": ["0", "1", "2", "3"],
+                  "correctAnswer": "3"
                 }
               ]
             },
@@ -252,68 +208,100 @@
           {
             "name": "dorms",
             "description": " You're in a small cramped [DORMS]",
-            "usefulItem": [
-              {
-                "name": "match",
-                "dialogs": ["On the floor there is a single [match].", "You use the match to light the stove!", "Seems like the pilot light is out."]
-              }],
+            "usefulItem":{"name": "none", "inscription":""},
             "actor": {
-              "name": "none",
-              "dialogs": [],
-              "item": {"name": ""},
-              "trivia": []
+              "name": "Filthy the Bear",
+              "health": 5,
+              "attack": 1,
+              "actorRoomText": "In the middle of the room, is a [Duckling] playing with a yellow rubber duck in a big fish tank",
+              "secretText": "Come on baby, it was just a joke, here take what you want, i'm too pretty to die like this...",
+              "dialogs": [
+                "Owww youre kind of cute, you should just stay here with me for the night",
+                "Oh, you're no fun, well not yet... you'll be plenty fun when you're dead!",
+                "Roar roar"
+              ],
+              "item":
+              {
+                "name": "Dirty handkerchief",
+                "inscription": "to my love, Filthy, in memory of the magic ball we had..."
+              },
+              "wantedItem": [],
+              "trivia": [
+                {
+                  "question": " An adult male duck is referred to as a _____?",
+                  "answers": ["Mandrake", "Drake", "Quacker", "Duckle"],
+                  "correctAnswer": "Drake"
+                },
+                {
+                  "question": "Many birds have a gland that produces a waxy oil to waterproof feathers called a _____ gland?",
+                  "answers": ["Mandrake", "Drake", "Uropygial", "Duckle"],
+                  "correctAnswer": "Uropygial"
+                },
+                {
+                  "question": "How long after hatching are Ducklings able to walk and leave the nest?",
+                  "answers": ["immediately", "a couple hours", "a day", "a couple days"],
+                  "correctAnswer": "a couple hours"
+                },
+                {
+                  "question": "a group of ducks can be called a ______?",
+                  "answers": ["druid", "deckle", "cast", "raft"],
+                  "correctAnswer": "raft"
+                },
+                {
+                  "question": "How many eyelids does a duck have?",
+                  "answers": ["0", "1", "2", "3"],
+                  "correctAnswer": "3"
+                }
+              ]
             },
             "adjacent_rooms": ["cock pit", "kitchen"]
           },
           {
             "name": "escape hatch",
             "description": "You're in a small cramped [ESCAPE HATCH]",
-            "usefulItem": [{"name": "none", "dialogs":[]}],
+            "usefulItem": {"name": "none", "inscription":""},
             "actor": {
-              "name": "fish",
-              "dialogs": ["A [Fish] is repairing some air lock doors. They look very busy", "That [Cat] keeps trying to swipe at me! I need my [fishbowl] to protect me. Can you go talk to the [Duckling] who is using my [fishbowl] as a swimming pool?",
-              "No way! I got my fishbowl back. Thank you so much stranger! The third number to the [POD] [keypad] is 8!", "Glub glub"],
-              "item":
-                {
-                  "name": "",
-                  "dialogs": []
-                },
-              "wantedItem": [{
-                "name": "hammer",
-                "dialogs": []
-              },{
-                "name": "nail",
-                "dialogs": []
-              },{
-                "name": "bow",
-                "dialogs": []
-              }
+              "name": "Frisky Whiskers",
+              "health": 5,
+              "attack": 1,
+              "actorRoomText": "You've entered an empty white room, you hear upbeat 80s music, Madonna maybe?, towards the center you see a massive Lion wearing a hot pink blazer working out to a Richard Simmons workout video...",
+              "secretText": "We could of danced the night away but you had to ruin it didn't you.",
+              "dialogs": [
+                "I've always practiced this; Love yourself, move your body. Watch your portions...",
+                "Number one, like yourself. Number two, you have to eat healthy. And number three, you've got to squeeze your buns. That's my formula... Lets DANCE",
+                "Purrr Purrr"
               ],
+              "item":
+              {
+                "name": "Pioneer 8 Track Stereo Model H-R99",
+                "inscription": "cool cats never die, the have many lives."
+              },
+              "wantedItem": [],
               "trivia": [
                 {
-                  "question": " What is the loudest fish?",
-                  "answers": ["clapper", "croaker", "gulper", "glubber"],
-                  "correctAnswer": "croaker"
+                  "question": " An adult male duck is referred to as a _____?",
+                  "answers": ["Mandrake", "Drake", "Quacker", "Duckle"],
+                  "correctAnswer": "Drake"
                 },
                 {
-                  "question": "A Lungfish can live out of water for _______?",
-                  "answers": ["couple months", "several years", "couple weeks", "several hours"],
-                  "correctAnswer": "several years"
+                  "question": "Many birds have a gland that produces a waxy oil to waterproof feathers called a _____ gland?",
+                  "answers": ["Mandrake", "Drake", "Uropygial", "Duckle"],
+                  "correctAnswer": "Uropygial"
                 },
                 {
-                  "question": "Oldest known fish was ___ years old Lungfish?",
-                  "answers": ["45", "65", "95", "35"],
-                  "correctAnswer": "65"
+                  "question": "How long after hatching are Ducklings able to walk and leave the nest?",
+                  "answers": ["immediately", "a couple hours", "a day", "a couple days"],
+                  "correctAnswer": "a couple hours"
                 },
                 {
-                  "question": "Only fish that has eye lids is the __________ ?",
-                  "answers": ["whale", "shark", "lungfish", "eel"],
-                  "correctAnswer": "shark"
+                  "question": "a group of ducks can be called a ______?",
+                  "answers": ["druid", "deckle", "cast", "raft"],
+                  "correctAnswer": "raft"
                 },
                 {
-                  "question": "The slowest fish is a ________?",
-                  "answers": ["slothfish", "jellyfish", "starfish", "seahorse"],
-                  "correctAnswer": "seahorse"
+                  "question": "How many eyelids does a duck have?",
+                  "answers": ["0", "1", "2", "3"],
+                  "correctAnswer": "3"
                 }
               ]
             },
@@ -322,60 +310,49 @@
           {
             "name": "pod",
             "description": "You're in a small cramped [POD]",
-            "usefulItem": [
-              {
-                "name": "wrench",
-                "dialogs": ["A [wrench] sits on the table. Should you take it?", "You use the WRENCH to dig through the tunnel", "If only you had some type of digging tool"]
-              },
-              {
-                "name": "keypad",
-                "dialogs": ["A [keypad] is attached to the display of the pod to activate it.", "something", "A [keypad] is attached to the display of the pod to activate it."]
-              }],
+            "usefulItem":{"name": "none", "inscription":""},
             "actor": {
-              "name": "cat",
-              "dialogs": ["A [Cat] is lounging on a high perch.", "I love messing with [Fish], but I want more exciting toys! Can you Steal the laser pointer from Dog. He keeps it in the [DORMS]",
-              "Thank you for the toy! I heard you wanted to use the [POD], I remember the second number was the number of lives a [Cat] has.", "Meow"],
-              "item":
-                {
-                  "name": "",
-                  "dialogs": []
-                },
-              "wantedItem": [{
-                "name": "hammer",
-                "dialogs": []
-              },{
-                "name": "nail",
-                "dialogs": []
-              },{
-                "name": "bow",
-                "dialogs": []
-              }
+              "name": "Big Daddy the Devilishly Handsome Donkey",
+              "health": 5,
+              "attack": 1,
+              "actorRoomText": "Flames light up against the wall, toward the back of the room sits a Donkey on a suede Throne his snout buried in a bucket full of mice, you can hear their little squeeks as their bones pop between the donkeys bloody teeth",
+              "secretText": "Oh, no, how could this be, Big Daddy was taken down by someone like you... ",
+              "dialogs": [
+                "Hey hey hey, [Big Daddy stairs at your jacket], That's a nice jacket you have there, can I try it on? ",
+                "They call me Big Daddy for a reason, I guess its time to tumble.... HeeHaw",
+                "HeeHaw"
               ],
+              "item":
+              {
+                "name": "Pioneer 8 Track Stereo Model H-R99",
+                "inscription": "cool cats never die, the have many lives."
+              },
+              "wantedItem": [],
               "trivia": [
                 {
-                  "question": "Cats move with their right feet and then their left feet. The only other animals that walk this way are ________?",
-                  "answers": ["horses and rhinos", "camels and giraffes", "elephants and zebras", "wolves and iguanas"],
-                  "correctAnswer": "camels and giraffes"
+                  "question": " An adult male duck is referred to as a _____?",
+                  "answers": ["Mandrake", "Drake", "Quacker", "Duckle"],
+                  "correctAnswer": "Drake"
                 },
                 {
-                  "question": "Cats have whiskers on the back of their ______, as well?",
-                  "answers": ["ears", "front legs", "back legs", "tail"],
-                  "correctAnswer": "front legs"
+                  "question": "Many birds have a gland that produces a waxy oil to waterproof feathers called a _____ gland?",
+                  "answers": ["Mandrake", "Drake", "Uropygial", "Duckle"],
+                  "correctAnswer": "Uropygial"
                 },
                 {
-                  "question": "A cat with a question-mark-shaped tail is asking, “________”?",
-                  "answers": ["Who are you", "Want to Play", "Want to Fight", "Want to get something to eat"],
-                  "correctAnswer": "Want to Play"
+                  "question": "How long after hatching are Ducklings able to walk and leave the nest?",
+                  "answers": ["immediately", "a couple hours", "a day", "a couple days"],
+                  "correctAnswer": "a couple hours"
                 },
                 {
-                  "question": "Meowing is a behavior that cats developed exclusively to ___________?",
-                  "answers": ["communicate with kittens", "communicate with people", "trick prey", "find a mate"],
-                  "correctAnswer": "communicate with people"
+                  "question": "a group of ducks can be called a ______?",
+                  "answers": ["druid", "deckle", "cast", "raft"],
+                  "correctAnswer": "raft"
                 },
                 {
-                  "question": "A ______ cat was born in Denmark in 1995. Some people believe that high levels of copper in the water pipes nearby may have given his fur a verdigris effect?",
-                  "answers": ["blue", "green", "red", "purple"],
-                  "correctAnswer": "green"
+                  "question": "How many eyelids does a duck have?",
+                  "answers": ["0", "1", "2", "3"],
+                  "correctAnswer": "3"
                 }
               ]
             },

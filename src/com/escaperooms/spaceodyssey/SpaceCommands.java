@@ -5,5 +5,6 @@ public enum SpaceCommands {
     GO,
     USE,
     HELP,
-    UNKNOWN_COMMAND
+    UNKNOWN_COMMAND,
+    EXIT
 }

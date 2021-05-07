@@ -27,10 +27,6 @@ public class GameRoom {
         return games;
     }
 
-    public void addGame(Game game){
-        gameMap.put(game.getName(), game);
-    }
-
     public void play(){
         System.out.println("Select a Game");
         listGames();
@@ -39,7 +35,6 @@ public class GameRoom {
             currentGame = gameMap.get(input);
             currentGame.play();
         }
-
     }
 
     private void buildGameMap(){
@@ -48,7 +43,7 @@ public class GameRoom {
         }
     }
 
-    private void setCurrentGame(SpaceGame game){
+    private void setCurrentGame(Game game){
         this.currentGame = game;
     }
 

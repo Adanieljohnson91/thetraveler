@@ -35,6 +35,8 @@ public class SpaceController implements Controller {
             case HELP:
                 help();
                 break;
+            case EXIT:
+                System.exit(0);
             default:
                 System.out.println("UNKNOWN");
 
@@ -43,7 +45,6 @@ public class SpaceController implements Controller {
 
     private void talk(){
         SpaceGame.CURRENT_ROOM.getActor().interact();
-        System.out.println("Talking");
     }
 
     private void use(){
