@@ -5,6 +5,7 @@ import com.escaperooms.application.Game;
 import com.escaperooms.application.GameRoom;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -12,12 +13,14 @@ public class SpaceController implements Controller {
     private Map<String, SpaceCommands> commandMap = new HashMap<>();
     private SpaceCommands currentCommand;
     private String currentItem;
+    private String currentInput;
 
     SpaceController(){
         buildSpaceCommands();
     }
 
     @Override public void control(String input) {
+        this.currentInput = input;
         parseInputs(input);
         switch (currentCommand){
             case USE:
@@ -34,6 +37,9 @@ public class SpaceController implements Controller {
                 break;
             case HELP:
                 help();
+                break;
+            case VIEW:
+                view();
                 break;
             case EXIT:
                 System.exit(0);
@@ -52,11 +58,16 @@ public class SpaceController implements Controller {
     }
 
     private void go(){
-        System.out.println("Going");
+       SpaceGame.CURRENT_ROOM = SpaceGame.ROOMMAP
+               .get(findValidWordInStringFromArrayOfStrings(this.currentInput));
     }
 
     private void unknown(){
         System.out.println("Unknowning");
+    }
+
+    private void view(){
+        SpaceGame.CURRENT_ROOM.getAdjacent_rooms().forEach(System.out::println);
     }
 
     private void help(){
@@ -73,6 +84,7 @@ public class SpaceController implements Controller {
      *              and global room commands.
      */
     private void parseInputs(String input){
+
         String[] inputs = input.split(" ");
         currentCommand = getCommand(inputs);
     }
@@ -88,6 +100,32 @@ public class SpaceController implements Controller {
         }
         return cmd;
     }
+
+    public String findValidWordInStringFromArrayOfStrings(String sentence){
+        String next = SpaceGame.CURRENT_ROOM.getName();
+        List<String> ac  = SpaceGame.CURRENT_ROOM.getAdjacent_rooms();
+        for(String word: ac){
+            if(wordInSentence(sentence, word)){
+                next = word;
+                break;
+            }
+        }
+        return next;
+    }
+    public boolean wordInSentence(String sentence, String word){
+
+        boolean res = false;
+        for(int i = 0; i < sentence.length() - (word.length() - 1); i++){
+            String currentWord = sentence.substring(i, word.length() + i);
+            if(currentWord.equalsIgnoreCase(word)){
+                res = true;
+                break;
+            }
+        }
+        return res;
+    }
+
+
 
     private void buildSpaceCommands(){
         SpaceCommands[] values = SpaceCommands.values();

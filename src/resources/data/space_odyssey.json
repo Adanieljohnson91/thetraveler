@@ -2,10 +2,10 @@
         "name": "space_odyssey",
         "rooms": [
           {
-          "name": "kitchen",
-            "description": "You're in the most beautiful kitchen you have ever seen.",
-          "usefulItem": {"name": "none", "inscription":""},
-          "actor": {
+            "name": "the dark hallway",
+            "description": "Lights flickering down a dark hallway",
+            "requiredItem": {"name": "none", "inscription":""},
+            "actor": {
             "name": "Diego the Wide Mouthed Duck",
             "health": 5,
             "attack": 1,
@@ -50,12 +50,12 @@
             ]
           }
           ,
-          "adjacent_rooms": ["stock room", "dorms"]
+          "adjacent_rooms": ["storage closet", "the dark room", "the disco hole", "the broken mirror"]
         },
           {
-            "name": "stock room",
+            "name": "storage closet",
             "description": "You're in a small cramped [STOCK ROOM]",
-            "usefulItem":{"name": "none", "inscription":""},
+            "requiredItem":{"name": "Willie Mays 1952 Topps #261 Giants Baseball Card", "inscription":""},
             "actor": {
               "name": "Bunny Bunny Big Skins",
               "health": 6,
@@ -101,12 +101,12 @@
                 }
               ]
             },
-            "adjacent_rooms": ["kitchen"]
+            "adjacent_rooms": ["the dark hallway"]
           },
           {
-            "name": "cock pit",
-            "description": "You're in the [COCK PIT]",
-            "usefulItem":{"name": "none", "inscription":""},
+            "name": "the dark room",
+            "description": "You've entered the Dark room, if you peer into the darkness long enough, eventually it looks back into you...",
+            "requiredItem":{"name": "Willie Mays 1952 Topps #261 Giants Baseball Card", "inscription":""},
             "actor": {
               "name": "Mad Bat",
               "health": 5,
@@ -152,17 +152,17 @@
                 }
               ]
             },
-            "adjacent_rooms": ["engine room", "dorms"]
+            "adjacent_rooms": ["dark hallway", "the bathroom"]
           },
           {
-            "name": "engine room",
-            "description": " You're in a small cramped [ENGINE ROOM]",
-            "usefulItem":{"name": "none", "inscription":""},
+            "name": "the bathroom",
+            "description": " You've entered the bathroom, it obviously hasn't been cleaned in days",
+            "requiredItem":{"name": "Baccarat Zodiac Pig", "inscription":""},
             "actor": {
               "name": "Arty the Alligator",
               "health": 5,
               "attack": 1,
-              "actorRoomText": "The room smells like fish and cheap cologne, you look down and see Arty the Alligator with his mouth wide open",
+              "actorRoomText": "the smell of fish and cheap cologne permeate your nostrils , you look down and see Arty the Alligator with his mouth wide open",
               "secretText": "Oh shit, how did this happen... Let me go my friend, it was just a game... Please don't, I have kids, we'll there my sisters kids, but i love them like my own... ok, you got me i don't have a sister... Oh noo....",
               "dialogs": [
                 "You can quit now, just step inside, or answer my question, either way you will die.",
@@ -203,12 +203,12 @@
                 }
               ]
             },
-            "adjacent_rooms": ["escape hatch", "cock pit"]
+            "adjacent_rooms": ["the dark Room", "the disco hole"]
           },
           {
-            "name": "dorms",
+            "name": "the disco hole",
             "description": " You're in a small cramped [DORMS]",
-            "usefulItem":{"name": "none", "inscription":""},
+            "requiredItem":{"name": "none", "inscription":""},
             "actor": {
               "name": "Filthy the Bear",
               "health": 5,
@@ -254,12 +254,12 @@
                 }
               ]
             },
-            "adjacent_rooms": ["cock pit", "kitchen"]
+            "adjacent_rooms": ["the bathroom"]
           },
           {
-            "name": "escape hatch",
+            "name": "the broken mirror",
             "description": "You're in a small cramped [ESCAPE HATCH]",
-            "usefulItem": {"name": "none", "inscription":""},
+            "requiredItem": {"name": "Dirty handkerchief", "inscription":""},
             "actor": {
               "name": "Frisky Whiskers",
               "health": 5,
@@ -305,12 +305,12 @@
                 }
               ]
             },
-            "adjacent_rooms": ["engine room", "pod"]
+            "adjacent_rooms": ["big daddys lair", "the dark hallway"]
           },
           {
-            "name": "pod",
-            "description": "You're in a small cramped [POD]",
-            "usefulItem":{"name": "none", "inscription":""},
+            "name": "big daddys lair",
+            "description": "You've stepped into big daddies lair, are you ready for some big daddy? ",
+            "requiredItem":{"name": "Pioneer 8 Track Stereo Model H-R99", "inscription":""},
             "actor": {
               "name": "Big Daddy the Devilishly Handsome Donkey",
               "health": 5,

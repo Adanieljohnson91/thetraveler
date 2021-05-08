@@ -34,7 +34,7 @@ public class SpaceGame implements Game {
     public SpaceGame(@JsonProperty("name") String name, @JsonProperty("rooms") List<RoomV2> rooms){
         this.name = name;
         createRoomMap(rooms);
-        CURRENT_ROOM = ROOMMAP.get("kitchen");
+        CURRENT_ROOM = ROOMMAP.get("the dark hallway");
     }
 
     public List<RoomV2> getRooms() {
@@ -81,11 +81,12 @@ public class SpaceGame implements Game {
     public void currentSceneDialogs(){
         try{
             System.out.println(CURRENT_ROOM.getDescription());
-            CURRENT_ROOM.getActor().describe();
+            if(CURRENT_ROOM.getActor().getIsAlive()){
+                CURRENT_ROOM.getActor().sceneDialog();
+            }
         } catch(Exception e){
             System.out.println(e.getMessage());
         }
-
     }
 
     public RoomV2 getCurrentRoom() {

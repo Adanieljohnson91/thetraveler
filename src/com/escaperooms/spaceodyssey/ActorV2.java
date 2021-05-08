@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
 
 /**
  * "name": "Big Daddy the Devilishly Handsome Donkey",
@@ -26,6 +28,9 @@ import java.util.List;
  *               },
  */
 public class ActorV2 {
+
+    Scanner scanner = new Scanner(System.in);
+
     private String name;
     private List<String> dialogs;
     private UsefulItem item;
@@ -35,6 +40,7 @@ public class ActorV2 {
     private String actorRoomText;
     private String secretText;
     private List<TriviaV2> trivia;
+    private boolean isAlive = true;
     private boolean questionAnswered;
 
 
@@ -64,77 +70,20 @@ public class ActorV2 {
         return name;
     }
 
-    public List<String> getDialogs() {
-        return dialogs;
-    }
-
     public UsefulItem getItem() {
         return item;
-    }
-
-    public List<TriviaV2> getTrivia() {
-        return trivia;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setDialogs(List<String> dialogs) {
-        this.dialogs = dialogs;
-    }
 
     public void setItem(UsefulItem item) {
         this.item = item;
     }
 
-    public void setTrivia(List<TriviaV2> trivia) {
-        this.trivia = trivia;
-    }
 
-    public int getAttack() {
-        return attack;
-    }
-
-    public int getHealth() {
-        return health;
-    }
-
-    public String getActorRoomText() {
-        return actorRoomText;
-    }
-
-    public String getSecretText() {
-        return secretText;
-    }
-
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
-    public void setActorRoomText(String actorRoomText) {
-        this.actorRoomText = actorRoomText;
-    }
-
-    public void setAttack(int attack) {
-        this.attack = attack;
-    }
-
-    public void setQuestionAnswered(boolean questionAnswered) {
-        this.questionAnswered = questionAnswered;
-    }
-
-    public void setSecretText(String secretText) {
-        this.secretText = secretText;
-    }
-
-    public void setWantedItem(List<UsefulItem> wantedItem) {
-        this.wantedItem = wantedItem;
-    }
-
-    public void describe(){
-        System.out.println(dialogs.get(0));
-    }
 
     public void congratulate(){
         System.out.println(dialogs.get(1));
@@ -149,11 +98,8 @@ public class ActorV2 {
          * when you interact with an Actor, we will need to check if we currently have an item they
          * are looking for, if not then option1 is called if yes option2 is called
          */
-        if(GameRoom.user.hasItem(item)){
-            option2();
-        }else{
-            askQuestion();
-        }
+        if(!isAlive)return;
+        questionDialog();
     }
 
     private void askQuestion(){
@@ -168,10 +114,48 @@ public class ActorV2 {
         return this.item;
     }
 
-    private void option1(){
+    private void questionDialog(){
+        System.out.println(dialogs.get(0));
+        String input = scanner.nextLine();
+        /**
+         * expect available commands; if they are not valid ask again
+         */
+        battleOrAnswerQuestion(input);
+
+
+    }
+
+    private void battleOrAnswerQuestion(String string){
+        switch (string.toUpperCase(Locale.ROOT)){
+            case "FIGHT":
+                battleDialog();
+                break;
+            case "ANSWER":
+                askQuestion();
+                break;
+            default:
+                System.out.println("fight or answer");
+                questionDialog();
+        }
+
+    }
+
+    public void sceneDialog(){
+        System.out.println(actorRoomText);
+    }
+
+    public boolean getIsAlive() {
+        return isAlive;
+    }
+
+    public void battleDialog(){
         System.out.println(dialogs.get(1));
     }
-    private void option2(){
+    public void noiseDialog(){
         System.out.println(dialogs.get(2));
+    }
+
+    public void defeatDialog(){
+        System.out.println(secretText);
     }
 }
