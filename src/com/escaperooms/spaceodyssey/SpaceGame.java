@@ -12,9 +12,6 @@ import java.util.Scanner;
 
 public class SpaceGame implements Game {
 
-    @JsonProperty("type")
-    private String type;
-
     @JsonProperty("name")
     public String name;
 
@@ -34,7 +31,7 @@ public class SpaceGame implements Game {
     public SpaceGame(@JsonProperty("name") String name, @JsonProperty("rooms") List<RoomV2> rooms){
         this.name = name;
         createRoomMap(rooms);
-        CURRENT_ROOM = ROOMMAP.get("kitchen");
+        CURRENT_ROOM = ROOMMAP.get("the dark hallway");
     }
 
     public List<RoomV2> getRooms() {
@@ -58,13 +55,6 @@ public class SpaceGame implements Game {
             ROOMMAP.put(room.getName(), room);
         }
     }
-
-    public void listRooms(){
-        for(RoomV2 room: rooms){
-            System.out.println(room.getName());
-        }
-    }
-
     /**
      * Game logic: a user starts in a room and is given a description of the area
      * based on the room they will have different options on how to interact
@@ -72,13 +62,26 @@ public class SpaceGame implements Game {
      * we loop over that string and pull out the available commands that match a larger Commands Enum?
      */
     public void play(){
+        try{
+            while (true){
+                currentSceneDialogs();
+                String input = scanner.nextLine();
+                controller.control(input);
+            }
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
 
-        controller.control("help");
-        System.out.println(CURRENT_ROOM.getDescription());
-        CURRENT_ROOM.getActor().getDialogs().forEach(System.out::println);
-        while (true){
-            String input = scanner.nextLine();
-            controller.control(input);
+    }
+
+    public void currentSceneDialogs(){
+        try{
+            System.out.println(CURRENT_ROOM.getDescription());
+            if(CURRENT_ROOM.getActor().getIsAlive()){
+                CURRENT_ROOM.getActor().sceneDialog();
+            }
+        } catch(Exception e){
+            System.out.println(e.getMessage());
         }
     }
 

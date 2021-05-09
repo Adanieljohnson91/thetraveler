@@ -27,19 +27,19 @@ public class GameRoom {
         return games;
     }
 
-    public void addGame(Game game){
-        gameMap.put(game.getName(), game);
+    public void play(){
+            currentGame = gameMap.get(selectGame());
+            currentGame.play();
     }
 
-    public void play(){
-        System.out.println("Select a Game");
+    private String selectGame(){
+        System.out.println("Please Select a Game");
         listGames();
-        while (true){
-            String input = scanner.nextLine();
-            currentGame = gameMap.get(input);
-            currentGame.play();
+        String string = scanner.nextLine();
+        if(games.stream().anyMatch(x -> x.getName().equalsIgnoreCase(string))){
+            return string;
         }
-
+        return selectGame();
     }
 
     private void buildGameMap(){
@@ -48,7 +48,7 @@ public class GameRoom {
         }
     }
 
-    private void setCurrentGame(SpaceGame game){
+    private void setCurrentGame(Game game){
         this.currentGame = game;
     }
 

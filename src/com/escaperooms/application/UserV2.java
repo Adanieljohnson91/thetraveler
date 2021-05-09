@@ -16,12 +16,14 @@ public class UserV2 {
         name = scanner.nextLine().trim();
         System.out.println("Welcome " + name + " Are you ready for an Adventure of a lifetime?");
         List<String> s = new ArrayList<>();
-        items.add(new UsefulItem("hammer", s));
+        items.add(new UsefulItem("hammer", ""));
     }
 
     /**
      * Will need to think out logic more, Dog checks for multiple items... may need to do check for it wanted list
      * contains more than one item, or not.
+     *
+     * Will
      * @param items
      * @return
      */
@@ -35,6 +37,20 @@ public class UserV2 {
             }
         }
         return res;
+    }
+    public boolean hasItem(UsefulItem item){
+        boolean res = false;
+        for(UsefulItem i: items){
+            if(item.getName().equalsIgnoreCase(i.getName())){
+                res = true;
+                break;
+            }
+        }
+        return res;
+    }
+
+    public void addItem(UsefulItem item){
+        items.add(item);
     }
 
 }
