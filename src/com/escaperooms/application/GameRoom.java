@@ -28,13 +28,18 @@ public class GameRoom {
     }
 
     public void play(){
-        System.out.println("Select a Game");
-        listGames();
-        while (true){
-            String input = scanner.nextLine();
-            currentGame = gameMap.get(input);
+            currentGame = gameMap.get(selectGame());
             currentGame.play();
+    }
+
+    private String selectGame(){
+        System.out.println("Please Select a Game");
+        listGames();
+        String string = scanner.nextLine();
+        if(games.stream().anyMatch(x -> x.getName().equalsIgnoreCase(string))){
+            return string;
         }
+        return selectGame();
     }
 
     private void buildGameMap(){

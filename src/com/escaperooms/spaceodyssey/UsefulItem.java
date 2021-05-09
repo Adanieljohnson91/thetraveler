@@ -31,4 +31,9 @@ public class UsefulItem {
     public void setDialogs(String inscription) {
         this.inscription = inscription;
     }
+
+    @Override
+    public String toString() {
+        return "ITEM NAME: " + name;
+    }
 }

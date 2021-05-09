@@ -12,9 +12,6 @@ import java.util.Scanner;
 
 public class SpaceGame implements Game {
 
-    @JsonProperty("type")
-    private String type;
-
     @JsonProperty("name")
     public String name;
 
@@ -65,7 +62,6 @@ public class SpaceGame implements Game {
      * we loop over that string and pull out the available commands that match a larger Commands Enum?
      */
     public void play(){
-
         try{
             while (true){
                 currentSceneDialogs();
