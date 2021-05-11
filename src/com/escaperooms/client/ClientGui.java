@@ -1,5 +1,7 @@
 package com.escaperooms.client;
 
+import com.escaperooms.application.GameRoom;
+import com.escaperooms.application.UserV2;
 import com.escaperooms.gui.GameInterface;
 import com.escaperooms.gui.controller.Controller;
 import com.escaperooms.parsers.SpaceAdventureParser;
@@ -20,6 +22,8 @@ public class ClientGui {
 
         controller.setSpaceGame(spaceGame);
         spaceGame.linkGuiController(controller);
+
+        GameRoom.user = new UserV2();
 
         gi.setVisible(true);
     }
