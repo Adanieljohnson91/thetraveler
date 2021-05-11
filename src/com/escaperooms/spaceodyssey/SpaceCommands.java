@@ -3,5 +3,9 @@ package com.escaperooms.spaceodyssey;
 public enum SpaceCommands {
     TALK,
     GO,
-    USE
+    USE,
+    HELP,
+    VIEW,
+    UNKNOWN_COMMAND,
+    EXIT
 }

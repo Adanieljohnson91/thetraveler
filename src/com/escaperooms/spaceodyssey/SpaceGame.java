@@ -1,35 +1,39 @@
 package com.escaperooms.spaceodyssey;
 
 import com.escaperooms.application.Game;
-import com.escaperooms.spaceodyssey.RoomV2;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 
 public class SpaceGame implements Game {
-    @JsonProperty("type")
-    private String type;
+
     @JsonProperty("name")
     public String name;
+
     @JsonProperty("rooms")
     private List<RoomV2> rooms;
+
+    private final SpaceController controller = new SpaceController();
+    private final Scanner scanner = new Scanner(System.in);
     /**
      * @param roomMap is used to store our rooms so that we can navigate our game. inside of the roomMap are rooms orgainzed by name
      *                each room has a list of adjacent rooms they can connect to, we will use those names to switch the room we are currently in.
      */
-    private static Map<String, RoomV2> roomMap = new HashMap<>();
-    private static RoomV2 currentRoom;
+    public static Map<String, RoomV2> ROOMMAP = new HashMap<>();
+    public static RoomV2 CURRENT_ROOM;
 
     @JsonCreator
     public SpaceGame(@JsonProperty("name") String name, @JsonProperty("rooms") List<RoomV2> rooms){
         this.name = name;
         createRoomMap(rooms);
-        currentRoom = roomMap.get("kitchen");
+        CURRENT_ROOM = ROOMMAP.get("the dark hallway");
     }
+
     public List<RoomV2> getRooms() {
         return rooms;
     }
@@ -48,16 +52,9 @@ public class SpaceGame implements Game {
 
     private void createRoomMap(List<RoomV2> rooms){
         for(RoomV2 room: rooms){
-            roomMap.put(room.getName(), room);
+            ROOMMAP.put(room.getName(), room);
         }
     }
-
-    public void listRooms(){
-        for(RoomV2 room: rooms){
-            System.out.println(room.getName());
-        }
-    }
-
     /**
      * Game logic: a user starts in a room and is given a description of the area
      * based on the room they will have different options on how to interact
@@ -65,12 +62,31 @@ public class SpaceGame implements Game {
      * we loop over that string and pull out the available commands that match a larger Commands Enum?
      */
     public void play(){
-        System.out.println(currentRoom.getDescription());
-        currentRoom.getActor().getDialogs().forEach(System.out::println);
+        try{
+            while (true){
+                currentSceneDialogs();
+                String input = scanner.nextLine();
+                controller.control(input);
+            }
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    public void currentSceneDialogs(){
+        try{
+            System.out.println(CURRENT_ROOM.getDescription());
+            if(CURRENT_ROOM.getActor().getIsAlive()){
+                CURRENT_ROOM.getActor().sceneDialog();
+            }
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
     public RoomV2 getCurrentRoom() {
-        return currentRoom;
+        return CURRENT_ROOM;
     }
 
     @Override
