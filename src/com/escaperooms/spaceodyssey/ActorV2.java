@@ -105,6 +105,7 @@ public class ActorV2 {
     private void askQuestion(){
         if(trivia.get(0).quiz()){
             congratulate();
+            isAlive = false;
             GameRoom.user.addItem(giveItem());
         }
     }
@@ -143,6 +144,7 @@ public class ActorV2 {
     }
 
     public void sceneDialog(){
+        if(!isAlive)return;
         System.out.println(actorRoomText);
     }
 

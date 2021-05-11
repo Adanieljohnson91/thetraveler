@@ -54,7 +54,7 @@
         },
           {
             "name": "storage closet",
-            "description": "You're in a small cramped [STOCK ROOM]",
+            "description": "You've entered a storage closet, what looked like a 3 by 4 square seems to have stretched into a large open area of nothingness",
             "requiredItem":{"name": "Willie Mays 1952 Topps #261 Giants Baseball Card", "inscription":""},
             "actor": {
               "name": "Bunny Bunny Big Skins",
@@ -152,7 +152,7 @@
                 }
               ]
             },
-            "adjacent_rooms": ["dark hallway", "the bathroom"]
+            "adjacent_rooms": ["the dark hallway", "the bathroom"]
           },
           {
             "name": "the bathroom",
@@ -203,17 +203,17 @@
                 }
               ]
             },
-            "adjacent_rooms": ["the dark Room", "the disco hole"]
+            "adjacent_rooms": ["the dark room", "the disco hole"]
           },
           {
             "name": "the disco hole",
-            "description": " You're in a small cramped [DORMS]",
+            "description": "You have entered the disco hole, energy levels are high, your foot starts to slap uncontrollably against the floor as horrible 80's music floods your ears.",
             "requiredItem":{"name": "none", "inscription":""},
             "actor": {
               "name": "Filthy the Bear",
               "health": 5,
               "attack": 1,
-              "actorRoomText": "In the middle of the room, is a [Duckling] playing with a yellow rubber duck in a big fish tank",
+              "actorRoomText": "Filthy the Bear is staring into a cheap vanity putting on lipstick, smoke is rising from an ashtray, you can taste ",
               "secretText": "Come on baby, it was just a joke, here take what you want, i'm too pretty to die like this...",
               "dialogs": [
                 "Owww youre kind of cute, you should just stay here with me for the night",
@@ -356,7 +356,7 @@
                 }
               ]
             },
-            "adjacent_rooms": ["escape hatch"]
+            "adjacent_rooms": ["the broken mirror"]
           }
         ]
 }
