@@ -5,6 +5,7 @@ import com.escaperooms.gui.controller.Controller;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 public class GameInterface extends JFrame {
     private final int FRAME_X_SIZE = 800;
@@ -27,6 +28,9 @@ public class GameInterface extends JFrame {
         roomTextTA = new JTextArea();
         roomTextTA.setText("The is the room text area.");
         roomTextTA.setBounds(25,25,getWidth() - (25 + 25),300);
+        roomTextTA.setLineWrap(true);
+        roomTextTA.setWrapStyleWord(true);
+        roomTextTA.setEditable(false);
 
         playerInputTF = new JTextField();
         playerInputTF.setBounds(25, 325, 250,25);
@@ -56,6 +60,48 @@ public class GameInterface extends JFrame {
 
     public void setRoomTextTA(String roomText){
         roomTextTA.setText(roomText);
+    }
+
+    public String twoAnswerDialog(String question, List<String> answers){
+        Object[] options = new Object[2];
+        options[0] = answers.get(0);
+        options[1] = answers.get(1);
+        int result = JOptionPane.showOptionDialog(this,
+                question,
+                null,
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                options,
+                null);
+        System.out.println(result);
+        if (result != -1) {
+            System.out.println(answers.get(result));
+            return answers.get(result);
+        }
+        return "";
+    }
+
+    public String triviaDialog(String question, List<String> answers){
+        int answerCount = answers.size();
+        Object[] options = new Object[answerCount];
+        for (int x=0; x < answerCount; x++){
+            options[x] = answers.get(x);
+        }
+        int result = JOptionPane.showOptionDialog(this,
+                question,
+                null,
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                options,
+                null);
+        System.out.println(result);
+        if (result != -1) {
+            System.out.println(answers.get(result));
+            return answers.get(result);
+        }
+        return "";
     }
 
     private class HandleSubmitBTNClick implements ActionListener {
