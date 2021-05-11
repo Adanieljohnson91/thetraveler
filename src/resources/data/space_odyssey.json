@@ -1,0 +1,362 @@
+{
+        "name": "space_odyssey",
+        "rooms": [
+          {
+            "name": "the dark hallway",
+            "description": "Lights flickering down a dark hallway",
+            "requiredItem": {"name": "none", "inscription":""},
+            "actor": {
+            "name": "Diego the Wide Mouthed Duck",
+            "health": 5,
+            "attack": 1,
+            "actorRoomText": "In the distance you see what looks like a duck, oh wait, it is Diego the wide mouthed Duck with a bill full of... Guts?",
+            "secretText": "Quack quack quack, before you put me down, let Bunny bunny big skins know that I love him",
+            "dialogs": [
+              "I have some cards, but im not sure what to do, answer my question while I think it through.",
+              "Come fight me baby... [Diego blows you a kiss.]",
+              "Quack Quack"
+            ],
+            "item":
+              {
+                "name": "Willie Mays 1952 Topps #261 Giants Baseball Card",
+                "inscription": "Base ball gloves fits all..."
+              },
+            "trivia": [
+              {
+                "question": " An adult male duck is referred to as a _____?",
+                "answers": ["Mandrake", "Drake", "Quacker", "Duckle"],
+                "correctAnswer": "Drake"
+              },
+              {
+                "question": "Many birds have a gland that produces a waxy oil to waterproof feathers called a _____ gland?",
+                "answers": ["Mandrake", "Drake", "Uropygial", "Duckle"],
+                "correctAnswer": "Uropygial"
+              },
+              {
+                "question": "How long after hatching are Ducklings able to walk and leave the nest?",
+                "answers": ["immediately", "a couple hours", "a day", "a couple days"],
+                "correctAnswer": "a couple hours"
+              },
+              {
+                "question": "a group of ducks can be called a ______?",
+                "answers": ["druid", "deckle", "cast", "raft"],
+                "correctAnswer": "raft"
+              },
+              {
+                "question": "How many eyelids does a duck have?",
+                "answers": ["0", "1", "2", "3"],
+                "correctAnswer": "3"
+              }
+            ]
+          }
+          ,
+          "adjacent_rooms": ["storage closet", "the dark room", "the disco hole", "the broken mirror"]
+        },
+          {
+            "name": "storage closet",
+            "description": "You're in a small cramped [STOCK ROOM]",
+            "requiredItem":{"name": "Willie Mays 1952 Topps #261 Giants Baseball Card", "inscription":""},
+            "actor": {
+              "name": "Bunny Bunny Big Skins",
+              "health": 6,
+              "attack": 2,
+              "actorRoomText": "You see 'Bunny Bunny Big Skins' sitting in the corner of the room chopping away at a carrot",
+              "secretText": "Oh god, what are you doing? Whats wrong with you, please don't hurt me!!! AHHHHH!!!",
+              "dialogs": [
+                "So you think you can escape, answer a question if you want my help.",
+                "Oh, so this is how it is? hope you weren't planning on getting out of here.",
+                "Thump Thump [The sound of Bunny feet slapping the ground]"
+              ],
+              "item":
+              {
+                "name": "brass knuckle",
+                "inscription": "the sun can be represented by the number..."
+              },
+              "wantedItem": [],
+              "trivia": [
+                {
+                  "question": " An adult male duck is referred to as a _____?",
+                  "answers": ["Mandrake", "Drake", "Quacker", "Duckle"],
+                  "correctAnswer": "Drake"
+                },
+                {
+                  "question": "Many birds have a gland that produces a waxy oil to waterproof feathers called a _____ gland?",
+                  "answers": ["Mandrake", "Drake", "Uropygial", "Duckle"],
+                  "correctAnswer": "Uropygial"
+                },
+                {
+                  "question": "How long after hatching are Ducklings able to walk and leave the nest?",
+                  "answers": ["immediately", "a couple hours", "a day", "a couple days"],
+                  "correctAnswer": "a couple hours"
+                },
+                {
+                  "question": "a group of ducks can be called a ______?",
+                  "answers": ["druid", "deckle", "cast", "raft"],
+                  "correctAnswer": "raft"
+                },
+                {
+                  "question": "How many eyelids does a duck have?",
+                  "answers": ["0", "1", "2", "3"],
+                  "correctAnswer": "3"
+                }
+              ]
+            },
+            "adjacent_rooms": ["the dark hallway"]
+          },
+          {
+            "name": "the dark room",
+            "description": "You've entered the Dark room, if you peer into the darkness long enough, eventually it looks back into you...",
+            "requiredItem":{"name": "Willie Mays 1952 Topps #261 Giants Baseball Card", "inscription":""},
+            "actor": {
+              "name": "Mad Bat",
+              "health": 5,
+              "attack": 1,
+              "actorRoomText": "Deep in the darkness of you can only see the light of the room ahead, from the ceiling you hear a crunching, CRUNCH CRUNCH CRUNCH, the sounds of beetle bones snapping in Mad Bats mouth",
+              "secretText": "..... [Mad Bat Parishes in Silence]",
+              "dialogs": [
+                "CRUNCH CRUNCH CRUNCH, You dare interrupt my feast, answer me now before I hang you by your feet...",
+                "How do you expect to fight me in the darkness when you cant see me, but i can see you?",
+                "Swoosh Swoosh"
+              ],
+              "item":
+              {
+                "name": "Baccarat Zodiac Pig",
+                "inscription": "socks and shoes both come in..."
+              },
+              "wantedItem": [],
+              "trivia": [
+                {
+                  "question": " An adult male duck is referred to as a _____?",
+                  "answers": ["Mandrake", "Drake", "Quacker", "Duckle"],
+                  "correctAnswer": "Drake"
+                },
+                {
+                  "question": "Many birds have a gland that produces a waxy oil to waterproof feathers called a _____ gland?",
+                  "answers": ["Mandrake", "Drake", "Uropygial", "Duckle"],
+                  "correctAnswer": "Uropygial"
+                },
+                {
+                  "question": "How long after hatching are Ducklings able to walk and leave the nest?",
+                  "answers": ["immediately", "a couple hours", "a day", "a couple days"],
+                  "correctAnswer": "a couple hours"
+                },
+                {
+                  "question": "a group of ducks can be called a ______?",
+                  "answers": ["druid", "deckle", "cast", "raft"],
+                  "correctAnswer": "raft"
+                },
+                {
+                  "question": "How many eyelids does a duck have?",
+                  "answers": ["0", "1", "2", "3"],
+                  "correctAnswer": "3"
+                }
+              ]
+            },
+            "adjacent_rooms": ["dark hallway", "the bathroom"]
+          },
+          {
+            "name": "the bathroom",
+            "description": " You've entered the bathroom, it obviously hasn't been cleaned in days",
+            "requiredItem":{"name": "Baccarat Zodiac Pig", "inscription":""},
+            "actor": {
+              "name": "Arty the Alligator",
+              "health": 5,
+              "attack": 1,
+              "actorRoomText": "the smell of fish and cheap cologne permeate your nostrils , you look down and see Arty the Alligator with his mouth wide open",
+              "secretText": "Oh shit, how did this happen... Let me go my friend, it was just a game... Please don't, I have kids, we'll there my sisters kids, but i love them like my own... ok, you got me i don't have a sister... Oh noo....",
+              "dialogs": [
+                "You can quit now, just step inside, or answer my question, either way you will die.",
+                "So you want to be my meal of the day?",
+                "Chomp Chomp"
+              ],
+              "item":
+              {
+                "name": "Snake skin assless chaps",
+                "inscription": "...Rainbows have so many colors..."
+              },
+              "wantedItem": [],
+              "trivia": [
+                {
+                  "question": " An adult male duck is referred to as a _____?",
+                  "answers": ["Mandrake", "Drake", "Quacker", "Duckle"],
+                  "correctAnswer": "Drake"
+                },
+                {
+                  "question": "Many birds have a gland that produces a waxy oil to waterproof feathers called a _____ gland?",
+                  "answers": ["Mandrake", "Drake", "Uropygial", "Duckle"],
+                  "correctAnswer": "Uropygial"
+                },
+                {
+                  "question": "How long after hatching are Ducklings able to walk and leave the nest?",
+                  "answers": ["immediately", "a couple hours", "a day", "a couple days"],
+                  "correctAnswer": "a couple hours"
+                },
+                {
+                  "question": "a group of ducks can be called a ______?",
+                  "answers": ["druid", "deckle", "cast", "raft"],
+                  "correctAnswer": "raft"
+                },
+                {
+                  "question": "How many eyelids does a duck have?",
+                  "answers": ["0", "1", "2", "3"],
+                  "correctAnswer": "3"
+                }
+              ]
+            },
+            "adjacent_rooms": ["the dark Room", "the disco hole"]
+          },
+          {
+            "name": "the disco hole",
+            "description": " You're in a small cramped [DORMS]",
+            "requiredItem":{"name": "none", "inscription":""},
+            "actor": {
+              "name": "Filthy the Bear",
+              "health": 5,
+              "attack": 1,
+              "actorRoomText": "In the middle of the room, is a [Duckling] playing with a yellow rubber duck in a big fish tank",
+              "secretText": "Come on baby, it was just a joke, here take what you want, i'm too pretty to die like this...",
+              "dialogs": [
+                "Owww youre kind of cute, you should just stay here with me for the night",
+                "Oh, you're no fun, well not yet... you'll be plenty fun when you're dead!",
+                "Roar roar"
+              ],
+              "item":
+              {
+                "name": "Dirty handkerchief",
+                "inscription": "to my love, Filthy, in memory of the magic ball we had..."
+              },
+              "wantedItem": [],
+              "trivia": [
+                {
+                  "question": " An adult male duck is referred to as a _____?",
+                  "answers": ["Mandrake", "Drake", "Quacker", "Duckle"],
+                  "correctAnswer": "Drake"
+                },
+                {
+                  "question": "Many birds have a gland that produces a waxy oil to waterproof feathers called a _____ gland?",
+                  "answers": ["Mandrake", "Drake", "Uropygial", "Duckle"],
+                  "correctAnswer": "Uropygial"
+                },
+                {
+                  "question": "How long after hatching are Ducklings able to walk and leave the nest?",
+                  "answers": ["immediately", "a couple hours", "a day", "a couple days"],
+                  "correctAnswer": "a couple hours"
+                },
+                {
+                  "question": "a group of ducks can be called a ______?",
+                  "answers": ["druid", "deckle", "cast", "raft"],
+                  "correctAnswer": "raft"
+                },
+                {
+                  "question": "How many eyelids does a duck have?",
+                  "answers": ["0", "1", "2", "3"],
+                  "correctAnswer": "3"
+                }
+              ]
+            },
+            "adjacent_rooms": ["the bathroom"]
+          },
+          {
+            "name": "the broken mirror",
+            "description": "You're in a small cramped [ESCAPE HATCH]",
+            "requiredItem": {"name": "Dirty handkerchief", "inscription":""},
+            "actor": {
+              "name": "Frisky Whiskers",
+              "health": 5,
+              "attack": 1,
+              "actorRoomText": "You've entered an empty white room, you hear upbeat 80s music, Madonna maybe?, towards the center you see a massive Lion wearing a hot pink blazer working out to a Richard Simmons workout video...",
+              "secretText": "We could of danced the night away but you had to ruin it didn't you.",
+              "dialogs": [
+                "I've always practiced this; Love yourself, move your body. Watch your portions...",
+                "Number one, like yourself. Number two, you have to eat healthy. And number three, you've got to squeeze your buns. That's my formula... Lets DANCE",
+                "Purrr Purrr"
+              ],
+              "item":
+              {
+                "name": "Pioneer 8 Track Stereo Model H-R99",
+                "inscription": "cool cats never die, the have many lives."
+              },
+              "wantedItem": [],
+              "trivia": [
+                {
+                  "question": " An adult male duck is referred to as a _____?",
+                  "answers": ["Mandrake", "Drake", "Quacker", "Duckle"],
+                  "correctAnswer": "Drake"
+                },
+                {
+                  "question": "Many birds have a gland that produces a waxy oil to waterproof feathers called a _____ gland?",
+                  "answers": ["Mandrake", "Drake", "Uropygial", "Duckle"],
+                  "correctAnswer": "Uropygial"
+                },
+                {
+                  "question": "How long after hatching are Ducklings able to walk and leave the nest?",
+                  "answers": ["immediately", "a couple hours", "a day", "a couple days"],
+                  "correctAnswer": "a couple hours"
+                },
+                {
+                  "question": "a group of ducks can be called a ______?",
+                  "answers": ["druid", "deckle", "cast", "raft"],
+                  "correctAnswer": "raft"
+                },
+                {
+                  "question": "How many eyelids does a duck have?",
+                  "answers": ["0", "1", "2", "3"],
+                  "correctAnswer": "3"
+                }
+              ]
+            },
+            "adjacent_rooms": ["big daddys lair", "the dark hallway"]
+          },
+          {
+            "name": "big daddys lair",
+            "description": "You've stepped into big daddies lair, are you ready for some big daddy? ",
+            "requiredItem":{"name": "Pioneer 8 Track Stereo Model H-R99", "inscription":""},
+            "actor": {
+              "name": "Big Daddy the Devilishly Handsome Donkey",
+              "health": 5,
+              "attack": 1,
+              "actorRoomText": "Flames light up against the wall, toward the back of the room sits a Donkey on a suede Throne his snout buried in a bucket full of mice, you can hear their little squeeks as their bones pop between the donkeys bloody teeth",
+              "secretText": "Oh, no, how could this be, Big Daddy was taken down by someone like you... ",
+              "dialogs": [
+                "Hey hey hey, [Big Daddy stairs at your jacket], That's a nice jacket you have there, can I try it on? ",
+                "They call me Big Daddy for a reason, I guess its time to tumble.... HeeHaw",
+                "HeeHaw"
+              ],
+              "item":
+              {
+                "name": "Pioneer 8 Track Stereo Model H-R99",
+                "inscription": "cool cats never die, the have many lives."
+              },
+              "wantedItem": [],
+              "trivia": [
+                {
+                  "question": " An adult male duck is referred to as a _____?",
+                  "answers": ["Mandrake", "Drake", "Quacker", "Duckle"],
+                  "correctAnswer": "Drake"
+                },
+                {
+                  "question": "Many birds have a gland that produces a waxy oil to waterproof feathers called a _____ gland?",
+                  "answers": ["Mandrake", "Drake", "Uropygial", "Duckle"],
+                  "correctAnswer": "Uropygial"
+                },
+                {
+                  "question": "How long after hatching are Ducklings able to walk and leave the nest?",
+                  "answers": ["immediately", "a couple hours", "a day", "a couple days"],
+                  "correctAnswer": "a couple hours"
+                },
+                {
+                  "question": "a group of ducks can be called a ______?",
+                  "answers": ["druid", "deckle", "cast", "raft"],
+                  "correctAnswer": "raft"
+                },
+                {
+                  "question": "How many eyelids does a duck have?",
+                  "answers": ["0", "1", "2", "3"],
+                  "correctAnswer": "3"
+                }
+              ]
+            },
+            "adjacent_rooms": ["escape hatch"]
+          }
+        ]
+}

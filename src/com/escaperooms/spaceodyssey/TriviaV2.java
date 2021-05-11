@@ -5,11 +5,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class TriviaV2 {
     private String question;
     private List<String> answers = new ArrayList<>();
     private String correctAnswer;
+    private Scanner scanner = new Scanner(System.in);
 
     @JsonCreator
     public TriviaV2(@JsonProperty("question") String question,
@@ -42,5 +44,26 @@ public class TriviaV2 {
 
     public void setQuestion(String question) {
         this.question = question;
+    }
+
+    private void askQuestion(){
+        System.out.println(question);
+    }
+    private void giveAnswers(){
+        answers.forEach(System.out::println);
+    }
+
+    private String getAnswer(){
+        System.out.println("Answer -> ");
+        return scanner.nextLine();
+    }
+    private boolean checkAnswer(String answer){
+        return answer.equalsIgnoreCase(correctAnswer);
+    }
+
+    public boolean quiz(){
+        askQuestion();
+        giveAnswers();
+        return checkAnswer(getAnswer());
     }
 }

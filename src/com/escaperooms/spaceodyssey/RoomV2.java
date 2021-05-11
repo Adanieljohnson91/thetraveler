@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class RoomV2 {
     private String name;
     private String description;
-    private List<UsefulItem> usefulItem;
+    private UsefulItem requiredItem;
     private ActorV2 actor;
     private List<String> commands = new ArrayList<>();
     private List<String> adjacent_rooms;
@@ -19,12 +19,12 @@ public class RoomV2 {
     @JsonCreator
     public RoomV2(@JsonProperty("name")String name,
                   @JsonProperty("description")String description,
-                  @JsonProperty("usefulItem")List<UsefulItem> usefulItem,
+                  @JsonProperty("requiredItem")UsefulItem requiredItem,
                   @JsonProperty("actor")ActorV2 actor,
                   @JsonProperty("adjacent_rooms")List<String> adjacent_rooms) {
         this.name = name;
         this.description = description;
-        this.usefulItem = usefulItem;
+        this.requiredItem = requiredItem;
         this.actor = actor;
         this.adjacent_rooms = adjacent_rooms;
     }
@@ -49,8 +49,8 @@ public class RoomV2 {
         return description;
     }
 
-    public List<UsefulItem> getUsefulItem() {
-        return usefulItem;
+    public UsefulItem getUsefulItem() {
+        return requiredItem;
     }
 
     public void setName(String name) {
@@ -65,8 +65,8 @@ public class RoomV2 {
         this.description = description;
     }
 
-    public void setUsefulItem(List<UsefulItem> usefulItem) {
-        this.usefulItem = usefulItem;
+    public void setUsefulItem(UsefulItem requiredItem) {
+        this.requiredItem = requiredItem;
     }
 
     public void listAdjacentRooms(){

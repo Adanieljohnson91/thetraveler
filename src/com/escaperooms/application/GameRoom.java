@@ -14,10 +14,11 @@ public class GameRoom {
     private List<Game> games;
     private Map<String, Game> gameMap = new HashMap<>();
     private Game currentGame;
+    public static UserV2 user;
     Scanner scanner = new Scanner(System.in);
 
-    @JsonCreator
-    public GameRoom(@JsonProperty("games") List<Game> games){
+    public GameRoom(List<Game> games, UserV2 user){
+        this.user = user;
         this.games = games;
         buildGameMap();
     }
@@ -26,19 +27,19 @@ public class GameRoom {
         return games;
     }
 
-    public void addGame(Game game){
-        gameMap.put(game.getName(), game);
+    public void play(){
+            currentGame = gameMap.get(selectGame());
+            currentGame.play();
     }
 
-    public void play(){
+    private String selectGame(){
+        System.out.println("Please Select a Game");
         listGames();
-        while (true){
-            System.out.println("Select a Game");
-            String input = scanner.nextLine();
-            currentGame = gameMap.get(input);
-            currentGame.play();
+        String string = scanner.nextLine();
+        if(games.stream().anyMatch(x -> x.getName().equalsIgnoreCase(string))){
+            return string;
         }
-
+        return selectGame();
     }
 
     private void buildGameMap(){
@@ -47,7 +48,7 @@ public class GameRoom {
         }
     }
 
-    private void setCurrentGame(SpaceGame game){
+    private void setCurrentGame(Game game){
         this.currentGame = game;
     }
 
