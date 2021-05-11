@@ -58,8 +58,22 @@ public class SpaceController implements Controller {
     }
 
     private void go(){
+        String whereIWantToGo = findValidWordInStringFromArrayOfStrings(this.currentInput);
+        if(!checkAccess(whereIWantToGo)){
+            System.out.println("Sorry champ, looks like you don't have what it takes to go to "+ whereIWantToGo);
+            return;
+        }
        SpaceGame.CURRENT_ROOM = SpaceGame.ROOMMAP
-               .get(findValidWordInStringFromArrayOfStrings(this.currentInput));
+               .get(whereIWantToGo);
+    }
+
+    private boolean checkAccess(String input){
+        var bool = false;
+        //DOES USER HAVE THE REQUIRED ITEM OF THE ROOM?
+        if(GameRoom.user.hasItem(SpaceGame.ROOMMAP.get(input).getRequiredItem())){
+            bool = true;
+        }
+        return bool;
     }
 
     private void unknown(){
