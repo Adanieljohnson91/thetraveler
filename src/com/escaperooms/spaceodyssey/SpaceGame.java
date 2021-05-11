@@ -21,13 +21,14 @@ public class SpaceGame implements Game {
 
     private final SpaceController controller = new SpaceController();
     private final Scanner scanner = new Scanner(System.in);
-    private Controller guiController;
+    //private Controller guiController; // Moved this to the static
     /**
      * @param roomMap is used to store our rooms so that we can navigate our game. inside of the roomMap are rooms orgainzed by name
      * each room has a list of adjacent rooms they can connect to, we will use those names to switch the room we are currently in.
      */
     public static Map<String, RoomV2> ROOMMAP = new HashMap<>();
     public static RoomV2 CURRENT_ROOM;
+    private static Controller guiController;
 
     @JsonCreator
     public SpaceGame(@JsonProperty("name") String name, @JsonProperty("rooms") List<RoomV2> rooms) {
