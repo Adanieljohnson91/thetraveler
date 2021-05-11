@@ -133,8 +133,10 @@ public class ActorV2 {
             case "ANSWER":
                 askQuestion();
                 break;
+            case "LEAVE":
+                break;
             default:
-                System.out.println("fight or answer");
+                System.out.println("AVAILABLE OPTIONS: FIGHT, ANSWER, LEAVE");
                 questionDialog();
         }
 
