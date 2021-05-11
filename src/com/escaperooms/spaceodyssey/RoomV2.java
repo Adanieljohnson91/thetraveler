@@ -41,6 +41,10 @@ public class RoomV2 {
         this.adjacent_rooms = adjacent_rooms;
     }
 
+    public UsefulItem getRequiredItem() {
+        return requiredItem;
+    }
+
     public ActorV2 getActor() {
         return actor;
     }
