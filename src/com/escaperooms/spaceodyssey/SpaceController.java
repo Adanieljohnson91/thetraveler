@@ -65,9 +65,16 @@ public class SpaceController implements Controller {
     private void unknown(){
         System.out.println("Unknowning");
     }
-
+    private String isCleared(String x) {
+        if(!SpaceGame.ROOMMAP.get(x).getActor().getIsAlive()){
+            return " CLEARED";
+        }
+        return "";
+    };
     private void view(){
-        SpaceGame.CURRENT_ROOM.getAdjacent_rooms().forEach(System.out::println);
+        SpaceGame.CURRENT_ROOM.getAdjacent_rooms().forEach(x -> {
+            System.out.println(x + this.isCleared(x));
+        });
     }
 
     private void help(){
