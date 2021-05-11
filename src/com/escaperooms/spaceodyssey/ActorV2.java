@@ -144,6 +144,11 @@ public class ActorV2 {
         System.out.println(actorRoomText);
     }
 
+
+    public String getActorRoomText(){
+        return actorRoomText;
+    }
+
     public boolean getIsAlive() {
         return isAlive;
     }
@@ -151,11 +156,24 @@ public class ActorV2 {
     public void battleDialog(){
         System.out.println(dialogs.get(1));
     }
+
+    public String getBattleDialog(){
+        return dialogs.get(1);
+    }
+
     public void noiseDialog(){
         System.out.println(dialogs.get(2));
     }
 
+    public String getNoiseDialog() {
+        return dialogs.get(2);
+    }
+
     public void defeatDialog(){
         System.out.println(secretText);
+    }
+
+    public String getDefeatDialog() {
+        return secretText;
     }
 }
