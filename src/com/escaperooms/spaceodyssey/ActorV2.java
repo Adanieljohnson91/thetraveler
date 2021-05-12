@@ -84,7 +84,7 @@ public class ActorV2 {
 
 
     public void congratulate(){
-        String roomText = SpaceGame.CURRENT_ROOM.generateRoomText();
+        String roomText = SpaceGame.CURRENT_ROOM.generateRoomText(false);
         UsefulItem item = giveItem();
         roomText += "\n\n" + dialogs.get(2);
         if (!item.getName().equals("none")){
@@ -94,12 +94,13 @@ public class ActorV2 {
     }
 
     public void congratulateFight(){
-        String roomText = SpaceGame.CURRENT_ROOM.generateRoomText();
+        String roomText = SpaceGame.CURRENT_ROOM.generateRoomText(true);
         UsefulItem item = giveItem();
         roomText += "\n\n" + "That was close, Let's try to answer the question next time." + "\n\n" + secretText;
         if (!item.getName().equals("none")){
             roomText += "\nYou have received " + item.getName();
         }
+        roomText += "\n\nInventory:\n" + GameRoom.user.getInventoryList();
         SpaceGame.guiController.updateRoomText(roomText);
     }
 
@@ -119,9 +120,8 @@ public class ActorV2 {
     private void askQuestion(){
         if(trivia.get(0).quiz()){
             GameRoom.user.addItem(giveItem());
-            congratulate();
             isAlive = false;
-
+            congratulate();
         }
     }
 
@@ -135,7 +135,7 @@ public class ActorV2 {
         //String input = scanner.nextLine();
         String[] ansList = {"Fight","Answer"};
         List<String> answers = Arrays.asList(ansList);
-        String input = SpaceGame.guiController.fightORQuestionDialog(dialogs.get(0),answers);
+        String input = SpaceGame.guiController.fightORQuestionDialog(dialogs.get(0),answers,getName());
         /**
          * expect available commands; if they are not valid ask again
          */

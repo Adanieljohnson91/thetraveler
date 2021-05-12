@@ -1,5 +1,7 @@
 package com.escaperooms.spaceodyssey;
 
+import com.escaperooms.application.Game;
+import com.escaperooms.application.GameRoom;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -61,7 +63,6 @@ public class TriviaV2 {
     private boolean checkAnswer(String answer){
         return answer.equalsIgnoreCase(correctAnswer);
     }
-
     private boolean checkAnswerFight(String answer){
         List<String> correctAnswer = List.of("Rock", "Paper", "Scissors");
         Random rand = new Random();
@@ -70,7 +71,7 @@ public class TriviaV2 {
     }
 
     public boolean quiz(){
-        return checkAnswer(SpaceGame.guiController.askTrivia(question,answers));
+        return checkAnswer(SpaceGame.guiController.askTrivia(question,answers, SpaceGame.CURRENT_ROOM.getName()));
     }
     public boolean quizFight(){
         return checkAnswerFight(SpaceGame.guiController.fightTrivia("Rock... Paper... Scissors... SHOOT!",List.of("Rock", "Paper", "Scissors")));

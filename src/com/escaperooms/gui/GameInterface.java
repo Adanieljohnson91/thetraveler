@@ -14,7 +14,9 @@ public class GameInterface extends JFrame {
     private JTextArea roomTextTA;
     private JTextField playerInputTF;
     private JButton submitBTN;
-    Controller controller;
+    private Controller controller;
+
+    private ImageLoader imageLoader;
 
     public GameInterface(String title){
         super(title);
@@ -44,6 +46,8 @@ public class GameInterface extends JFrame {
         add(playerInputTF);
         add(submitBTN);
 
+        imageLoader = new ImageLoader();
+
     }
 
     public void setController(Controller controller) {
@@ -62,7 +66,7 @@ public class GameInterface extends JFrame {
         roomTextTA.setText(roomText);
     }
 
-    public String twoAnswerDialog(String question, List<String> answers){
+    public String twoAnswerDialog(String question, List<String> answers, String iconKey){
         Object[] options = new Object[2];
         options[0] = answers.get(0);
         options[1] = answers.get(1);
@@ -71,19 +75,17 @@ public class GameInterface extends JFrame {
                 null,
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE,
-                null,
+                imageLoader.getImage(iconKey),
                 options,
                 null);
-        System.out.println(result);
+        //System.out.println(result);
         if (result != -1) {
-            System.out.println("~~~~~~~~~~~~~~~~~~HITTING");
-            System.out.println(answers.get(result));
             return answers.get(result);
         }
         return "";
     }
 
-    public String triviaDialog(String question, List<String> answers){
+    public String triviaDialog(String question, List<String> answers,String key){
         int answerCount = answers.size();
         Object[] options = new Object[answerCount];
         for (int x=0; x < answerCount; x++){
@@ -94,12 +96,10 @@ public class GameInterface extends JFrame {
                 null,
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE,
-                null,
+                imageLoader.getImage(key),
                 options,
                 null);
-        System.out.println(result);
         if (result != -1) {
-            System.out.println(answers.get(result));
             return answers.get(result);
         }
         return "";

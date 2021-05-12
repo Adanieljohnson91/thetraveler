@@ -15,15 +15,13 @@ public class ClientGui {
         Controller controller = new Controller();
         gi.setController(controller);
         controller.setGi(gi);
-
+        GameRoom.user = new UserV2();
         File SPACE_FILE = new File("src/resources/data/space_odyssey.json");
         SpaceAdventureParser space_parser = new SpaceAdventureParser();
         SpaceGame spaceGame = space_parser.parse(SPACE_FILE);
 
         controller.setSpaceGame(spaceGame);
         spaceGame.linkGuiController(controller);
-
-        GameRoom.user = new UserV2();
 
         gi.setVisible(true);
     }
