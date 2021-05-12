@@ -14,7 +14,7 @@
             "dialogs": [
               "I have some cards, but im not sure what to do, answer my question while I think it through.",
               "Come fight me baby... [Diego blows you a kiss.]",
-              "Quack Quack"
+              "Quack Quack, Diego seems to have vanished, you hear quacking in the distance"
             ],
             "item":
               {
@@ -65,7 +65,7 @@
               "dialogs": [
                 "So you think you can escape, answer a question if you want my help.",
                 "Oh, so this is how it is? hope you weren't planning on getting out of here.",
-                "Thump Thump [The sound of Bunny feet slapping the ground]"
+                "Thump Thump [The sound of Bunny feet slapping the ground], so long, good luck, Thump thump thump thump thump"
               ],
               "item":
               {
@@ -116,7 +116,7 @@
               "dialogs": [
                 "CRUNCH CRUNCH CRUNCH, You dare interrupt my feast, answer me now before I hang you by your feet...",
                 "How do you expect to fight me in the darkness when you cant see me, but i can see you?",
-                "Swoosh Swoosh"
+                "Swoosh Swoosh... Mad Bat flys away"
               ],
               "item":
               {

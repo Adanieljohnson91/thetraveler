@@ -83,6 +83,8 @@ public class SpaceGame implements Game {
             System.out.println(CURRENT_ROOM.getDescription());
             if (CURRENT_ROOM.getActor().getIsAlive()) {
                 CURRENT_ROOM.getActor().sceneDialog();
+            }else{
+                System.out.println("It seems pretty quite in here.");
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());

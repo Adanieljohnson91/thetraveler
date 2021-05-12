@@ -34,7 +34,7 @@ public class SpaceController implements Controller {
                 talk();
                 break;
             case UNKNOWN_COMMAND:
-                unknown();
+                unknown(input);
                 break;
             case HELP:
                 help();
@@ -85,8 +85,9 @@ public class SpaceController implements Controller {
         return bool;
     }
 
-    private void unknown() {
-        System.out.println("Unknowning");
+    private void unknown(String input){
+        System.out.println("Sorry folk person, thats not going to work, if you need HELP, just ask \n YOUR INPUT: " + input);
+
     }
 
     private String isCleared(String x) {
