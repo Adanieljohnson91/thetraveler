@@ -98,7 +98,7 @@ public class SpaceGame implements Game {
         if (getCurrentRoom().getActor().getIsAlive()){
             roomText += "\n\n" + getCurrentRoom().getActor().getActorRoomText();
         }
-        roomText += "\n\nAdjacent Rooms:\n" + String.join(", ",getCurrentRoom().getAdjacent_rooms());
+        //roomText += "\n\nAdjacent Rooms:\n" + String.join(", ",getCurrentRoom().getAdjacent_rooms());
         roomText += "\n\nInventory:\n" + GameRoom.user.getInventoryList();
         guiController.updateRoomText(roomText);
     }

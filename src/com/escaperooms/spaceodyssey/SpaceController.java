@@ -69,7 +69,7 @@ public class SpaceController implements Controller {
             SpaceGame.CURRENT_ROOM = SpaceGame.ROOMMAP
                     .get(whereIWantToGo);
         }
-        String roomText = SpaceGame.CURRENT_ROOM.generateRoomText();
+        String roomText = SpaceGame.CURRENT_ROOM.generateRoomText(false);
         if (blockedText != null){
             roomText += "\n\n" + blockedText;
         }
@@ -101,9 +101,14 @@ public class SpaceController implements Controller {
     ;
 
     private void view() {
+        /*
         SpaceGame.CURRENT_ROOM.getAdjacent_rooms().forEach(x -> {
             System.out.println(x + this.isCleared(x));
         });
+         */
+        String roomText = SpaceGame.CURRENT_ROOM.generateRoomText(true);
+        roomText += "\n\nInventory:\n" + GameRoom.user.getInventoryList();
+        SpaceGame.guiController.updateRoomText(roomText);
     }
 
     private void help() {

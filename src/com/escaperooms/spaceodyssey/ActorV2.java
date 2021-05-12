@@ -84,7 +84,7 @@ public class ActorV2 {
 
 
     public void congratulate(){
-        String roomText = SpaceGame.CURRENT_ROOM.generateRoomText();
+        String roomText = SpaceGame.CURRENT_ROOM.generateRoomText(false);
         UsefulItem item = giveItem();
         roomText += "\n\n" + dialogs.get(2);
         if (item != null){
@@ -110,9 +110,8 @@ public class ActorV2 {
     private void askQuestion(){
         if(trivia.get(0).quiz(getName())){
             GameRoom.user.addItem(giveItem());
-            congratulate();
             isAlive = false;
-
+            congratulate();
         }
     }
 
