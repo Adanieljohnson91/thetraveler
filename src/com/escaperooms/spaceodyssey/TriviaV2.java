@@ -75,6 +75,5 @@ public class TriviaV2 {
     public boolean quizFight(){
         return checkAnswerFight(SpaceGame.guiController.fightTrivia("Rock... Paper... Scissors... SHOOT!",List.of("Rock", "Paper", "Scissors")));
 
-        //return checkAnswer(getAnswer());
     }
 }
