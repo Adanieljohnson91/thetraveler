@@ -12,11 +12,14 @@ public class UserV2 {
     private Scanner scanner = new Scanner(System.in);
 
     public UserV2(){
+        /*
         System.out.println("Before we begin, What should we call you? ");
         name = scanner.nextLine().trim();
         System.out.println("Welcome " + name + " Are you ready for an Adventure of a lifetime?");
+
+         */
         List<String> s = new ArrayList<>();
-        items.add(new UsefulItem("hammer", ""));
+        items.add(new UsefulItem("none", ""));
     }
 
     /**

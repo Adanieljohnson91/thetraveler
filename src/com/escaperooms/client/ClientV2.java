@@ -29,6 +29,5 @@ public class ClientV2 {
         gameList.add(joninGame);
         GameRoom gameRoom = new GameRoom(gameList, new UserV2());
         gameRoom.play();
-
     }
 }

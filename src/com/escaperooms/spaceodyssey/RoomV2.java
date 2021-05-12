@@ -41,6 +41,10 @@ public class RoomV2 {
         this.adjacent_rooms = adjacent_rooms;
     }
 
+    public UsefulItem getRequiredItem() {
+        return requiredItem;
+    }
+
     public ActorV2 getActor() {
         return actor;
     }
@@ -73,6 +77,16 @@ public class RoomV2 {
         for(String room: adjacent_rooms){
             System.out.println(room);
         }
+    }
+
+    public String generateRoomText(){
+        String roomText = "Room Name: " + SpaceGame.CURRENT_ROOM.getName();
+        roomText += "\n\n" + SpaceGame.CURRENT_ROOM.getDescription();
+        if (SpaceGame.CURRENT_ROOM.getActor().getIsAlive()){
+            roomText += "\n\n" + SpaceGame.CURRENT_ROOM.getActor().getActorRoomText();
+        }
+        roomText += "\n\nAdjacent Rooms:\n" + String.join(", ",SpaceGame.CURRENT_ROOM.getAdjacent_rooms());
+        return roomText;
     }
 
 }
