@@ -90,6 +90,7 @@ public class ActorV2 {
         if (item != null){
             roomText += "\nYou have received " + item.getName();
         }
+        roomText += "\n\nInventory:\n" + GameRoom.user.getInventoryList();
         SpaceGame.guiController.updateRoomText(roomText);
     }
 
@@ -107,7 +108,7 @@ public class ActorV2 {
     }
 
     private void askQuestion(){
-        if(trivia.get(0).quiz()){
+        if(trivia.get(0).quiz(getName())){
             GameRoom.user.addItem(giveItem());
             congratulate();
             isAlive = false;
@@ -125,7 +126,7 @@ public class ActorV2 {
         //String input = scanner.nextLine();
         String[] ansList = {"Fight","Answer"};
         List<String> answers = Arrays.asList(ansList);
-        String input = SpaceGame.guiController.fightORQuestionDialog(dialogs.get(0),answers);
+        String input = SpaceGame.guiController.fightORQuestionDialog(dialogs.get(0),answers,getName());
         /**
          * expect available commands; if they are not valid ask again
          */

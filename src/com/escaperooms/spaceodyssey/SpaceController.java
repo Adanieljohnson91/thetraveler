@@ -73,6 +73,7 @@ public class SpaceController implements Controller {
         if (blockedText != null){
             roomText += "\n\n" + blockedText;
         }
+        roomText += "\n\nInventory:\n" + GameRoom.user.getInventoryList();
         SpaceGame.guiController.updateRoomText(roomText);
     }
 
