@@ -28,7 +28,7 @@ public class SpaceGame implements Game {
      */
     public static Map<String, RoomV2> ROOMMAP = new HashMap<>();
     public static RoomV2 CURRENT_ROOM;
-    private static Controller guiController;
+    public static Controller guiController;
 
     @JsonCreator
     public SpaceGame(@JsonProperty("name") String name, @JsonProperty("rooms") List<RoomV2> rooms) {
@@ -108,7 +108,7 @@ public class SpaceGame implements Game {
     public void processUserInput(String input) {
         System.out.println("The input of '" + input + "' was received by the SpaceGame.");
         controller.control(input);
-        currentSceneDialogsForInterface();
+
     }
 
     public void linkGuiController(Controller con) {

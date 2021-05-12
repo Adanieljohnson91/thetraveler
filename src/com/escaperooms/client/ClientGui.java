@@ -11,7 +11,7 @@ import java.io.File;
 
 public class ClientGui {
     public static void main(String[] args) {
-        GameInterface gi = new GameInterface("Test");
+        GameInterface gi = new GameInterface("Space Odyssey");
         Controller controller = new Controller();
         gi.setController(controller);
         controller.setGi(gi);
