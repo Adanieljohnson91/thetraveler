@@ -19,7 +19,7 @@ public class UserV2 {
 
          */
         List<String> s = new ArrayList<>();
-        items.add(new UsefulItem("hammer", ""));
+        items.add(new UsefulItem("none", ""));
     }
 
     /**

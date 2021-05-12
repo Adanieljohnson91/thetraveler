@@ -86,7 +86,7 @@ public class ActorV2 {
 
 
     public void congratulate(){
-        System.out.println(dialogs.get(1));
+        System.out.println(dialogs.get(2));
     }
 
     private boolean doesActorHaveItem(){
