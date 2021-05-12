@@ -56,4 +56,12 @@ public class UserV2 {
         items.add(item);
     }
 
+    public String getInventoryList(){
+        List<String> list = new ArrayList<>();
+        for (UsefulItem item : items){
+            list.add(item.getName());
+        }
+        return String.join(", ",list);
+    }
+
 }

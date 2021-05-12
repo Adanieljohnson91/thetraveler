@@ -1,6 +1,7 @@
 package com.escaperooms.spaceodyssey;
 
 import com.escaperooms.application.Game;
+import com.escaperooms.application.GameRoom;
 import com.escaperooms.gui.controller.Controller;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -37,6 +38,10 @@ public class SpaceGame implements Game {
         CURRENT_ROOM = ROOMMAP.get("the dark hallway");
     }
 
+    /**
+     * Check to see if required for Jackson; Check.
+     * @return
+     */
     public List<RoomV2> getRooms() {
         return rooms;
     }
@@ -97,7 +102,8 @@ public class SpaceGame implements Game {
         if (getCurrentRoom().getActor().getIsAlive()){
             roomText += "\n\n" + getCurrentRoom().getActor().getActorRoomText();
         }
-        roomText += "\n\nAdjacent Rooms:\n" + String.join(", ",getCurrentRoom().getAdjacent_rooms());
+        //roomText += "\n\nAdjacent Rooms:\n" + String.join(", ",getCurrentRoom().getAdjacent_rooms());
+        roomText += "\n\nInventory:\n" + GameRoom.user.getInventoryList();
         guiController.updateRoomText(roomText);
     }
 
