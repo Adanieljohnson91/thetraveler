@@ -62,8 +62,9 @@ public class TriviaV2 {
     }
 
     public boolean quiz(){
-        askQuestion();
-        giveAnswers();
-        return checkAnswer(getAnswer());
+        //askQuestion();
+        //giveAnswers();
+        return checkAnswer(SpaceGame.guiController.askTrivia(question,answers));
+        //return checkAnswer(getAnswer());
     }
 }
