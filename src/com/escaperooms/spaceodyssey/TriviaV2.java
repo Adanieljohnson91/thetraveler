@@ -61,10 +61,10 @@ public class TriviaV2 {
         return answer.equalsIgnoreCase(correctAnswer);
     }
 
-    public boolean quiz(){
+    public boolean quiz(String actor_name){
         //askQuestion();
         //giveAnswers();
-        return checkAnswer(SpaceGame.guiController.askTrivia(question,answers));
+        return checkAnswer(SpaceGame.guiController.askTrivia(question,answers,actor_name));
         //return checkAnswer(getAnswer());
     }
 }
