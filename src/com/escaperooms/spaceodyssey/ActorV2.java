@@ -91,6 +91,7 @@ public class ActorV2 {
         if (item != null){
             roomText += "\nYou have received " + item.getName();
         }
+        roomText += "\n\nInventory:\n" + GameRoom.user.getInventoryList();
         SpaceGame.guiController.updateRoomText(roomText);
     }
 
