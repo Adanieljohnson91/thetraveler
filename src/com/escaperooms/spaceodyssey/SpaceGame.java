@@ -37,6 +37,10 @@ public class SpaceGame implements Game {
         CURRENT_ROOM = ROOMMAP.get("the dark hallway");
     }
 
+    /**
+     * Check to see if required for Jackson; Check.
+     * @return
+     */
     public List<RoomV2> getRooms() {
         return rooms;
     }

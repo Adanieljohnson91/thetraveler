@@ -34,4 +34,8 @@ public class Controller {
     public String askTrivia(String question, List<String> answers){
         return gameInterface.triviaDialog(question,answers);
     }
+
+    public String fightTrivia(String question, List<String> answers){
+        return gameInterface.fightDialog(question,answers);
+    }
 }

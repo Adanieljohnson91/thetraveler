@@ -76,6 +76,7 @@ public class GameInterface extends JFrame {
                 null);
         System.out.println(result);
         if (result != -1) {
+            System.out.println("~~~~~~~~~~~~~~~~~~HITTING");
             System.out.println(answers.get(result));
             return answers.get(result);
         }
@@ -83,6 +84,28 @@ public class GameInterface extends JFrame {
     }
 
     public String triviaDialog(String question, List<String> answers){
+        int answerCount = answers.size();
+        Object[] options = new Object[answerCount];
+        for (int x=0; x < answerCount; x++){
+            options[x] = answers.get(x);
+        }
+        int result = JOptionPane.showOptionDialog(this,
+                question,
+                null,
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                options,
+                null);
+        System.out.println(result);
+        if (result != -1) {
+            System.out.println(answers.get(result));
+            return answers.get(result);
+        }
+        return "";
+    }
+
+    public String fightDialog(String question, List<String> answers){
         int answerCount = answers.size();
         Object[] options = new Object[answerCount];
         for (int x=0; x < answerCount; x++){
