@@ -83,6 +83,8 @@ public class SpaceGame implements Game {
             System.out.println(CURRENT_ROOM.getDescription());
             if (CURRENT_ROOM.getActor().getIsAlive()) {
                 CURRENT_ROOM.getActor().sceneDialog();
+            }else{
+                System.out.println("It seems pretty quite in here.");
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -96,7 +98,7 @@ public class SpaceGame implements Game {
         if (getCurrentRoom().getActor().getIsAlive()){
             roomText += "\n\n" + getCurrentRoom().getActor().getActorRoomText();
         }
-        roomText += "\n\nAdjacent Rooms:\n" + String.join(", ",getCurrentRoom().getAdjacent_rooms());
+        //roomText += "\n\nAdjacent Rooms:\n" + String.join(", ",getCurrentRoom().getAdjacent_rooms());
         roomText += "\n\nInventory:\n" + GameRoom.user.getInventoryList();
         guiController.updateRoomText(roomText);
     }

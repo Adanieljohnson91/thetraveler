@@ -84,10 +84,9 @@ public class ActorV2 {
 
 
     public void congratulate(){
-        //System.out.println(dialogs.get(1));
-        String roomText = SpaceGame.CURRENT_ROOM.generateRoomText();
+        String roomText = SpaceGame.CURRENT_ROOM.generateRoomText(false);
         UsefulItem item = giveItem();
-        roomText += "\n\n" + dialogs.get(1);
+        roomText += "\n\n" + dialogs.get(2);
         if (item != null){
             roomText += "\nYou have received " + item.getName();
         }
@@ -111,9 +110,8 @@ public class ActorV2 {
     private void askQuestion(){
         if(trivia.get(0).quiz(getName())){
             GameRoom.user.addItem(giveItem());
-            congratulate();
             isAlive = false;
-
+            congratulate();
         }
     }
 
@@ -144,8 +142,10 @@ public class ActorV2 {
             case "ANSWER":
                 askQuestion();
                 break;
+            case "LEAVE":
+                break;
             default:
-                //System.out.println("fight or answer");
+                System.out.println("AVAILABLE OPTIONS: FIGHT, ANSWER, LEAVE");
                 questionDialog();
         }
 
