@@ -1,18 +1,15 @@
 package com.escaperooms.spaceodyssey;
 
-import com.escaperooms.application.Game;
-import com.escaperooms.application.GameRoom;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
 public class TriviaV2 {
     private String question;
-    private List<String> answers = new ArrayList<>();
+    private List<String> answers;
     private String correctAnswer;
     private Scanner scanner = new Scanner(System.in);
 
@@ -25,40 +22,11 @@ public class TriviaV2 {
         this.correctAnswer = correctAnswer;
     }
 
-    public List<String> getAnswers() {
-        return answers;
-    }
-
-    public String getCorrectAnswer() {
-        return correctAnswer;
-    }
-
     public String getQuestion() {
         return question;
     }
-
-    public void setAnswers(List<String> answers) {
-        this.answers = answers;
-    }
-
-    public void setCorrectAnswer(String correctAnswer) {
-        this.correctAnswer = correctAnswer;
-    }
-
     public void setQuestion(String question) {
         this.question = question;
-    }
-
-    private void askQuestion(){
-        System.out.println(question);
-    }
-    private void giveAnswers(){
-        answers.forEach(System.out::println);
-    }
-
-    private String getAnswer(){
-        System.out.println("Answer -> ");
-        return scanner.nextLine();
     }
     private boolean checkAnswer(String answer){
         return answer.equalsIgnoreCase(correctAnswer);

@@ -41,15 +41,6 @@ public class SpaceGame implements Game {
         musicPlayer = new MusicPlayer(CURRENT_ROOM.getSong());
         musicPlayer.start();
     }
-
-    /**
-     * Check to see if required for Jackson; Check.
-     * @return
-     */
-    public List<RoomV2> getRooms() {
-        return rooms;
-    }
-
     public String getName() {
         return name;
     }
@@ -63,11 +54,6 @@ public class SpaceGame implements Game {
         musicPlayer.changeSong(CURRENT_ROOM.getSong());
 
     }
-
-    public void setRooms(List<RoomV2> rooms) {
-        this.rooms = rooms;
-    }
-
     private void createRoomMap(List<RoomV2> rooms) {
         for (RoomV2 room : rooms) {
             ROOMMAP.put(room.getName(), room);
@@ -112,7 +98,6 @@ public class SpaceGame implements Game {
         if (getCurrentRoom().getActor().getIsAlive()){
             roomText += "\n\n" + getCurrentRoom().getActor().getActorRoomText();
         }
-        //roomText += "\n\nAdjacent Rooms:\n" + String.join(", ",getCurrentRoom().getAdjacent_rooms());
         roomText += "\n\nInventory:\n" + GameRoom.user.getInventoryList();
         guiController.updateRoomText(roomText);
     }

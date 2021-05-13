@@ -1,21 +1,16 @@
 package com.escaperooms.spaceodyssey;
 
-import com.escaperooms.music.MusicPlayer;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class RoomV2 {
     private String name;
     private String description;
     private UsefulItem requiredItem;
     private ActorV2 actor;
-    private List<String> commands = new ArrayList<>();
     private List<String> adjacent_rooms;
-    private Scanner scanner = new Scanner(System.in);
     private String song;
 
     @JsonCreator
@@ -45,10 +40,6 @@ public class RoomV2 {
         return adjacent_rooms;
     }
 
-    public void setAdjacent_rooms(List<String> adjacent_rooms) {
-        this.adjacent_rooms = adjacent_rooms;
-    }
-
     public UsefulItem getRequiredItem() {
         return requiredItem;
     }
@@ -61,30 +52,8 @@ public class RoomV2 {
         return description;
     }
 
-    public UsefulItem getUsefulItem() {
-        return requiredItem;
-    }
-
     public void setName(String name) {
         this.name = name;
-    }
-
-    public void setActor(ActorV2 actor) {
-        this.actor = actor;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setUsefulItem(UsefulItem requiredItem) {
-        this.requiredItem = requiredItem;
-    }
-
-    public void listAdjacentRooms(){
-        for(String room: adjacent_rooms){
-            System.out.println(room);
-        }
     }
 
     public String generateRoomText(boolean showRooms){

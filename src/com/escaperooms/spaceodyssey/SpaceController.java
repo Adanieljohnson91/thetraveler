@@ -1,7 +1,6 @@
 package com.escaperooms.spaceodyssey;
 
 import com.escaperooms.application.Controller;
-import com.escaperooms.application.Game;
 import com.escaperooms.application.GameRoom;
 
 import java.util.*;
@@ -9,7 +8,6 @@ import java.util.*;
 public class SpaceController implements Controller {
     private Map<String, SpaceCommands> commandMap = new HashMap<>();
     private SpaceCommands currentCommand;
-    private String currentItem;
     private String currentInput;
 
     SpaceController() {
@@ -94,8 +92,6 @@ public class SpaceController implements Controller {
         }
         return "";
     }
-
-    ;
 
     private void view() {
         /*
@@ -200,7 +196,6 @@ public class SpaceController implements Controller {
         }
         return res;
     }
-
 
     private void buildSpaceCommands() {
         SpaceCommands[] values = SpaceCommands.values();

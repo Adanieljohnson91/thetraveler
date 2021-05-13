@@ -102,7 +102,6 @@ public class GameInterface extends JFrame {
                 imageLoader.getImage(iconKey),
                 options,
                 null);
-        //System.out.println(result);
         if (result != -1) {
             return answers.get(result);
         }

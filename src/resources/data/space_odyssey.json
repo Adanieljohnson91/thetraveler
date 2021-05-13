@@ -8,8 +8,6 @@
             "requiredItem": {"name": "none", "inscription":""},
             "actor": {
             "name": "Diego the Wide Mouthed Duck",
-            "health": 5,
-            "attack": 1,
             "actorRoomText": "In the distance you see what looks like a duck, oh wait, it is Diego the wide mouthed Duck with a bill full of... Guts?",
             "secretText": "Quack quack quack, before you put me down, let Bunny bunny big skins know that I love him",
             "dialogs": [
@@ -60,8 +58,6 @@
             "requiredItem":{"name": "Willie Mays 1952 Topps #261 Giants Baseball Card", "inscription":""},
             "actor": {
               "name": "Bunny Bunny Big Skins",
-              "health": 6,
-              "attack": 2,
               "actorRoomText": "You see 'Bunny Bunny Big Skins' sitting in the corner of the room chopping away at a carrot",
               "secretText": "Oh god, what are you doing? Whats wrong with you, please don't hurt me!!! AHHHHH!!!",
               "dialogs": [
@@ -74,7 +70,6 @@
                 "name": "brass knuckle",
                 "inscription": "the sun can be represented by the number... VII"
               },
-              "wantedItem": [],
               "trivia": [
                 {
                   "question": "What is added to steel to makes it 'Stainless', 'Tastless', and prevents 'Oxidation'? ",
@@ -112,8 +107,6 @@
             "requiredItem":{"name": "Willie Mays 1952 Topps #261 Giants Baseball Card", "inscription":""},
             "actor": {
               "name": "Mad Bat",
-              "health": 5,
-              "attack": 1,
               "actorRoomText": "Deep in the darkness of you can only see the light of the room ahead, from the ceiling you hear a crunching, CRUNCH CRUNCH CRUNCH, the sounds of beetle bones snapping in Mad Bats mouth",
               "secretText": "..... [Mad Bat Parishes in Silence]",
               "dialogs": [
@@ -126,7 +119,6 @@
                 "name": "Baccarat Zodiac Pig",
                 "inscription": "socks and shoes both come in... III"
               },
-              "wantedItem": [],
               "trivia": [
                 {
                   "question": "Which animal has pink milk?",
@@ -164,8 +156,6 @@
             "requiredItem":{"name": "Baccarat Zodiac Pig", "inscription":""},
             "actor": {
               "name": "Arty the Alligator",
-              "health": 5,
-              "attack": 1,
               "actorRoomText": "the smell of fish and cheap cologne permeate your nostrils , you look down and see Arty the Alligator with his mouth wide open",
               "secretText": "Oh shit, how did this happen... Let me go my friend, it was just a game... Please don't, I have kids, we'll there my sisters kids, but i love them like my own... ok, you got me i don't have a sister... Oh noo....",
               "dialogs": [
@@ -178,7 +168,6 @@
                 "name": "Snake skin assless chaps",
                 "inscription": "...Rainbows have so many colors... II"
               },
-              "wantedItem": [],
               "trivia": [
                 {
                   "question": " An adult male duck is referred to as a _____?",
@@ -216,8 +205,6 @@
             "requiredItem":{"name": "Snake skin assless chaps", "inscription":""},
             "actor": {
               "name": "Filthy the Bear",
-              "health": 5,
-              "attack": 1,
               "actorRoomText": "Filthy the Bear is staring into a cheap vanity putting on lipstick, smoke is rising from an ashtray, you can taste ",
               "secretText": "Come on baby, it was just a joke, here take what you want, i'm too pretty to die like this...",
               "dialogs": [
@@ -230,7 +217,6 @@
                 "name": "Dirty Handkerchief",
                 "inscription": "to my love, Filthy, in memory of the magic ball we had... V"
               },
-              "wantedItem": [],
               "trivia": [
                 {
                   "question": "If you have 23 pairs of people what is the chance that two of them share the same birthday?",
@@ -268,8 +254,6 @@
             "requiredItem": {"name": "Dirty handkerchief", "inscription":""},
             "actor": {
               "name": "Frisky Whiskers",
-              "health": 5,
-              "attack": 1,
               "actorRoomText": "You've entered an empty white room, you hear upbeat 80s music, Madonna maybe?, towards the center you see a massive Lion wearing a hot pink blazer working out to a Richard Simmons workout video...",
               "secretText": "We could of danced the night away but you had to ruin it didn't you.",
               "dialogs": [
@@ -282,7 +266,6 @@
                 "name": "Pioneer 8 Track Stereo Model H-R99",
                 "inscription": "cool cats never die, the have many lives. VI"
               },
-              "wantedItem": [],
               "trivia": [
                 {
                   "question": "If you have a pie how many cuts would it take to make 8 slices?",
@@ -320,8 +303,6 @@
             "requiredItem":{"name": "Pioneer 8 Track Stereo Model H-R99", "inscription":""},
             "actor": {
               "name": "Big Daddy the Devilishly Handsome Donkey",
-              "health": 5,
-              "attack": 1,
               "actorRoomText": "Flames light up against the wall, toward the back of the room sits a Donkey on a suede Throne his snout buried in a bucket full of mice, you can hear their little squeeks as their bones pop between the donkeys bloody teeth",
               "secretText": "Oh, no, how could this be, Big Daddy was taken down by someone like you... ",
               "dialogs": [
@@ -334,7 +315,6 @@
                 "name": "Pioneer 8 Track Stereo Model H-R99",
                 "inscription": "cool cats never die, the have many lives. VIII"
               },
-              "wantedItem": [],
               "trivia": [
                 {
                   "question": "How many seconds are there in a year?",
@@ -372,8 +352,6 @@
             "requiredItem":{"name": "Pioneer 8 Track Stereo Model H-R99", "inscription":""},
             "actor": {
               "name": "Lyssa, Daughter of Nyx",
-              "health": 5,
-              "attack": 1,
               "actorRoomText": "Towards the center of the room sits a pale faced women, adorned in a tattered dress, playing a lune",
               "secretText": "Thank you for saving me from my madness, this place has grown heavy on my soul",
               "dialogs": [
@@ -386,7 +364,6 @@
                 "name": "Lyssas flute",
                 "inscription": "It seems life could not grant us with the love we deserved, now we look to the gods in the sky... I"
               },
-              "wantedItem": [],
               "trivia": [
                 {
                   "question": "How many planets are named after Gods from mythology?",
@@ -424,8 +401,6 @@
             "requiredItem": {"name": "Lyssas Flute", "inscription":""},
             "actor": {
               "name": "Mak",
-              "health": 5,
-              "attack": 1,
               "actorRoomText": "You turn around to leave and but you feel a pull at your arm",
               "secretText": "As the paths ahead are certain to be dark, I shall certainly be with you...",
               "dialogs": [
@@ -438,7 +413,6 @@
                 "name": "7th ring of Hell",
                 "inscription": "unlucky friday... IX-X"
               },
-              "wantedItem": [],
               "trivia": [
                 {
                   "question": " An adult male duck is referred to as a _____?",
