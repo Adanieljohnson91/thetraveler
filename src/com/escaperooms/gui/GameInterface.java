@@ -132,6 +132,21 @@ public class GameInterface extends JFrame {
         return "";
     }
 
+    public int gameOver(String message, boolean success){
+        Object[] options = {"Restart", "Exit Game"};
+        int n = JOptionPane.showOptionDialog(
+                this,
+                message,
+                "Game Over",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                success ? imageLoader.getImage("freedom") : imageLoader.getImage("skull"),
+                options,
+                null
+        );
+        return n;
+    }
+
     private class HandleSubmitBTNClick implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
