@@ -1,6 +1,7 @@
 package com.escaperooms.gui;
 
 import com.escaperooms.gui.controller.Controller;
+import com.escaperooms.music.MusicPlayer;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -10,6 +11,8 @@ import java.util.List;
 public class GameInterface extends JFrame {
     private final int FRAME_X_SIZE = 800;
     private final int FRAME_Y_SIZE = 600;
+
+    private MusicPlayer musicPlayer = new MusicPlayer("crazystanswelcomemessage.wav");
 
     private JTextArea roomTextTA;
     private JTextField playerInputTF;
@@ -45,7 +48,7 @@ public class GameInterface extends JFrame {
         add(roomTextTA);
         add(playerInputTF);
         add(submitBTN);
-
+        musicPlayer.start();
         imageLoader = new ImageLoader();
 
     }

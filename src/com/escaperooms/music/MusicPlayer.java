@@ -39,6 +39,7 @@ public class MusicPlayer extends Thread{
             */
 
         } catch (Exception e) {
+            System.out.println("ERROR DOG");
             Thread.currentThread().interrupt();
         }
     }
