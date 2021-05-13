@@ -1,5 +1,104 @@
-{
-  "name": "John",
-  "age": "23",
-  "location": ["one", "two"]
-}
+[
+  {
+  "name": "Mysterious Door",
+  "description": "You've passed through the Mysterious Door and now find yourself in a kaleidoscope dream\nGravity seems to have increased, it's hard to stand",
+  "requiredItem":{"name": "none", "inscription":""},
+  "actor": {
+    "name": "Lyssa, Daughter of Nyx",
+    "health": 5,
+    "attack": 1,
+    "actorRoomText": "Towards the center of the room sits a pale faced women, adorned in a tattered dress, playing a lune",
+    "secretText": "Thank you for saving me from my madness, this place has grown heavy on my soul",
+    "dialogs": [
+      "Please, keep away, I don't want to hurt you",
+      "Lyssa goes into a mad rage and the room is seemingly warping",
+      "... farewell... Lyssa seemingly melts into the floor"
+    ],
+    "item":
+    {
+      "name": "Lyssas flute",
+      "inscription": "It seems life could not grant us with the love we deserved, now we look to the gods in the sky... I"
+    },
+    "wantedItem": [],
+    "trivia": [
+      {
+        "question": "How many planets are named after Gods from mythology?",
+        "answers": ["3", "4", "7", "8"],
+        "correctAnswer": "7"
+      },
+      {
+        "question": "Many birds have a gland that produces a waxy oil to waterproof feathers called a _____ gland?",
+        "answers": ["Mandrake", "Drake", "Uropygial", "Duckle"],
+        "correctAnswer": "Uropygial"
+      },
+      {
+        "question": "How long after hatching are Ducklings able to walk and leave the nest?",
+        "answers": ["immediately", "a couple hours", "a day", "a couple days"],
+        "correctAnswer": "a couple hours"
+      },
+      {
+        "question": "a group of ducks can be called a ______?",
+        "answers": ["druid", "deckle", "cast", "raft"],
+        "correctAnswer": "raft"
+      },
+      {
+        "question": "How many eyelids does a duck have?",
+        "answers": ["0", "1", "2", "3"],
+        "correctAnswer": "3"
+      }
+    ]
+  },
+  "adjacent_rooms": ["the bathroom"]
+},
+  {
+    "name": "long stairwell",
+    "description": "You entered a stairwell which seemed to have no end...\nFinally it comes to an end, you can no longer see the light from the doorway from which you came but only an old steel door that seems to have been barred shut.\nYou should probably turn back",
+    "requiredItem": {"name": "Lyssas Flute", "inscription":""},
+    "actor": {
+      "name": "Mak",
+      "health": 5,
+      "attack": 1,
+      "actorRoomText": "You turn around to leave and but you feel a pull at your arm",
+      "secretText": "As the paths ahead are certain to be dark, I shall certainly be with you...",
+      "dialogs": [
+        "I've always practiced this; Love yourself, move your body. Watch your portions...",
+        "Midway upon the journey of life we have found ourselves in this forest dark, your path ends here...",
+        "Mak releases you arm, you should probably leave..."
+      ],
+      "item":
+      {
+        "name": "7th ring of Hell",
+        "inscription": "unlucky friday... IX-X"
+      },
+      "wantedItem": [],
+      "trivia": [
+        {
+          "question": " An adult male duck is referred to as a _____?",
+          "answers": ["Mandrake", "Drake", "Quacker", "Duckle"],
+          "correctAnswer": "Drake"
+        },
+        {
+          "question": "Many birds have a gland that produces a waxy oil to waterproof feathers called a _____ gland?",
+          "answers": ["Mandrake", "Drake", "Uropygial", "Duckle"],
+          "correctAnswer": "Uropygial"
+        },
+        {
+          "question": "How long after hatching are Ducklings able to walk and leave the nest?",
+          "answers": ["immediately", "a couple hours", "a day", "a couple days"],
+          "correctAnswer": "a couple hours"
+        },
+        {
+          "question": "a group of ducks can be called a ______?",
+          "answers": ["druid", "deckle", "cast", "raft"],
+          "correctAnswer": "raft"
+        },
+        {
+          "question": "How many eyelids does a duck have?",
+          "answers": ["0", "1", "2", "3"],
+          "correctAnswer": "3"
+        }
+      ]
+    },
+    "adjacent_rooms": ["big daddys lair", "the dark hallway"]
+  }
+]
