@@ -50,4 +50,8 @@ public class Controller {
         String key = actorTable.get(actor_name) + "_quiz";
         return gameInterface.triviaDialog(question,answers, key);
     }
+
+    public String fightTrivia(String question, List<String> answers){
+        return gameInterface.fightDialog(question,answers);
+    }
 }

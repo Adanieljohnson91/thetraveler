@@ -84,9 +84,11 @@ public class RoomV2 {
         roomText += "\n\n" + SpaceGame.CURRENT_ROOM.getDescription();
         if (SpaceGame.CURRENT_ROOM.getActor().getIsAlive()){
             roomText += "\n\n" + SpaceGame.CURRENT_ROOM.getActor().getActorRoomText();
+        }else{
+            roomText += "\n\nIt seems to be peaceful in here... \nWe should check some more rooms...";
         }
         if (showRooms) {
-            roomText += "\n\nAdjacent Rooms:\n" + String.join(", ", SpaceGame.CURRENT_ROOM.getAdjacent_rooms());
+            roomText +=   String.join(", ", SpaceGame.CURRENT_ROOM.getAdjacent_rooms());
         }
         return roomText;
     }

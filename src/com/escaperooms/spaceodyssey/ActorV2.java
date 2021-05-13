@@ -87,7 +87,17 @@ public class ActorV2 {
         String roomText = SpaceGame.CURRENT_ROOM.generateRoomText(false);
         UsefulItem item = giveItem();
         roomText += "\n\n" + dialogs.get(2);
-        if (item != null){
+        if (!item.getName().equals("none")){
+            roomText += "\nYou have received " + item.getName();
+        }
+        SpaceGame.guiController.updateRoomText(roomText);
+    }
+
+    public void congratulateFight(){
+        String roomText = SpaceGame.CURRENT_ROOM.generateRoomText(true);
+        UsefulItem item = giveItem();
+        roomText += "\n\n" + "That was close, Let's try to answer the question next time." + "\n\n" + secretText;
+        if (!item.getName().equals("none")){
             roomText += "\nYou have received " + item.getName();
         }
         roomText += "\n\nInventory:\n" + GameRoom.user.getInventoryList();
@@ -108,7 +118,7 @@ public class ActorV2 {
     }
 
     private void askQuestion(){
-        if(trivia.get(0).quiz(getName())){
+        if(trivia.get(0).quiz()){
             GameRoom.user.addItem(giveItem());
             isAlive = false;
             congratulate();
@@ -167,6 +177,14 @@ public class ActorV2 {
 
     public void battleDialog(){
         System.out.println(dialogs.get(1));
+        if(trivia.get(0).quizFight()){
+
+            GameRoom.user.addItem(giveItem());
+            congratulateFight();
+            isAlive = false;
+            return;
+        }
+
     }
 
     public String getBattleDialog(){
