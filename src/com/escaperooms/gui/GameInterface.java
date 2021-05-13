@@ -35,11 +35,11 @@ public class GameInterface extends JFrame {
         roomTextTA.setEditable(false);
 
         playerInputTF = new JTextField();
-        playerInputTF.setBounds(25, 325, 250,25);
+        playerInputTF.setBounds(25, 350, 625,25);
         playerInputTF.addActionListener(new HandleEnterPressOnPlayerInputTF());
 
         submitBTN = new JButton("Submit");
-        submitBTN.setBounds(275,325,100,25);
+        submitBTN.setBounds(675,350,100,25);
         submitBTN.addActionListener(new HandleSubmitBTNClick());
 
         add(roomTextTA);
@@ -80,7 +80,6 @@ public class GameInterface extends JFrame {
                 null);
         //System.out.println(result);
         if (result != -1) {
-            //System.out.println(answers.get(result));
             return answers.get(result);
         }
         return "";
@@ -101,6 +100,33 @@ public class GameInterface extends JFrame {
                 options,
                 null);
         if (result != -1) {
+            return answers.get(result);
+        }
+        return "";
+    }
+
+    public void showMessage(String message){
+        JOptionPane.showMessageDialog(this,
+                message);
+    }
+
+    public String fightDialog(String question, List<String> answers){
+        int answerCount = answers.size();
+        Object[] options = new Object[answerCount];
+        for (int x=0; x < answerCount; x++){
+            options[x] = answers.get(x);
+        }
+        int result = JOptionPane.showOptionDialog(this,
+                question,
+                null,
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                options,
+                null);
+        System.out.println(result);
+        if (result != -1) {
+            System.out.println(answers.get(result));
             return answers.get(result);
         }
         return "";

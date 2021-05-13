@@ -4,10 +4,7 @@ import com.escaperooms.application.Controller;
 import com.escaperooms.application.Game;
 import com.escaperooms.application.GameRoom;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 
 public class SpaceController implements Controller {
     private Map<String, SpaceCommands> commandMap = new HashMap<>();
@@ -42,6 +39,9 @@ public class SpaceController implements Controller {
             case VIEW:
                 view();
                 break;
+            case LOOK:
+                look();
+                break;
             case EXIT:
                 System.exit(0);
             default:
@@ -60,19 +60,16 @@ public class SpaceController implements Controller {
 
     private void go() {
         String whereIWantToGo = findValidWordInStringFromArrayOfStrings(this.currentInput);
-        String blockedText = null;
         if (!checkAccess(whereIWantToGo)) {
             //System.out.println("Sorry champ, looks like you don't have what it takes to go to "+ whereIWantToGo);
-            blockedText = "Sorry champ, looks like you don't have what it takes to go to " + whereIWantToGo;
+            //blockedText = "Sorry champ, looks like you don't have what it takes to go to " + whereIWantToGo;
+            SpaceGame.guiController.displayMessage("Sorry champ, looks like you don't have what it takes to go to " + whereIWantToGo);
         }
         else {
             SpaceGame.CURRENT_ROOM = SpaceGame.ROOMMAP
                     .get(whereIWantToGo);
         }
         String roomText = SpaceGame.CURRENT_ROOM.generateRoomText(false);
-        if (blockedText != null){
-            roomText += "\n\n" + blockedText;
-        }
         roomText += "\n\nInventory:\n" + GameRoom.user.getInventoryList();
         SpaceGame.guiController.updateRoomText(roomText);
     }
@@ -87,8 +84,8 @@ public class SpaceController implements Controller {
     }
 
     private void unknown(String input){
-        System.out.println("Sorry folk person, thats not going to work, if you need HELP, just ask \n YOUR INPUT: " + input);
-
+        //System.out.println("Sorry folk person, that's not going to work, if you need HELP, just ask \n YOUR INPUT: " + input);
+        SpaceGame.guiController.displayMessage("Sorry folk person, that's not going to work, if you need HELP, just ask. \n\n YOUR INPUT: " + input);
     }
 
     private String isCleared(String x) {
@@ -111,11 +108,37 @@ public class SpaceController implements Controller {
         SpaceGame.guiController.updateRoomText(roomText);
     }
 
+    private void look() {
+        UsefulItem item = findValidItemInInput(this.currentInput);
+        if (item != null){
+            //System.out.println("The inscription for " + item.getName() + " is " + "'" + item.getDialogs() + "'.");
+            String roomText = SpaceGame.CURRENT_ROOM.generateRoomText(true);
+            roomText += "\n\nThe inscription on " + item.getName() + "reads '" + item.getDialogs() + "'";
+            roomText += "\n\nInventory:\n" + GameRoom.user.getInventoryList();
+            SpaceGame.guiController.updateRoomText(roomText);
+        }
+        else {
+            //System.out.println("You don't seem to have that item.");
+            SpaceGame.guiController.displayMessage("You don't seem to have that item.");
+        }
+
+    }
+
     private void help() {
+        /*
         System.out.println("Available Commands");
         for (String cmd : commandMap.keySet()) {
             System.out.println(cmd);
         }
+         */
+        List<String> commandList =  new ArrayList<>();
+        for (String cmd : commandMap.keySet()) {
+            if (!"UNKNOWN_COMMAND".equals(cmd))
+                commandList.add(cmd);
+        }
+        String message = "Available Commands:\n\n";
+        message += String.join(", ",commandList);
+        SpaceGame.guiController.displayMessage(message);
     }
 
     /**
@@ -151,6 +174,18 @@ public class SpaceController implements Controller {
             }
         }
         return next;
+    }
+
+    public UsefulItem findValidItemInInput(String sentence){
+        UsefulItem item = null;
+        List<UsefulItem> inventory = GameRoom.user.getInventoryItems();
+        for (UsefulItem invItem : inventory){
+            if (wordInSentence(sentence,invItem.getName())){
+                item = invItem;
+                break;
+            }
+        }
+        return item;
     }
 
     public boolean wordInSentence(String sentence, String word) {

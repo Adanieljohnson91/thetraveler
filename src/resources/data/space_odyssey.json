@@ -167,7 +167,7 @@
               "dialogs": [
                 "You can quit now, just step inside, or answer my question, either way you will die.",
                 "So you want to be my meal of the day?",
-                "Chomp Chomp"
+                "Chomp Chomp Chomp Chomp, Arty barrels through the floor"
               ],
               "item":
               {
@@ -218,7 +218,7 @@
               "dialogs": [
                 "Owww youre kind of cute, you should just stay here with me for the night",
                 "Oh, you're no fun, well not yet... you'll be plenty fun when you're dead!",
-                "Roar roar"
+                "Filthy Implodes causing what looks like a rift in time?"
               ],
               "item":
               {
@@ -269,7 +269,7 @@
               "dialogs": [
                 "I've always practiced this; Love yourself, move your body. Watch your portions...",
                 "Number one, like yourself. Number two, you have to eat healthy. And number three, you've got to squeeze your buns. That's my formula... Lets DANCE",
-                "Purrr Purrr"
+                "You're getting warm... If you're not hangin around, I guess i'll catch you later Traveler"
               ],
               "item":
               {
@@ -318,9 +318,9 @@
               "actorRoomText": "Flames light up against the wall, toward the back of the room sits a Donkey on a suede Throne his snout buried in a bucket full of mice, you can hear their little squeeks as their bones pop between the donkeys bloody teeth",
               "secretText": "Oh, no, how could this be, Big Daddy was taken down by someone like you... ",
               "dialogs": [
-                "Hey hey hey, [Big Daddy stairs at your jacket], That's a nice jacket you have there, can I try it on? ",
+                "Hey hey hey, [Big Daddy stares at your jacket], That's a nice jacket you have there, can I try it on? ",
                 "They call me Big Daddy for a reason, I guess its time to tumble.... HeeHaw",
-                "HeeHaw"
+                "HeeHaw Looks like you're done here... \nYou follow Big Daddy through a dark corridor into an empty ballroom with a keypad sitting in the middle of the floor."
               ],
               "item":
               {
