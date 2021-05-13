@@ -35,11 +35,11 @@ public class GameInterface extends JFrame {
         roomTextTA.setEditable(false);
 
         playerInputTF = new JTextField();
-        playerInputTF.setBounds(25, 325, 250,25);
+        playerInputTF.setBounds(25, 350, 625,25);
         playerInputTF.addActionListener(new HandleEnterPressOnPlayerInputTF());
 
         submitBTN = new JButton("Submit");
-        submitBTN.setBounds(275,325,100,25);
+        submitBTN.setBounds(675,350,100,25);
         submitBTN.addActionListener(new HandleSubmitBTNClick());
 
         add(roomTextTA);

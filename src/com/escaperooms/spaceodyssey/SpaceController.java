@@ -4,10 +4,7 @@ import com.escaperooms.application.Controller;
 import com.escaperooms.application.Game;
 import com.escaperooms.application.GameRoom;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 
 public class SpaceController implements Controller {
     private Map<String, SpaceCommands> commandMap = new HashMap<>();
@@ -87,8 +84,8 @@ public class SpaceController implements Controller {
     }
 
     private void unknown(String input){
-        System.out.println("Sorry folk person, thats not going to work, if you need HELP, just ask \n YOUR INPUT: " + input);
-
+        //System.out.println("Sorry folk person, that's not going to work, if you need HELP, just ask \n YOUR INPUT: " + input);
+        SpaceGame.guiController.displayMessage("Sorry folk person, that's not going to work, if you need HELP, just ask. \n\n YOUR INPUT: " + input);
     }
 
     private String isCleared(String x) {
@@ -128,10 +125,20 @@ public class SpaceController implements Controller {
     }
 
     private void help() {
+        /*
         System.out.println("Available Commands");
         for (String cmd : commandMap.keySet()) {
             System.out.println(cmd);
         }
+         */
+        List<String> commandList =  new ArrayList<>();
+        for (String cmd : commandMap.keySet()) {
+            if (!"UNKNOWN_COMMAND".equals(cmd))
+                commandList.add(cmd);
+        }
+        String message = "Available Commands:\n\n";
+        message += String.join(", ",commandList);
+        SpaceGame.guiController.displayMessage(message);
     }
 
     /**
