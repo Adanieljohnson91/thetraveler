@@ -1,6 +1,7 @@
 package com.escaperooms.spaceodyssey;
 
 import com.escaperooms.application.Game;
+import com.escaperooms.application.GameRoom;
 import com.escaperooms.gui.controller.Controller;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -28,7 +29,7 @@ public class SpaceGame implements Game {
      */
     public static Map<String, RoomV2> ROOMMAP = new HashMap<>();
     public static RoomV2 CURRENT_ROOM;
-    private static Controller guiController;
+    public static Controller guiController;
 
     @JsonCreator
     public SpaceGame(@JsonProperty("name") String name, @JsonProperty("rooms") List<RoomV2> rooms) {
@@ -37,6 +38,10 @@ public class SpaceGame implements Game {
         CURRENT_ROOM = ROOMMAP.get("the dark hallway");
     }
 
+    /**
+     * Check to see if required for Jackson; Check.
+     * @return
+     */
     public List<RoomV2> getRooms() {
         return rooms;
     }
@@ -82,6 +87,8 @@ public class SpaceGame implements Game {
             System.out.println(CURRENT_ROOM.getDescription());
             if (CURRENT_ROOM.getActor().getIsAlive()) {
                 CURRENT_ROOM.getActor().sceneDialog();
+            }else{
+                System.out.println("It seems pretty quite in here.");
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -95,7 +102,8 @@ public class SpaceGame implements Game {
         if (getCurrentRoom().getActor().getIsAlive()){
             roomText += "\n\n" + getCurrentRoom().getActor().getActorRoomText();
         }
-        roomText += "\n\nAdjacent Rooms:\n" + String.join(", ",getCurrentRoom().getAdjacent_rooms());
+        //roomText += "\n\nAdjacent Rooms:\n" + String.join(", ",getCurrentRoom().getAdjacent_rooms());
+        roomText += "\n\nInventory:\n" + GameRoom.user.getInventoryList();
         guiController.updateRoomText(roomText);
     }
 
@@ -106,7 +114,7 @@ public class SpaceGame implements Game {
     public void processUserInput(String input) {
         System.out.println("The input of '" + input + "' was received by the SpaceGame.");
         controller.control(input);
-        currentSceneDialogsForInterface();
+
     }
 
     public void linkGuiController(Controller con) {

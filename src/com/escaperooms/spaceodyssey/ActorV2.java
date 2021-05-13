@@ -6,9 +6,7 @@ import com.escaperooms.spaceodyssey.TriviaV2;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.List;
-import java.util.Locale;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * "name": "Big Daddy the Devilishly Handsome Donkey",
@@ -86,7 +84,24 @@ public class ActorV2 {
 
 
     public void congratulate(){
-        System.out.println(dialogs.get(1));
+        String roomText = SpaceGame.CURRENT_ROOM.generateRoomText(false);
+        UsefulItem item = giveItem();
+        roomText += "\n\n" + dialogs.get(2);
+        if (!item.getName().equals("none")){
+            roomText += "\nYou have received " + item.getName();
+        }
+        SpaceGame.guiController.updateRoomText(roomText);
+    }
+
+    public void congratulateFight(){
+        String roomText = SpaceGame.CURRENT_ROOM.generateRoomText(true);
+        UsefulItem item = giveItem();
+        roomText += "\n\n" + "That was close, Let's try to answer the question next time." + "\n\n" + secretText;
+        if (!item.getName().equals("none")){
+            roomText += "\nYou have received " + item.getName();
+        }
+        roomText += "\n\nInventory:\n" + GameRoom.user.getInventoryList();
+        SpaceGame.guiController.updateRoomText(roomText);
     }
 
     private boolean doesActorHaveItem(){
@@ -104,20 +119,23 @@ public class ActorV2 {
 
     private void askQuestion(){
         if(trivia.get(0).quiz()){
-            congratulate();
-            isAlive = false;
             GameRoom.user.addItem(giveItem());
+            isAlive = false;
+            congratulate();
         }
     }
 
     private UsefulItem giveItem(){
-        System.out.println("You have received "+ this.item);
+        //System.out.println("You have received "+ this.item);
         return this.item;
     }
 
     private void questionDialog(){
-        System.out.println(dialogs.get(0));
-        String input = scanner.nextLine();
+        //System.out.println(dialogs.get(0));
+        //String input = scanner.nextLine();
+        String[] ansList = {"Fight","Answer"};
+        List<String> answers = Arrays.asList(ansList);
+        String input = SpaceGame.guiController.fightORQuestionDialog(dialogs.get(0),answers,getName());
         /**
          * expect available commands; if they are not valid ask again
          */
@@ -134,8 +152,10 @@ public class ActorV2 {
             case "ANSWER":
                 askQuestion();
                 break;
+            case "LEAVE":
+                break;
             default:
-                System.out.println("fight or answer");
+                System.out.println("AVAILABLE OPTIONS: FIGHT, ANSWER, LEAVE");
                 questionDialog();
         }
 
@@ -157,6 +177,14 @@ public class ActorV2 {
 
     public void battleDialog(){
         System.out.println(dialogs.get(1));
+        if(trivia.get(0).quizFight()){
+            GameRoom.user.addItem(giveItem());
+            congratulateFight();
+            isAlive = false;
+            return;
+        }
+        SpaceGame.guiController.triggerEndGame("GAME OVER", true);
+
     }
 
     public String getBattleDialog(){

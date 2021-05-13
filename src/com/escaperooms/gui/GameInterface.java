@@ -5,6 +5,7 @@ import com.escaperooms.gui.controller.Controller;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 public class GameInterface extends JFrame {
     private final int FRAME_X_SIZE = 800;
@@ -13,7 +14,9 @@ public class GameInterface extends JFrame {
     private JTextArea roomTextTA;
     private JTextField playerInputTF;
     private JButton submitBTN;
-    Controller controller;
+    private Controller controller;
+
+    private ImageLoader imageLoader;
 
     public GameInterface(String title){
         super(title);
@@ -27,18 +30,23 @@ public class GameInterface extends JFrame {
         roomTextTA = new JTextArea();
         roomTextTA.setText("The is the room text area.");
         roomTextTA.setBounds(25,25,getWidth() - (25 + 25),300);
+        roomTextTA.setLineWrap(true);
+        roomTextTA.setWrapStyleWord(true);
+        roomTextTA.setEditable(false);
 
         playerInputTF = new JTextField();
-        playerInputTF.setBounds(25, 325, 250,25);
+        playerInputTF.setBounds(25, 350, 625,25);
         playerInputTF.addActionListener(new HandleEnterPressOnPlayerInputTF());
 
         submitBTN = new JButton("Submit");
-        submitBTN.setBounds(275,325,100,25);
+        submitBTN.setBounds(675,350,100,25);
         submitBTN.addActionListener(new HandleSubmitBTNClick());
 
         add(roomTextTA);
         add(playerInputTF);
         add(submitBTN);
+
+        imageLoader = new ImageLoader();
 
     }
 
@@ -56,6 +64,87 @@ public class GameInterface extends JFrame {
 
     public void setRoomTextTA(String roomText){
         roomTextTA.setText(roomText);
+    }
+
+    public String twoAnswerDialog(String question, List<String> answers, String iconKey){
+        Object[] options = new Object[2];
+        options[0] = answers.get(0);
+        options[1] = answers.get(1);
+        int result = JOptionPane.showOptionDialog(this,
+                question,
+                null,
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                imageLoader.getImage(iconKey),
+                options,
+                null);
+        //System.out.println(result);
+        if (result != -1) {
+            return answers.get(result);
+        }
+        return "";
+    }
+
+    public String triviaDialog(String question, List<String> answers,String key){
+        int answerCount = answers.size();
+        Object[] options = new Object[answerCount];
+        for (int x=0; x < answerCount; x++){
+            options[x] = answers.get(x);
+        }
+        int result = JOptionPane.showOptionDialog(this,
+                question,
+                null,
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                imageLoader.getImage(key),
+                options,
+                null);
+        if (result != -1) {
+            return answers.get(result);
+        }
+        return "";
+    }
+
+    public void showMessage(String message){
+        JOptionPane.showMessageDialog(this,
+                message);
+    }
+
+    public String fightDialog(String question, List<String> answers){
+        int answerCount = answers.size();
+        Object[] options = new Object[answerCount];
+        for (int x=0; x < answerCount; x++){
+            options[x] = answers.get(x);
+        }
+        int result = JOptionPane.showOptionDialog(this,
+                question,
+                null,
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                options,
+                null);
+        System.out.println(result);
+        if (result != -1) {
+            System.out.println(answers.get(result));
+            return answers.get(result);
+        }
+        return "";
+    }
+
+    public int gameOver(String message, boolean success){
+        Object[] options = {"Restart", "Exit Game"};
+        int n = JOptionPane.showOptionDialog(
+                this,
+                message,
+                "Game Over",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                success ? imageLoader.getImage("freedom") : imageLoader.getImage("skull"),
+                options,
+                null
+        );
+        return n;
     }
 
     private class HandleSubmitBTNClick implements ActionListener {

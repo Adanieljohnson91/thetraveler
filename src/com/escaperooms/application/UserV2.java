@@ -19,7 +19,7 @@ public class UserV2 {
 
          */
         List<String> s = new ArrayList<>();
-        items.add(new UsefulItem("hammer", ""));
+        items.add(new UsefulItem("none", ""));
     }
 
     /**
@@ -54,6 +54,18 @@ public class UserV2 {
 
     public void addItem(UsefulItem item){
         items.add(item);
+    }
+
+    public String getInventoryList(){
+        List<String> list = new ArrayList<>();
+        for (UsefulItem item : items){
+            list.add(item.getName());
+        }
+        return String.join(", ",list);
+    }
+
+    public List<UsefulItem> getInventoryItems(){
+        return items;
     }
 
 }
