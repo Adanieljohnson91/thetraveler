@@ -22,6 +22,23 @@ public class MusicPlayer extends Thread{
         }
     }
 
+    public void changeSong(String song) {
+        clip.stop();
+        try{
+            URL url = MusicPlayer.class.getResource("/resources/" + song);
+            AudioInputStream audioStream;
+            audioStream = AudioSystem.getAudioInputStream(url);
+            clip = AudioSystem.getClip();
+            clip.open(audioStream);
+            clip.start();
+            FloatControl volumeControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+            volumeControl.setValue(20f * (float)Math.log10(volume));
+        }catch (Exception e){
+            System.out.println("ERROR DOG");
+            Thread.currentThread().interrupt();
+        }
+    }
+
     public void run() {
         try {
             URL url = MusicPlayer.class.getResource("/resources/" + song);
@@ -37,7 +54,6 @@ public class MusicPlayer extends Thread{
             {
             }
             */
-
         } catch (Exception e) {
             System.out.println("ERROR DOG");
             Thread.currentThread().interrupt();

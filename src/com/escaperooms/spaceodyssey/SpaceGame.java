@@ -3,6 +3,7 @@ package com.escaperooms.spaceodyssey;
 import com.escaperooms.application.Game;
 import com.escaperooms.application.GameRoom;
 import com.escaperooms.gui.controller.Controller;
+import com.escaperooms.music.MusicPlayer;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -30,12 +31,15 @@ public class SpaceGame implements Game {
     public static Map<String, RoomV2> ROOMMAP = new HashMap<>();
     public static RoomV2 CURRENT_ROOM;
     public static Controller guiController;
+    private static MusicPlayer musicPlayer;
 
     @JsonCreator
     public SpaceGame(@JsonProperty("name") String name, @JsonProperty("rooms") List<RoomV2> rooms) {
         this.name = name;
         createRoomMap(rooms);
         CURRENT_ROOM = ROOMMAP.get("the dark hallway");
+        musicPlayer = new MusicPlayer(CURRENT_ROOM.getSong());
+        musicPlayer.start();
     }
 
     /**
@@ -52,6 +56,12 @@ public class SpaceGame implements Game {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public static void setCurrentRoom(RoomV2 room){
+        CURRENT_ROOM = room;
+        musicPlayer.changeSong(CURRENT_ROOM.getSong());
+
     }
 
     public void setRooms(List<RoomV2> rooms) {

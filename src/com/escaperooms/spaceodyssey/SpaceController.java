@@ -66,8 +66,8 @@ public class SpaceController implements Controller {
             SpaceGame.guiController.displayMessage("Sorry champ, looks like you don't have what it takes to go to " + whereIWantToGo);
         }
         else {
-            SpaceGame.CURRENT_ROOM = SpaceGame.ROOMMAP
-                    .get(whereIWantToGo);
+            SpaceGame.setCurrentRoom(SpaceGame.ROOMMAP
+                    .get(whereIWantToGo));
         }
         String roomText = SpaceGame.CURRENT_ROOM.generateRoomText(false);
         roomText += "\n\nInventory:\n" + GameRoom.user.getInventoryList();

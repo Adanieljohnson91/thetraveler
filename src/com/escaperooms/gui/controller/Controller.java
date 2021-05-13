@@ -89,6 +89,7 @@ public class Controller {
             setSpaceGame(spaceGame);
             spaceGame.linkGuiController(this);
             updateRoomText(spaceGame.getCurrentRoom().generateRoomText(false));
+            gameInterface.showOpeningScene();
         }
     }
 }
