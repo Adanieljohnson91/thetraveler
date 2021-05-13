@@ -1,5 +1,6 @@
 package com.escaperooms.spaceodyssey;
 
+import com.escaperooms.music.MusicPlayer;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -15,22 +16,29 @@ public class RoomV2 {
     private List<String> commands = new ArrayList<>();
     private List<String> adjacent_rooms;
     private Scanner scanner = new Scanner(System.in);
+    private String song;
 
     @JsonCreator
     public RoomV2(@JsonProperty("name")String name,
                   @JsonProperty("description")String description,
                   @JsonProperty("requiredItem")UsefulItem requiredItem,
                   @JsonProperty("actor")ActorV2 actor,
-                  @JsonProperty("adjacent_rooms")List<String> adjacent_rooms) {
+                  @JsonProperty("adjacent_rooms")List<String> adjacent_rooms,
+                  @JsonProperty("song") String song) {
         this.name = name;
         this.description = description;
         this.requiredItem = requiredItem;
         this.actor = actor;
         this.adjacent_rooms = adjacent_rooms;
+        this.song = song;
     }
 
     public String getName() {
         return name;
+    }
+
+    public String getSong() {
+        return song;
     }
 
     public List<String> getAdjacent_rooms() {
@@ -85,7 +93,8 @@ public class RoomV2 {
         if (SpaceGame.CURRENT_ROOM.getActor().getIsAlive()){
             roomText += "\n\n" + SpaceGame.CURRENT_ROOM.getActor().getActorRoomText();
         }else{
-            roomText += "\n\nIt seems to be peaceful in here... \nWe should check some more rooms...";
+            roomText += "\n\nIt seems to be peaceful in here... " +
+                    "We should check some more rooms...";
         }
         if (showRooms) {
             roomText +=   String.join(", ", SpaceGame.CURRENT_ROOM.getAdjacent_rooms());
