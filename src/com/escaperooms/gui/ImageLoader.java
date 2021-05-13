@@ -30,6 +30,25 @@ public class ImageLoader {
                 imageIcons.put(key,new ImageIcon(img));
             }
         }
+        Image img = null;
+        String imagePath = "data/images/freedom.png";
+        try{
+            img = ImageIO.read(new File(imagePath));
+        }
+        catch(IOException ioe){
+            ioe.printStackTrace();
+        }
+        img = img.getScaledInstance(150,150,Image.SCALE_SMOOTH);
+        imageIcons.put("freedom",new ImageIcon(img));
+        imagePath = "data/images/skull.png";
+        try{
+            img = ImageIO.read(new File(imagePath));
+        }
+        catch(IOException ioe){
+            ioe.printStackTrace();
+        }
+        img = img.getScaledInstance(150,150,Image.SCALE_SMOOTH);
+        imageIcons.put("skull",new ImageIcon(img));
     }
 
     public ImageIcon getImage(String key){
