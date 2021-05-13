@@ -59,9 +59,9 @@ public class UserV2 {
     public String getInventoryList(){
         List<String> list = new ArrayList<>();
         for (UsefulItem item : items){
-            list.add(item.getName());
+            if (!item.getName().equalsIgnoreCase("none")) list.add(item.getName());
         }
-        return String.join(", ",list);
+        return String.join(", ", list);
     }
 
     public List<UsefulItem> getInventoryItems(){
