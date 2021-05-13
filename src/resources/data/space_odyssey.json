@@ -19,13 +19,13 @@
             "item":
               {
                 "name": "Willie Mays 1952 Topps #261 Giants Baseball Card",
-                "inscription": "Base ball gloves fits all..."
+                "inscription": "Base ball gloves fits all...IV"
               },
             "trivia": [
               {
-                "question": " An adult male duck is referred to as a _____?",
-                "answers": ["Mandrake", "Drake", "Quacker", "Duckle"],
-                "correctAnswer": "Drake"
+                "question": "How long would the Sun have to be out before people realzied it?",
+                "answers": ["1min", "4min", "8min", "12min"],
+                "correctAnswer": "8min"
               },
               {
                 "question": "Many birds have a gland that produces a waxy oil to waterproof feathers called a _____ gland?",
@@ -50,7 +50,7 @@
             ]
           }
           ,
-          "adjacent_rooms": ["storage closet", "the dark room", "the disco hole", "the broken mirror"]
+          "adjacent_rooms": ["storage closet", "the dark room", "the disco hole", "the broken mirror", "mysterious door"]
         },
           {
             "name": "storage closet",
@@ -70,14 +70,14 @@
               "item":
               {
                 "name": "brass knuckle",
-                "inscription": "the sun can be represented by the number..."
+                "inscription": "the sun can be represented by the number... VII"
               },
               "wantedItem": [],
               "trivia": [
                 {
-                  "question": " An adult male duck is referred to as a _____?",
-                  "answers": ["Mandrake", "Drake", "Quacker", "Duckle"],
-                  "correctAnswer": "Drake"
+                  "question": "What is added to steel to makes it 'Stainless', 'Tastless', and prevents 'Oxidation'? ",
+                  "answers": ["Chromium", "Silicon", "Manganses", "Carbon"],
+                  "correctAnswer": "Chromium"
                 },
                 {
                   "question": "Many birds have a gland that produces a waxy oil to waterproof feathers called a _____ gland?",
@@ -121,14 +121,14 @@
               "item":
               {
                 "name": "Baccarat Zodiac Pig",
-                "inscription": "socks and shoes both come in..."
+                "inscription": "socks and shoes both come in... III"
               },
               "wantedItem": [],
               "trivia": [
                 {
-                  "question": " An adult male duck is referred to as a _____?",
-                  "answers": ["Mandrake", "Drake", "Quacker", "Duckle"],
-                  "correctAnswer": "Drake"
+                  "question": "Which animal has pink milk?",
+                  "answers": ["Eastern Salmon", "Rhinos", "Platypus", "Hippopotamus"],
+                  "correctAnswer": "Hippopotamus"
                 },
                 {
                   "question": "Many birds have a gland that produces a waxy oil to waterproof feathers called a _____ gland?",
@@ -172,7 +172,7 @@
               "item":
               {
                 "name": "Snake skin assless chaps",
-                "inscription": "...Rainbows have so many colors..."
+                "inscription": "...Rainbows have so many colors... II"
               },
               "wantedItem": [],
               "trivia": [
@@ -208,7 +208,7 @@
           {
             "name": "the disco hole",
             "description": "You have entered the disco hole, energy levels are high, your foot starts to slap uncontrollably against the floor as horrible 80's music floods your ears.",
-            "requiredItem":{"name": "none", "inscription":""},
+            "requiredItem":{"name": "Snake skin assless chaps", "inscription":""},
             "actor": {
               "name": "Filthy the Bear",
               "health": 5,
@@ -223,14 +223,14 @@
               "item":
               {
                 "name": "Dirty handkerchief",
-                "inscription": "to my love, Filthy, in memory of the magic ball we had..."
+                "inscription": "to my love, Filthy, in memory of the magic ball we had... V"
               },
               "wantedItem": [],
               "trivia": [
                 {
-                  "question": " An adult male duck is referred to as a _____?",
-                  "answers": ["Mandrake", "Drake", "Quacker", "Duckle"],
-                  "correctAnswer": "Drake"
+                  "question": "If you have 23 pairs of people what is the chance that two of them share the same birthday?",
+                  "answers": ["50%", "25%", "23%", "7%"],
+                  "correctAnswer": "50%"
                 },
                 {
                   "question": "Many birds have a gland that produces a waxy oil to waterproof feathers called a _____ gland?",
@@ -258,7 +258,7 @@
           },
           {
             "name": "the broken mirror",
-            "description": "You're in a small cramped [ESCAPE HATCH]",
+            "description": "You have fallen through a broken mirror",
             "requiredItem": {"name": "Dirty handkerchief", "inscription":""},
             "actor": {
               "name": "Frisky Whiskers",
@@ -274,14 +274,14 @@
               "item":
               {
                 "name": "Pioneer 8 Track Stereo Model H-R99",
-                "inscription": "cool cats never die, the have many lives."
+                "inscription": "cool cats never die, the have many lives. VI"
               },
               "wantedItem": [],
               "trivia": [
                 {
-                  "question": " An adult male duck is referred to as a _____?",
-                  "answers": ["Mandrake", "Drake", "Quacker", "Duckle"],
-                  "correctAnswer": "Drake"
+                  "question": "If you have a pie how many cuts would it take to make 8 slices?",
+                  "answers": ["1", "2", "3", "4"],
+                  "correctAnswer": "3"
                 },
                 {
                   "question": "Many birds have a gland that produces a waxy oil to waterproof feathers called a _____ gland?",
@@ -325,7 +325,109 @@
               "item":
               {
                 "name": "Pioneer 8 Track Stereo Model H-R99",
-                "inscription": "cool cats never die, the have many lives."
+                "inscription": "cool cats never die, the have many lives. VIII"
+              },
+              "wantedItem": [],
+              "trivia": [
+                {
+                  "question": "How many seconds are there in a year?",
+                  "answers": ["31,556,926", "9,333,334", "67,877,323,432", "234,876"],
+                  "correctAnswer": "31,556,926"
+                },
+                {
+                  "question": "Many birds have a gland that produces a waxy oil to waterproof feathers called a _____ gland?",
+                  "answers": ["Mandrake", "Drake", "Uropygial", "Duckle"],
+                  "correctAnswer": "Uropygial"
+                },
+                {
+                  "question": "How long after hatching are Ducklings able to walk and leave the nest?",
+                  "answers": ["immediately", "a couple hours", "a day", "a couple days"],
+                  "correctAnswer": "a couple hours"
+                },
+                {
+                  "question": "a group of ducks can be called a ______?",
+                  "answers": ["druid", "deckle", "cast", "raft"],
+                  "correctAnswer": "raft"
+                },
+                {
+                  "question": "How many eyelids does a duck have?",
+                  "answers": ["0", "1", "2", "3"],
+                  "correctAnswer": "3"
+                }
+              ]
+            },
+            "adjacent_rooms": ["the broken mirror"]
+          },
+          {
+            "name": "mysterious door",
+            "description": "You've passed through the Mysterious Door and now find yourself in a kaleidoscope dream\nGravity seems to have increased, it's hard to stand",
+            "requiredItem":{"name": "Pioneer 8 Track Stereo Model H-R99", "inscription":""},
+            "actor": {
+              "name": "Lyssa, Daughter of Nyx",
+              "health": 5,
+              "attack": 1,
+              "actorRoomText": "Towards the center of the room sits a pale faced women, adorned in a tattered dress, playing a lune",
+              "secretText": "Thank you for saving me from my madness, this place has grown heavy on my soul",
+              "dialogs": [
+                "Please, keep away, I don't want to hurt you",
+                "Lyssa goes into a mad rage and the room is seemingly warping",
+                "... farewell... Lyssa seemingly melts into the floor"
+              ],
+              "item":
+              {
+                "name": "Lyssas flute",
+                "inscription": "It seems life could not grant us with the love we deserved, now we look to the gods in the sky... I"
+              },
+              "wantedItem": [],
+              "trivia": [
+                {
+                  "question": "How many planets are named after Gods from mythology?",
+                  "answers": ["3", "4", "7", "8"],
+                  "correctAnswer": "7"
+                },
+                {
+                  "question": "Many birds have a gland that produces a waxy oil to waterproof feathers called a _____ gland?",
+                  "answers": ["Mandrake", "Drake", "Uropygial", "Duckle"],
+                  "correctAnswer": "Uropygial"
+                },
+                {
+                  "question": "How long after hatching are Ducklings able to walk and leave the nest?",
+                  "answers": ["immediately", "a couple hours", "a day", "a couple days"],
+                  "correctAnswer": "a couple hours"
+                },
+                {
+                  "question": "a group of ducks can be called a ______?",
+                  "answers": ["druid", "deckle", "cast", "raft"],
+                  "correctAnswer": "raft"
+                },
+                {
+                  "question": "How many eyelids does a duck have?",
+                  "answers": ["0", "1", "2", "3"],
+                  "correctAnswer": "3"
+                }
+              ]
+            },
+            "adjacent_rooms": ["the dark hallway", "long stairwell"]
+          },
+          {
+            "name": "long stairwell",
+            "description": "You entered a stairwell which seemed to have no end...\nFinally it comes to an end, you can no longer see the light from the doorway from which you came but only an old steel door that seems to have been barred shut.\nYou should probably turn back",
+            "requiredItem": {"name": "Lyssas Flute", "inscription":""},
+            "actor": {
+              "name": "Mak",
+              "health": 5,
+              "attack": 1,
+              "actorRoomText": "You turn around to leave and but you feel a pull at your arm",
+              "secretText": "As the paths ahead are certain to be dark, I shall certainly be with you...",
+              "dialogs": [
+                "I've always practiced this; Love yourself, move your body. Watch your portions...",
+                "Midway upon the journey of life we have found ourselves in this forest dark, your path ends here...",
+                "Mak releases you arm, you should probably leave..."
+              ],
+              "item":
+              {
+                "name": "7th ring of Hell",
+                "inscription": "unlucky friday... IX-X"
               },
               "wantedItem": [],
               "trivia": [
@@ -356,7 +458,7 @@
                 }
               ]
             },
-            "adjacent_rooms": ["the broken mirror"]
+            "adjacent_rooms": ["mysterious door"]
           }
         ]
 }
