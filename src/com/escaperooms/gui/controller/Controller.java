@@ -54,4 +54,8 @@ public class Controller {
     public String fightTrivia(String question, List<String> answers){
         return gameInterface.fightDialog(question,answers);
     }
+
+    public void displayMessage(String message){
+        gameInterface.showMessage(message);
+    }
 }

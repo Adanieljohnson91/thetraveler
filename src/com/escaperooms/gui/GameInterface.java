@@ -105,6 +105,11 @@ public class GameInterface extends JFrame {
         return "";
     }
 
+    public void showMessage(String message){
+        JOptionPane.showMessageDialog(this,
+                message);
+    }
+
     public String fightDialog(String question, List<String> answers){
         int answerCount = answers.size();
         Object[] options = new Object[answerCount];

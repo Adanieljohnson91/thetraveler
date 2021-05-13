@@ -64,4 +64,8 @@ public class UserV2 {
         return String.join(", ",list);
     }
 
+    public List<UsefulItem> getInventoryItems(){
+        return items;
+    }
+
 }
