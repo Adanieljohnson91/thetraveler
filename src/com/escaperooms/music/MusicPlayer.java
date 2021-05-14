@@ -22,7 +22,9 @@ public class MusicPlayer extends Thread{
         }
     }
 
-    public void changeSong(String song) {
+    public void changeSong(String _song) {
+        if(_song.equals(this.song))return;
+        this.song = _song;
         clip.stop();
         try{
             URL url = MusicPlayer.class.getResource("/resources/" + song);
@@ -31,6 +33,7 @@ public class MusicPlayer extends Thread{
             clip = AudioSystem.getClip();
             clip.open(audioStream);
             clip.start();
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
             FloatControl volumeControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
             volumeControl.setValue(20f * (float)Math.log10(volume));
         }catch (Exception e){

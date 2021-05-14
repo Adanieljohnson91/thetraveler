@@ -117,6 +117,10 @@ public class SpaceGame implements Game {
         currentSceneDialogsForInterface();
     }
 
+    public MusicPlayer getMusicPlayer() {
+        return musicPlayer;
+    }
+
     @Override
     public String toString() {
         return "Game{" +

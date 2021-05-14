@@ -3,6 +3,7 @@ package com.escaperooms.gui.controller;
 import com.escaperooms.application.GameRoom;
 import com.escaperooms.application.UserV2;
 import com.escaperooms.gui.GameInterface;
+import com.escaperooms.music.MusicPlayer;
 import com.escaperooms.parsers.SpaceAdventureParser;
 import com.escaperooms.spaceodyssey.SpaceGame;
 
@@ -39,7 +40,7 @@ public class Controller {
     // Controls for the GUI to talk to the game
     public void submitUserInput(String inputText){
         //test code to make sure the end game dialog was working
-        /*
+
         if ("win".equals(inputText)){
             triggerEndGame("you win", true);
             return;
@@ -48,8 +49,12 @@ public class Controller {
             triggerEndGame("you died", false);
             return;
         }
-         */
+
         spaceGame.processUserInput(inputText);
+    }
+
+    public MusicPlayer getMusicPlayer(){
+        return spaceGame.getMusicPlayer();
     }
 
     // Controls for the game to talk to the UI
@@ -76,6 +81,7 @@ public class Controller {
     }
 
     public void triggerEndGame(String message, boolean success){
+        /*
         int result = gameInterface.gameOver(message,success);
         if (result == -1 || result == 1){
             System.exit(0);
@@ -91,5 +97,21 @@ public class Controller {
             updateRoomText(spaceGame.getCurrentRoom().generateRoomText(false));
             gameInterface.showOpeningScene();
         }
+
+         */
+        gameInterface.showEndGame(message,success);
     }
+
+    public void restartGame(){
+        spaceGame.getMusicPlayer().stopMusic();
+        GameRoom.user = new UserV2();
+        File SPACE_FILE = new File("src/resources/data/space_odyssey.json");
+        SpaceAdventureParser space_parser = new SpaceAdventureParser();
+        SpaceGame spaceGame = space_parser.parse(SPACE_FILE);
+        setSpaceGame(spaceGame);
+        spaceGame.linkGuiController(this);
+        updateRoomText(spaceGame.getCurrentRoom().generateRoomText(false));
+        gameInterface.showOpeningScene();
+    }
+
 }
