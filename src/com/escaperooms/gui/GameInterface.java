@@ -14,7 +14,7 @@ import java.util.List;
 
 public class GameInterface extends JFrame {
     private final int FRAME_X_SIZE = 800;
-    private final int FRAME_Y_SIZE = 600;
+    private final int FRAME_Y_SIZE = 650;
 
 
     private JTextArea roomTextTA;
@@ -26,6 +26,10 @@ public class GameInterface extends JFrame {
     private JButton openingSceneBTN;
     private JButton endingSceneBTN;
     private JButton exitBTN;
+
+    private JMenuBar menuBar;
+    private JMenu menu;
+    private JMenuItem menuItem;
 
     public GameInterface(String title){
         super(title);
@@ -63,13 +67,21 @@ public class GameInterface extends JFrame {
 
         endingSceneBTN = new JButton();
         endingSceneBTN.setVisible(false);
-        endingSceneBTN.setBounds(25,25,FRAME_X_SIZE - (25 + 25), FRAME_Y_SIZE - (25 + 50) );
+        endingSceneBTN.setBounds(25,25,FRAME_X_SIZE - (25 + 25), FRAME_Y_SIZE - (75 + 50) );
         endingSceneBTN.addActionListener(new HandleEndingSceneBTNClick());
 
         exitBTN = new JButton("Run Away...");
         exitBTN.setVisible(false);
-        exitBTN.setBounds(FRAME_X_SIZE - (25 + 100),FRAME_Y_SIZE - (25+ 25),100,25 );
+        exitBTN.setBounds(FRAME_X_SIZE - (25 + 100),FRAME_Y_SIZE - (50+ 25),100,25 );
         exitBTN.addActionListener(new HandleExitBTNClick());
+
+        menuBar = new JMenuBar();
+        menu = new JMenu("Sounds");
+        menuBar.add(menu);
+        menuItem = new JMenuItem("Settings");
+        menuItem.addActionListener(new HandleSoundSettingsMenuClick());
+        menu.add(menuItem);
+
 
         add(roomTextTA);
         add(playerInputTF);
@@ -77,6 +89,7 @@ public class GameInterface extends JFrame {
         add(openingSceneBTN);
         add(endingSceneBTN);
         add(exitBTN);
+        setJMenuBar(menuBar);
 
         showOpeningScene();
     }
@@ -242,6 +255,15 @@ public class GameInterface extends JFrame {
         public void actionPerformed(ActionEvent e) {
             //System.out.println("exit clicked...");
             System.exit(0);
+        }
+    }
+
+    private class HandleSoundSettingsMenuClick implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            //System.out.println("settings clicked...");
+            SoundUI soundUI = new SoundUI("Settings",controller.getMusicPlayer(),getLocation());
+            soundUI.setVisible(true);
         }
     }
 }
