@@ -102,7 +102,7 @@
           },
           {
             "name": "the dark room",
-            "song": "stansbgm.wav",
+            "song": "soar.wav",
             "description": "You've entered the Dark room, if you peer into the darkness long enough, eventually it looks back into you...",
             "requiredItem":{"name": "Willie Mays 1952 Topps #261 Giants Baseball Card", "inscription":""},
             "actor": {
@@ -151,7 +151,7 @@
           },
           {
             "name": "the bathroom",
-            "song": "none.wav",
+            "song": "soar.wav",
             "description": " You've entered the bathroom, it obviously hasn't been cleaned in days",
             "requiredItem":{"name": "Baccarat Zodiac Pig", "inscription":""},
             "actor": {
@@ -200,7 +200,7 @@
           },
           {
             "name": "the disco hole",
-            "song": "iwillbe.wav",
+            "song": "soar.wav",
             "description": "You have entered the disco hole, energy levels are high, your foot starts to slap uncontrollably against the floor as horrible 80's music floods your ears.",
             "requiredItem":{"name": "Snake skin assless chaps", "inscription":""},
             "actor": {
@@ -249,7 +249,7 @@
           },
           {
             "name": "the broken mirror",
-            "song": "iwillbe.wav",
+            "song": "soar.wav",
             "description": "You have fallen through a broken mirror",
             "requiredItem": {"name": "Dirty handkerchief", "inscription":""},
             "actor": {
@@ -298,7 +298,7 @@
           },
           {
             "name": "big daddys lair",
-            "song": "iwillbe.wav",
+            "song": "soar.wav",
             "description": "You've stepped into big daddies lair, are you ready for some big daddy? ",
             "requiredItem":{"name": "Pioneer 8 Track Stereo Model H-R99", "inscription":""},
             "actor": {
@@ -347,7 +347,7 @@
           },
           {
             "name": "mysterious door",
-            "song": "iwillbe.wav",
+            "song": "soar.wav",
             "description": "You've passed through the Mysterious Door and now find yourself in a kaleidoscope dream\nGravity seems to have increased, it's hard to stand",
             "requiredItem":{"name": "Pioneer 8 Track Stereo Model H-R99", "inscription":""},
             "actor": {
@@ -396,7 +396,7 @@
           },
           {
             "name": "long stairwell",
-            "song": "iwillbe.wav",
+            "song": "soar.wav",
             "description": "You entered a stairwell which seemed to have no end...\nFinally it comes to an end, you can no longer see the light from the doorway from which you came but only an old steel door that seems to have been barred shut.\nYou should probably turn back",
             "requiredItem": {"name": "Lyssas Flute", "inscription":""},
             "actor": {
