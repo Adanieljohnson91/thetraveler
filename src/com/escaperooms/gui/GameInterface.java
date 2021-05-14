@@ -24,6 +24,8 @@ public class GameInterface extends JFrame {
 
     private ImageLoader imageLoader;
     private JButton openingSceneBTN;
+    private JButton endingSceneBTN;
+    private JButton exitBTN;
 
     public GameInterface(String title){
         super(title);
@@ -33,7 +35,7 @@ public class GameInterface extends JFrame {
         setResizable(false);
         setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+        imageLoader = new ImageLoader();
         roomTextTA = new JTextArea();
         roomTextTA.setText("The is the room text area.");
         roomTextTA.setBounds(25,25,getWidth() - (25 + 25),300);
@@ -56,21 +58,26 @@ public class GameInterface extends JFrame {
         openingSceneBTN.setBounds(25,25,750,525);
         openingSceneBTN.addActionListener(new HandleOpeningSceneBTNClick());
         openingSceneBTN.setVisible(false);
-        Image img = null;
-        try{
-            img = ImageIO.read(new File("data/images/hallway.jpg"));
-        }
-        catch(IOException ioe){
-            ioe.printStackTrace();
-        }
-        img = img.getScaledInstance(750,525,Image.SCALE_SMOOTH);
-        openingSceneBTN.setIcon(new ImageIcon(img));
+
+        openingSceneBTN.setIcon(imageLoader.getImage("opening"));
+
+        endingSceneBTN = new JButton();
+        endingSceneBTN.setVisible(false);
+        endingSceneBTN.setBounds(25,25,FRAME_X_SIZE - (25 + 25), FRAME_Y_SIZE - (25 + 50) );
+        endingSceneBTN.addActionListener(new HandleEndingSceneBTNClick());
+
+        exitBTN = new JButton("Run Away...");
+        exitBTN.setVisible(false);
+        exitBTN.setBounds(FRAME_X_SIZE - (25 + 100),FRAME_Y_SIZE - (25+ 25),100,25 );
+        exitBTN.addActionListener(new HandleExitBTNClick());
 
         add(roomTextTA);
         add(playerInputTF);
         add(submitBTN);
         add(openingSceneBTN);
-        imageLoader = new ImageLoader();
+        add(endingSceneBTN);
+        add(exitBTN);
+
         showOpeningScene();
     }
 
@@ -176,6 +183,8 @@ public class GameInterface extends JFrame {
         playerInputTF.setVisible(false);
         submitBTN.setVisible(false);
         openingSceneBTN.setVisible(true);
+        exitBTN.setVisible(false);
+        endingSceneBTN.setVisible(false);
     }
 
     public void showGame(){
@@ -183,6 +192,18 @@ public class GameInterface extends JFrame {
         playerInputTF.setVisible(!false);
         submitBTN.setVisible(!false);
         openingSceneBTN.setVisible(!true);
+        exitBTN.setVisible(!false);
+        endingSceneBTN.setVisible(!true);
+    }
+
+    public void showEndGame(String message, boolean success){
+        roomTextTA.setVisible(false);
+        playerInputTF.setVisible(false);
+        submitBTN.setVisible(false);
+        openingSceneBTN.setVisible(false);
+        exitBTN.setVisible(true);
+        endingSceneBTN.setIcon(success ? imageLoader.getImage("win") : imageLoader.getImage("lose"));
+        endingSceneBTN.setVisible(true);
     }
 
     private class HandleSubmitBTNClick implements ActionListener {
@@ -205,6 +226,22 @@ public class GameInterface extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             showGame();
+        }
+    }
+
+    private class HandleEndingSceneBTNClick implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            //System.out.println("restart clicked...");
+            controller.restartGame();
+        }
+    }
+
+    private class HandleExitBTNClick implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            //System.out.println("exit clicked...");
+            System.exit(0);
         }
     }
 }
