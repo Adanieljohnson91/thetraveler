@@ -27,38 +27,26 @@ import java.util.*;
  */
 public class ActorV2 {
 
-    Scanner scanner = new Scanner(System.in);
-
     private String name;
     private List<String> dialogs;
     private UsefulItem item;
-    private List<UsefulItem> wantedItem;
-    private int health;
-    private int attack;
     private String actorRoomText;
     private String secretText;
     private List<TriviaV2> trivia;
     private boolean isAlive = true;
-    private boolean questionAnswered;
 
 
     @JsonCreator
     public ActorV2(@JsonProperty("name") String name,
-                   @JsonProperty("health") int health,
-                   @JsonProperty("attack") int attack,
                    @JsonProperty("actorRoomText") String actionRoomText,
                    @JsonProperty("secretText") String secretText,
                    @JsonProperty("dialogs") List<String> dialogs,
                    @JsonProperty("item") UsefulItem item,
-                   @JsonProperty("trivia") List<TriviaV2> trivia,
-                   @JsonProperty("wantedItem") List<UsefulItem> wantedItem) {
+                   @JsonProperty("trivia") List<TriviaV2> trivia) {
         this.name = name;
         this.dialogs = dialogs;
         this.item = item;
         this.trivia = trivia;
-        this.wantedItem = wantedItem;
-        this.health = health;
-        this.attack = attack;
         this.actorRoomText = actionRoomText;
         this.secretText = secretText;
 
@@ -76,12 +64,9 @@ public class ActorV2 {
         this.name = name;
     }
 
-
     public void setItem(UsefulItem item) {
         this.item = item;
     }
-
-
 
     public void congratulate(){
         String roomText = SpaceGame.CURRENT_ROOM.generateRoomText(false);
@@ -102,10 +87,6 @@ public class ActorV2 {
         }
         roomText += "\n\nInventory:\n" + GameRoom.user.getInventoryList();
         SpaceGame.guiController.updateRoomText(roomText);
-    }
-
-    private boolean doesActorHaveItem(){
-        return wantedItem.isEmpty();
     }
 
     public void interact(){
@@ -178,32 +159,12 @@ public class ActorV2 {
     public void battleDialog(){
         System.out.println(dialogs.get(1));
         if(trivia.get(0).quizFight()){
-
             GameRoom.user.addItem(giveItem());
             congratulateFight();
             isAlive = false;
             return;
         }
+        SpaceGame.guiController.triggerEndGame("GAME OVER", true);
 
-    }
-
-    public String getBattleDialog(){
-        return dialogs.get(1);
-    }
-
-    public void noiseDialog(){
-        System.out.println(dialogs.get(2));
-    }
-
-    public String getNoiseDialog() {
-        return dialogs.get(2);
-    }
-
-    public void defeatDialog(){
-        System.out.println(secretText);
-    }
-
-    public String getDefeatDialog() {
-        return secretText;
     }
 }

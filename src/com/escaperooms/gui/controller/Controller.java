@@ -1,8 +1,13 @@
 package com.escaperooms.gui.controller;
 
+import com.escaperooms.application.GameRoom;
+import com.escaperooms.application.UserV2;
 import com.escaperooms.gui.GameInterface;
+import com.escaperooms.parsers.SpaceAdventureParser;
 import com.escaperooms.spaceodyssey.SpaceGame;
 
+import java.io.File;
+import java.sql.PreparedStatement;
 import java.util.HashMap;
 import java.util.List;
 
@@ -33,6 +38,17 @@ public class Controller {
 
     // Controls for the GUI to talk to the game
     public void submitUserInput(String inputText){
+        //test code to make sure the end game dialog was working
+        /*
+        if ("win".equals(inputText)){
+            triggerEndGame("you win", true);
+            return;
+        }
+        else if ("lose".equals(inputText)){
+            triggerEndGame("you died", false);
+            return;
+        }
+         */
         spaceGame.processUserInput(inputText);
     }
 
@@ -53,5 +69,27 @@ public class Controller {
 
     public String fightTrivia(String question, List<String> answers){
         return gameInterface.fightDialog(question,answers);
+    }
+
+    public void displayMessage(String message){
+        gameInterface.showMessage(message);
+    }
+
+    public void triggerEndGame(String message, boolean success){
+        int result = gameInterface.gameOver(message,success);
+        if (result == -1 || result == 1){
+            System.exit(0);
+        }
+        else{
+            //System.out.println("restart");
+            GameRoom.user = new UserV2();
+            File SPACE_FILE = new File("src/resources/data/space_odyssey.json");
+            SpaceAdventureParser space_parser = new SpaceAdventureParser();
+            SpaceGame spaceGame = space_parser.parse(SPACE_FILE);
+            setSpaceGame(spaceGame);
+            spaceGame.linkGuiController(this);
+            updateRoomText(spaceGame.getCurrentRoom().generateRoomText(false));
+            gameInterface.showOpeningScene();
+        }
     }
 }

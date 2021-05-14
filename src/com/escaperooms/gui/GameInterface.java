@@ -1,15 +1,21 @@
 package com.escaperooms.gui;
 
 import com.escaperooms.gui.controller.Controller;
+import com.escaperooms.music.MusicPlayer;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 public class GameInterface extends JFrame {
     private final int FRAME_X_SIZE = 800;
     private final int FRAME_Y_SIZE = 600;
+
 
     private JTextArea roomTextTA;
     private JTextField playerInputTF;
@@ -17,6 +23,7 @@ public class GameInterface extends JFrame {
     private Controller controller;
 
     private ImageLoader imageLoader;
+    private JButton openingSceneBTN;
 
     public GameInterface(String title){
         super(title);
@@ -33,21 +40,38 @@ public class GameInterface extends JFrame {
         roomTextTA.setLineWrap(true);
         roomTextTA.setWrapStyleWord(true);
         roomTextTA.setEditable(false);
+        roomTextTA.setVisible(false);
 
         playerInputTF = new JTextField();
-        playerInputTF.setBounds(25, 325, 250,25);
+        playerInputTF.setBounds(25, 350, 625,25);
         playerInputTF.addActionListener(new HandleEnterPressOnPlayerInputTF());
+        playerInputTF.setVisible(false);
 
         submitBTN = new JButton("Submit");
-        submitBTN.setBounds(275,325,100,25);
+        submitBTN.setBounds(675,350,100,25);
         submitBTN.addActionListener(new HandleSubmitBTNClick());
+        submitBTN.setVisible(false);
+
+        openingSceneBTN = new JButton();
+        openingSceneBTN.setBounds(25,25,750,525);
+        openingSceneBTN.addActionListener(new HandleOpeningSceneBTNClick());
+        openingSceneBTN.setVisible(false);
+        Image img = null;
+        try{
+            img = ImageIO.read(new File("data/images/hallway.jpg"));
+        }
+        catch(IOException ioe){
+            ioe.printStackTrace();
+        }
+        img = img.getScaledInstance(750,525,Image.SCALE_SMOOTH);
+        openingSceneBTN.setIcon(new ImageIcon(img));
 
         add(roomTextTA);
         add(playerInputTF);
         add(submitBTN);
-
+        add(openingSceneBTN);
         imageLoader = new ImageLoader();
-
+        showOpeningScene();
     }
 
     public void setController(Controller controller) {
@@ -78,7 +102,6 @@ public class GameInterface extends JFrame {
                 imageLoader.getImage(iconKey),
                 options,
                 null);
-        //System.out.println(result);
         if (result != -1) {
             return answers.get(result);
         }
@@ -105,6 +128,11 @@ public class GameInterface extends JFrame {
         return "";
     }
 
+    public void showMessage(String message){
+        JOptionPane.showMessageDialog(this,
+                message);
+    }
+
     public String fightDialog(String question, List<String> answers){
         int answerCount = answers.size();
         Object[] options = new Object[answerCount];
@@ -127,6 +155,35 @@ public class GameInterface extends JFrame {
         return "";
     }
 
+    public int gameOver(String message, boolean success){
+        Object[] options = {"Restart", "Exit Game"};
+        int n = JOptionPane.showOptionDialog(
+                this,
+                message,
+                "Game Over",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                success ? imageLoader.getImage("freedom") : imageLoader.getImage("skull"),
+                options,
+                null
+        );
+        return n;
+    }
+
+    public void showOpeningScene(){
+        roomTextTA.setVisible(false);
+        playerInputTF.setVisible(false);
+        submitBTN.setVisible(false);
+        openingSceneBTN.setVisible(true);
+    }
+
+    public void showGame(){
+        roomTextTA.setVisible(!false);
+        playerInputTF.setVisible(!false);
+        submitBTN.setVisible(!false);
+        openingSceneBTN.setVisible(!true);
+    }
+
     private class HandleSubmitBTNClick implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -140,6 +197,13 @@ public class GameInterface extends JFrame {
         public void actionPerformed(ActionEvent e) {
             System.out.println("Enter pressed in the text field");
             submitInput();
+        }
+    }
+
+    private class HandleOpeningSceneBTNClick implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            showGame();
         }
     }
 }
