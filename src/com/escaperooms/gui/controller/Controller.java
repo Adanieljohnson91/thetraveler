@@ -76,6 +76,7 @@ public class Controller {
     }
 
     public void triggerEndGame(String message, boolean success){
+        /*
         int result = gameInterface.gameOver(message,success);
         if (result == -1 || result == 1){
             System.exit(0);
@@ -91,5 +92,20 @@ public class Controller {
             updateRoomText(spaceGame.getCurrentRoom().generateRoomText(false));
             gameInterface.showOpeningScene();
         }
+
+         */
+        gameInterface.showEndGame(message,success);
     }
+
+    public void restartGame(){
+        GameRoom.user = new UserV2();
+        File SPACE_FILE = new File("src/resources/data/space_odyssey.json");
+        SpaceAdventureParser space_parser = new SpaceAdventureParser();
+        SpaceGame spaceGame = space_parser.parse(SPACE_FILE);
+        setSpaceGame(spaceGame);
+        spaceGame.linkGuiController(this);
+        updateRoomText(spaceGame.getCurrentRoom().generateRoomText(false));
+        gameInterface.showOpeningScene();
+    }
+
 }

@@ -42,7 +42,7 @@ public class RoomTest {
         TriviaV2 trivia2 = new TriviaV2(question2, answers2, correctAnswer2);
         List<TriviaV2> trivia = List.of(trivia1, trivia2);
         actor = new ActorV2(name, health, attack, actorRoomText, secretText, dialogs, item1, trivia, wantedItem);
-        room = new RoomV2(roomName, roomDescription, requiredItem, actor, adjacent_rooms);
+        //room = new RoomV2(roomName, roomDescription, requiredItem, actor, adjacent_rooms);
     }
 
     @Test
