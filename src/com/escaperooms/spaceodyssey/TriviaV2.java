@@ -39,7 +39,7 @@ public class TriviaV2 {
     }
 
     public boolean quiz(){
-        return checkAnswer(SpaceGame.guiController.askTrivia(question,answers, SpaceGame.CURRENT_ROOM.getName()));
+        return checkAnswer(SpaceGame.guiController.askTrivia(question,answers, SpaceGame.CURRENT_ROOM.getActor().getName()));
     }
     public boolean quizFight(String actorName){
         //return checkAnswerFight(SpaceGame.guiController.fightTrivia("Rock... Paper... Scissors... SHOOT!",List.of("Rock", "Paper", "Scissors")));
