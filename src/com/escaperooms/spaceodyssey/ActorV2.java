@@ -158,13 +158,13 @@ public class ActorV2 {
 
     public void battleDialog(){
         System.out.println(dialogs.get(1));
-        if(trivia.get(0).quizFight()){
+        if(trivia.get(0).quizFight(getName())){
             GameRoom.user.addItem(giveItem());
             congratulateFight();
             isAlive = false;
             return;
         }
-        SpaceGame.guiController.triggerEndGame("GAME OVER", true);
+        SpaceGame.guiController.triggerEndGame("GAME OVER", false);
 
     }
 }
