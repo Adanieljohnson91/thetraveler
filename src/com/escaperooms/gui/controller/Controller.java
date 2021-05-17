@@ -72,8 +72,10 @@ public class Controller {
         return gameInterface.triviaDialog(question,answers, key);
     }
 
-    public String fightTrivia(String question, List<String> answers){
-        return gameInterface.fightDialog(question,answers);
+    public String fightTrivia(String question, List<String> answers, String actor_name){
+        String key = actorTable.get(actor_name) + "_fight";
+
+        return gameInterface.fightDialog(question,answers,key);
     }
 
     public void displayMessage(String message){

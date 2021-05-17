@@ -153,7 +153,7 @@ public class GameInterface extends JFrame {
                 message);
     }
 
-    public String fightDialog(String question, List<String> answers){
+    public String fightDialog(String question, List<String> answers,String iconKey){
         int answerCount = answers.size();
         Object[] options = new Object[answerCount];
         for (int x=0; x < answerCount; x++){
@@ -164,7 +164,7 @@ public class GameInterface extends JFrame {
                 null,
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE,
-                null,
+                imageLoader.getImage(iconKey),
                 options,
                 null);
         System.out.println(result);
